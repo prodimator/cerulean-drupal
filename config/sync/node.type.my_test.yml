@@ -1,0 +1,18 @@
+uuid: c5c65e95-4cb7-4d7b-9068-9a5325b2c5aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'My test'
+type: my_test
+description: 'hello human'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
