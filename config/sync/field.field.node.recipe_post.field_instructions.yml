@@ -1,0 +1,21 @@
+uuid: 7daba223-f120-4f5b-979e-d653150c9c26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_instructions
+    - node.type.recipe_post
+  module:
+    - text
+id: node.recipe_post.field_instructions
+field_name: field_instructions
+entity_type: node
+bundle: recipe_post
+label: Instructions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
