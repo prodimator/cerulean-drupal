@@ -1,0 +1,28 @@
+uuid: b6e6a6ec-0d8f-40a7-a2b6-5a18bb586c5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.recipe_post.field_body_content
+    - field.field.node.recipe_post.field_date
+    - field.field.node.recipe_post.field_ingredients
+    - field.field.node.recipe_post.field_instructions
+    - node.type.recipe_post
+  module:
+    - user
+id: node.recipe_post.teaser
+targetEntityType: node
+bundle: recipe_post
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_body_content: true
+  field_date: true
+  field_ingredients: true
+  field_instructions: true

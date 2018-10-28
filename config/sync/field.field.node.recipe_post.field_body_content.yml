@@ -1,0 +1,21 @@
+uuid: abec54bd-2e26-4fb5-ab79-23345acdbc9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body_content
+    - node.type.recipe_post
+  module:
+    - text
+id: node.recipe_post.field_body_content
+field_name: field_body_content
+entity_type: node
+bundle: recipe_post
+label: 'Body Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
