@@ -1,0 +1,8 @@
+.slideshow{
+    background: url('../../images/almond_milk.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; 
+
+}
