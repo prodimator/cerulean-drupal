@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Navigation from './Navigation';
 import './Recipe.css';
 
 class Recipe extends Component {
   render() {
     return (
       <div>
+        <Navigation />
         <header className="Recipe-header">
           <img src="https://via.placeholder.com/350x150" className="Recipe-img" alt=""/>
         </header>

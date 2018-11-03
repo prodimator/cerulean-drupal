@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Recipe from './Recipe';
 import * as serviceWorker from './serviceWorker';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.render(<Recipe />, document.getElementById('root'));
 
