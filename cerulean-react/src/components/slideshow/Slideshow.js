@@ -13,21 +13,15 @@ class Slideshow extends Component {
 		const images = [
       {
         original: 'http://via.placeholder.com/500x250',
-        thumbnail: 'http://via.placeholder.com/500x250',
         originalClass: 'featured-slide',
-        thumbnailClass: 'featured-thumb',
         originalAlt: 'original-alt',
-        thumbnailAlt: 'thumbnail-alt',
-        thumbnailLabel: 'Optional',
         description: 'Optional description...',
       },
       {
         original: 'http://via.placeholder.com/500x250',
-        thumbnail: 'http://via.placeholder.com/500x250'
       },
       {
         original: 'http://via.placeholder.com/500x250',
-        thumbnail: 'http://via.placeholder.com/500x250'
       }
     ]
 
@@ -37,6 +31,7 @@ class Slideshow extends Component {
 	        ref={i => this._imageGallery = i}
 	        items={images}
 	        slideInterval={100}
+	        showThumbnails={false}
 	        onImageLoad={this.handleImageLoad}/>
     	</div>
     );
