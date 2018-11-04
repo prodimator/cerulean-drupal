@@ -26,7 +26,6 @@ class Recipe extends Component {
           instructions: data[0].instructions,
           ingredients: data[0].ingredients
          });
-         console.log(this.state.body_content);
 
       })
   }
@@ -40,8 +39,6 @@ class Recipe extends Component {
         </header>
         <div className="flex-container">
           <div className="recipe-post">
-            {this.state.body_content}
-
             <div dangerouslySetInnerHTML={{ __html: this.state.body_content }} />
           </div>
         </div>
