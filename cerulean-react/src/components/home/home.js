@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import './home.css';
+import Slideshow from '../slideshow/Slideshow';
+import './Home.css';
 
 class Home extends Component {
-    render() {
-        return (
-          <div className="slideshow">
-              
-          </div>
-        );
-      }
+	render() {
+    return (
+		<div className="Home">
+			<Slideshow/>
+	    </div>
+		);
+	}
 }
 
 export default Home;

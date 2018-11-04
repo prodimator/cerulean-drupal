@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navigation from '../navigation/Navigation';
 import './Recipe.css';
 
 class Recipe extends Component {
@@ -43,7 +42,6 @@ class Recipe extends Component {
   render() {
     return (
       <div>
-        <Navigation />
         <header className="Recipe-header" />
         <div className="recipe-post">
           <div className="recipe-title title-bold">
