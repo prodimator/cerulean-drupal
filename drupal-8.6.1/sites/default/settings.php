@@ -255,6 +255,9 @@ $config_directories = array(
   CONFIG_SYNC_DIRECTORY => '../../cerulean-drupal/config/sync',
 );
 
+global $content_directories;
+$content_directories['sync'] = $app_root.'/../content/sync';
+
 /**
  * Settings:
  *
