@@ -10,7 +10,9 @@ class Recipe extends Component {
       date: '',
       blog_content: '',
       instructions: [],
-      ingredients: []
+      ingredients: [],
+      titleBold: '',
+      titleSlim: '',
     }
   }
 
@@ -25,22 +27,32 @@ class Recipe extends Component {
           body_content: data[0].body_content,
           instructions: data[0].instructions,
           ingredients: data[0].ingredients
-         });
-
+        });
+        this.splitTitle();
       })
+  }
+  
+  splitTitle = () => {
+    var parsedTitle = this.state.title.split(' ');
+    this.setState({
+      titleBold: parsedTitle[0]+parsedTitle[1],
+      titleSlim: parsedTitle[2]
+    });
   }
 
   render() {
     return (
       <div>
         <Navigation />
-        <header className="Recipe-header">
-          <img src='https://via.placeholder.com/350x150' className="Recipe-img" alt="" />
-        </header>
-        <div className="flex-container">
-          <div className="recipe-post">
-            <div dangerouslySetInnerHTML={{ __html: this.state.body_content }} />
+        <header className="Recipe-header" />
+        <div className="recipe-post">
+          <div className="recipe-title title-bold">
+            {this.state.titleBold}
           </div>
+          <div className="recipe-title title-slim">
+            {this.state.titleSlim}
+          </div>
+          <div className="recipe-body" dangerouslySetInnerHTML={{ __html: this.state.body_content }} />
         </div>
       </div>
     );

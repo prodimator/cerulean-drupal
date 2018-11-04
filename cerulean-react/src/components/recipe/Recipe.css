@@ -1,25 +1,35 @@
-.Recipe-img {
-  position: absolute;
+.Recipe-header {
+  background: #000;
+  background: url('../../images/almond_milk_recipe.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
   height: 75vmin;
   width: 100%;
   z-index: -1;
 }
 
-.flex-container {
-	top: 70%;
-	position: absolute;
-	height: 100%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.recipe-post {
+  position: relative;
+  top: -100px;
+  padding-left: 50px;
+  padding-right: 50px;
+ 	background-color: #fdfdfd;
+  width: 900px;
+  margin: auto;
 }
 
-.recipe-post {
- 	background-color: #282c34;
-	width: 50%;
-	color: white;
+.recipe-title{
+  display: inline;
+  font-size: 80px;
+}
+.title-bold{
+  font-family: 'NexaBold';
+}
+.title-slim{
+  font-family: 'NexaLight';
+}
+.recipe-body{
+  font-family: 'BellMT';
+  font-size: 16px;
 }
