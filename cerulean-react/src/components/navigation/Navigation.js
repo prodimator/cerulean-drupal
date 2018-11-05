@@ -1,37 +1,79 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  InputGroup,
+  InputGroupAddon,
+  Button,
+  Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import './Navigation.css';
 
-const NavItem = props => {
-  const pageURI = window.location.pathname+window.location.search
-  const liClassName = (props.path === pageURI) ? "nav-item active" : "nav-item";
-  return (
-    <li className={liClassName}>
-      <Link className="nav-link" to={props.path}>{props.name}</Link>
-    </li>
-  );
-}
+class Navigation extends Component {
+  constructor(props) {
+    super(props);
 
-class Navigation extends React.Component {
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light">
-        <a className="navbar-brand" href="/">Lapa Eats</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <NavItem path="/" name="Home" />
-            <NavItem path="/recipes" name="Recipes"/> 
-          </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-    )
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Lapa Eats</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="mr-auto" navbar>
+              <NavItem>
+                <NavLink tag={Link} to="/">Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/recipes">Recipes</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Options
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>
+                    Option 1
+                  </DropdownItem>
+                  <DropdownItem>
+                    Option 2
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    Reset
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
+            <InputGroup className="really">
+              <Input placeholder="Search"/>
+              <InputGroupAddon addonType="append">
+                <Button outline color="info">Search</Button>
+              </InputGroupAddon>
+            </InputGroup>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
   }
 }
 

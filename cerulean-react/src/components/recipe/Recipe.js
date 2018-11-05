@@ -51,6 +51,10 @@ class Recipe extends Component {
             {this.state.titleSlim}
           </div>
           <div className="recipe-body" dangerouslySetInnerHTML={{ __html: this.state.body_content }} />
+          <h3>Ingredients</h3>
+          <div className="recipe-body" dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
+          <h3>Instructions</h3>
+          <div className="recipe-body" dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
         </div>
       </div>
     );
