@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Recipe from './components/recipe/Recipe';
-// import Home from './components/home/Home';
+import { BrowserRouter } from 'react-router-dom';
 import Main from './components/main/Main';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
-import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-
-// ReactDOM.render(<Main />, document.getElementById('root'));
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <BrowserRouter>
