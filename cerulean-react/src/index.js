@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 // import Recipe from './components/recipe/Recipe';
 // import Home from './components/home/Home';
 import Main from './components/main/Main';
-// import App from './App';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';

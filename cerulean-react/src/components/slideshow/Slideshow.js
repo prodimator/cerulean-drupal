@@ -5,23 +5,42 @@ import './Slideshow.css';
 
 class Slideshow extends Component {
 
+  constructor(){
+    super();
+    this.state = {
+      width: 0,
+      height: 0,
+      url: ''
+    };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
 	handleImageLoad(event) {
     console.log('Image loaded ', event.target)
   }
 
 	render() {
+    var url='https://picsum.photos/'+this.state.width+'/'+this.state.height+'/?random';
 		const images = [
       {
-        original: 'http://via.placeholder.com/500x250',
+        original: url,
         originalClass: 'featured-slide',
         originalAlt: 'original-alt',
-        description: 'Optional description...',
       },
       {
-        original: 'http://via.placeholder.com/500x250',
+        original: url,
       },
       {
-        original: 'http://via.placeholder.com/500x250',
+        original: url,
       }
     ]
 
@@ -29,9 +48,14 @@ class Slideshow extends Component {
     	<div className="gallery">
     		<ImageGallery
 	        ref={i => this._imageGallery = i}
-	        items={images}
-	        slideInterval={100}
-	        showThumbnails={false}
+          items={images}
+          autoPlay={true}
+	        slideInterval={5000}
+          showThumbnails={false}
+          showBullets={true}
+          showNavigation={true}
+          showPlayButton={false}
+          showFullscreenButton={false}
 	        onImageLoad={this.handleImageLoad}/>
     	</div>
     );
