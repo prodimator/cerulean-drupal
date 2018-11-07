@@ -7,9 +7,9 @@ import Recipe from '../recipe/Recipe';
 class Main extends Component {
 	render() {
     return (
-		<div className="Main">
+		<div className="main">
 			<div>
-			    <Navigation />
+				<Navigation />
 			    <div>
 			    	<Route exact path="/" component={Home}/>
 			    	<Route path="/recipes" component={Recipe}/>

@@ -51,8 +51,10 @@ class Example extends Component {
     ];
 
     return (
-      <UncontrolledCarousel
-        items={items}/>
+      <div>
+        <UncontrolledCarousel
+          items={items}/>
+      </div>
     );
   }
 }

@@ -1,0 +1,21 @@
+.feed {
+	display: block;
+	text-align: center;
+}
+
+.mess {
+	-webkit-transform: rotate(270deg) !important;
+	background-color: black !important;
+}
+
+.cards {
+	margin: 20px;
+}
+
+.card-deck {
+	justify-content: center;
+}
+
+.card {
+	border: none !important;
+}
