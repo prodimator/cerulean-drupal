@@ -64,7 +64,7 @@ class Navigation extends Component {
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
-            <InputGroup className="really">
+            <InputGroup>
               <Input placeholder="Search"/>
               <InputGroupAddon addonType="append">
                 <Button outline color="info">Search</Button>
