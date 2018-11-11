@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {_AppConstants} from '../../index.constants';
 import './Recipe.css';
 
 class Recipe extends Component {
@@ -12,11 +13,12 @@ class Recipe extends Component {
       ingredients: [],
       titleBold: '',
       titleSlim: '',
+      image_header_url: '',
     }
   }
 
   componentDidMount() {
-    fetch('http://35.199.10.212/api/recipes?_format=json')
+    fetch(_AppConstants.api + '/api/recipes?_format=json')
       .then((results) => {
         return results.json();
       }).then((data) => {
@@ -25,8 +27,10 @@ class Recipe extends Component {
           date: data[0].date,
           body_content: data[0].body_content,
           instructions: data[0].instructions,
-          ingredients: data[0].ingredients
+          ingredients: data[0].ingredients,
+          image_header_url: _AppConstants.api + data[0].image_header,
         });
+        console.log(this.state.image_header_url);
         this.splitTitle();
       })
   }
@@ -42,7 +46,7 @@ class Recipe extends Component {
   render() {
     return (
       <div>
-        <header className="Recipe-header" />
+        <header className="Recipe-header" style={{backgroundImage: `url(${this.state.image_header_url})`}} />
         <div className="recipe-post">
           <div className="recipe-title title-bold">
             {this.state.titleBold}
@@ -51,10 +55,6 @@ class Recipe extends Component {
             {this.state.titleSlim}
           </div>
           <div className="recipe-body" dangerouslySetInnerHTML={{ __html: this.state.body_content }} />
-          <h3>Ingredients</h3>
-          <div className="recipe-body" dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
-          <h3>Instructions</h3>
-          <div className="recipe-body" dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
         </div>
       </div>
     );
