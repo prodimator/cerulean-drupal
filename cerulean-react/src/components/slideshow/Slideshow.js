@@ -3,7 +3,7 @@ import { UncontrolledCarousel } from 'reactstrap';
 import { _AppConstants } from '../../index.constants';
 import './Slideshow.css';
 
-class Example extends Component {
+class Slideshow extends Component {
 
   constructor() {
     super();
@@ -52,4 +52,4 @@ class Example extends Component {
   }
 }
 
-export default Example;
+export default Slideshow;
