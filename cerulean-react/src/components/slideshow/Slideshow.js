@@ -17,12 +17,11 @@ class Slideshow extends Component {
       .then((results) => {
         return results.json();
       }).then((data) => {
-        let images = data.map((img) =>{
+        let images = data.map((img) => {
           return (_AppConstants.api + img.image_header);
         })
         this.setState({images});
       })
-
   }
 
   render() {

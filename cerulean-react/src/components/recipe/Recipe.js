@@ -3,8 +3,8 @@ import {_AppConstants} from '../../index.constants';
 import './Recipe.css';
 
 class Recipe extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: '',
       date: '',
@@ -18,7 +18,7 @@ class Recipe extends Component {
   }
 
   componentDidMount() {
-    fetch(_AppConstants.api + '/api/recipes?_format=json')
+    fetch(_AppConstants.api + '/api/recipes?_format=json&id='+this.props.recipe_id)
       .then((results) => {
         return results.json();
       }).then((data) => {
@@ -30,7 +30,6 @@ class Recipe extends Component {
           ingredients: data[0].ingredients,
           image_header_url: _AppConstants.api + data[0].image_header,
         });
-        console.log(this.state.image_header_url);
         this.splitTitle();
       })
   }
