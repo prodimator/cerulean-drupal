@@ -41,18 +41,16 @@ class Feed extends Component{
 
         <div className="cards" id="feed">
           <CardDeck>
-            <Col sm="3">
-              {this.state.recipes.map((item)=>
-                <Card>
-                  <CardImg top width="100%" src={`${_AppConstants.api}${item.image}`} alt="Card image cap" />
-                  <CardBody>
-                    <CardTitle>{item.title}</CardTitle>
-                    <CardSubtitle>{item.date}</CardSubtitle>
-                    <CardText>{item.description}</CardText>
-                  </CardBody>
-                </Card>
-              )}
-            </Col>
+            {this.state.recipes.map((item)=>
+              <Card>
+                <CardImg top width="100%" src={`${_AppConstants.api}${item.image}`} alt="Card image cap" />
+                <CardBody>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardSubtitle>{item.date}</CardSubtitle>
+                  <CardText>{item.description}</CardText>
+                </CardBody>
+              </Card>
+            )}
           </CardDeck>
         </div>
 

@@ -35,7 +35,7 @@ class Slideshow extends Component {
         caption: 'Slide 2',
       },
       {
-        src: this.state.images[1],
+        src: this.state.images[2],
         caption: 'Slide 3',
       }
     ];
