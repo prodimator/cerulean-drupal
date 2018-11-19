@@ -23,6 +23,7 @@ class Feed extends Component{
             id: recipe.id,
             title: recipe.title,
             date: recipe.date,
+            description: recipe.description,
             image: recipe.image_header,
           });
         })
@@ -47,7 +48,7 @@ class Feed extends Component{
                   <CardBody>
                     <CardTitle>{item.title}</CardTitle>
                     <CardSubtitle>{item.date}</CardSubtitle>
-                    <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+                    <CardText>{item.description}</CardText>
                   </CardBody>
                 </Card>
               )}
