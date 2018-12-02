@@ -12,7 +12,7 @@ class Main extends Component {
 				<Navigation />
 			    <div>
 			    	<Route exact path="/" component={Home}/>
-					<Route path="/recipes" render={() => (<Recipe recipe_id='3'/>)}/>
+					<Route path="/recipes" component={Recipe}/>
 			    </div>
 		    </div>
 	    </div>

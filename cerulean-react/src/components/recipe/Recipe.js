@@ -1,61 +1,85 @@
 import React, { Component } from 'react';
-import {_AppConstants} from '../../index.constants';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { _AppConstants } from '../../index.constants';
 import './Recipe.css';
+
 
 class Recipe extends Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      date: '',
-      blog_content: '',
-      instructions: [],
-      ingredients: [],
-      titleBold: '',
-      titleSlim: '',
-      image_header_url: '',
+      super(props);
+      this.state = {
+        recipes: []
+      };
     }
-  }
 
   componentDidMount() {
-    fetch(_AppConstants.api + '/api/recipes?_format=json&id='+this.props.recipe_id)
-      .then((results) => {
-        return results.json();
-      }).then((data) => {
-        this.setState({
-          title: data[0].title,
-          date: data[0].date,
-          body_content: data[0].body_content,
-          instructions: data[0].instructions,
-          ingredients: data[0].ingredients,
-          image_header_url: _AppConstants.api + data[0].image_header,
+  fetch(_AppConstants.api + '/api/recipes?_format=json')
+    .then((results) => {
+      return results.json();
+    }).then((data) => {
+      let recipes = data.map((recipe) => {
+        let parsedTitle = recipe.title.split(' ');
+        console.log(parsedTitle);
+        return ({
+          id: recipe.id,
+          title: recipe.title,
+          title_bold: parsedTitle[0]+parsedTitle[1],
+          title_slim: parsedTitle[2],
+          date: recipe.date,
+          description: recipe.description,
+          body_content: recipe.body_content,
+          ingredients: recipe.ingredients,
+          instructions: recipe.instructions,
+          image_header_url: recipe.image_header,
         });
-        this.splitTitle();
       })
-  }
-  
-  splitTitle = () => {
-    var parsedTitle = this.state.title.split(' ');
-    this.setState({
-      titleBold: parsedTitle[0]+parsedTitle[1],
-      titleSlim: parsedTitle[2]
-    });
+      this.setState({recipes});
+    })
   }
 
   render() {
+      console.log("hi there");
+      console.log(_AppConstants.api);
+      console.log(this.state.recipes);
+      console.log(this.state.recipes.title);
+      console.log(this.state.recipes.image_header_url);
+      return (
+        <div>
+          <header className="Recipe-header" style={{backgroundImage: `url(${_AppConstants.api}${this.state.recipes.image_header_url})`}} />
+          <div className="recipe-post">
+            <div className="recipe-title title-bold">
+              {this.state.recipes.title_bold}
+            </div>
+            <div className="recipe-title title-slim">
+              {this.state.recipes.title_slim}
+            </div>
+            <div className="recipe-body" dangerouslySetInnerHTML={{ __html: this.state.recipes.body_content }} />
+          </div>
+        </div>
+      );
+    }
+
+  render() {
+    let id = this.props.match.params.id;
+    let recipe = this.state.recipes.reduce(function (current, recipe) {
+      return id === current.id ? current : recipe;
+    }, {});
+
+    if (!recipe) return <div>Image not found</div>;
+
     return (
       <div>
-        <header className="Recipe-header" style={{backgroundImage: `url(${this.state.image_header_url})`}} />
-        <div className="recipe-post">
-          <div className="recipe-title title-bold">
-            {this.state.titleBold}
-          </div>
-          <div className="recipe-title title-slim">
-            {this.state.titleSlim}
-          </div>
-          <div className="recipe-body" dangerouslySetInnerHTML={{ __html: this.state.body_content }} />
+            <header className="Recipe-header" style={{backgroundImage: `url(${_AppConstants.api}${recipe.image_header_url})`}} />
+            <div className="recipe-post">
+              <div className="recipe-title title-bold">
+                {recipe.title_bold}
+              </div>
+              <div className="recipe-title title-slim">
+                {recipe.title_slim}
+              </div>
+              <div className="recipe-body" dangerouslySetInnerHTML={{ __html: recipe.body_content }} />
+            </div>
         </div>
-      </div>
     );
   }
 }
