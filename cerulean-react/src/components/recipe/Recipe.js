@@ -38,28 +38,6 @@ class Recipe extends Component {
   }
 
   render() {
-      console.log("hi there");
-      console.log(_AppConstants.api);
-      console.log(this.state.recipes);
-      console.log(this.state.recipes.title);
-      console.log(this.state.recipes.image_header_url);
-      return (
-        <div>
-          <header className="Recipe-header" style={{backgroundImage: `url(${_AppConstants.api}${this.state.recipes.image_header_url})`}} />
-          <div className="recipe-post">
-            <div className="recipe-title title-bold">
-              {this.state.recipes.title_bold}
-            </div>
-            <div className="recipe-title title-slim">
-              {this.state.recipes.title_slim}
-            </div>
-            <div className="recipe-body" dangerouslySetInnerHTML={{ __html: this.state.recipes.body_content }} />
-          </div>
-        </div>
-      );
-    }
-
-  render() {
     let id = this.props.match.params.id;
     let recipe = this.state.recipes.reduce(function (current, recipe) {
       return id === current.id ? current : recipe;

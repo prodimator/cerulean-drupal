@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Navigation from '../navigation/Navigation';
-import Home from '../home/Home';
-import Recipe from '../recipe/Recipe';
+import Feed from '../feed/Feed';
+import RecipeMenu from '../recipemenu/RecipeMenu';
+import About from '../about/About';
 
 class Main extends Component {
 	render() {
@@ -11,8 +12,9 @@ class Main extends Component {
 			<div>
 				<Navigation />
 			    <div>
-			    	<Route exact path="/" component={Home}/>
-					<Route path="/recipes" component={Recipe}/>
+			    	<Route exact path="/" component={Feed}/>
+					<Route path="/recipes" component={RecipeMenu}/>
+					<Route path="/about" component={About}/>
 			    </div>
 		    </div>
 	    </div>
