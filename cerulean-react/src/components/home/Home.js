@@ -1,14 +1,12 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Card, CardImg, CardTitle, CardText, CardDeck, CardSubtitle,CardBody, Col } from 'reactstrap';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { _AppConstants } from '../../index.constants';
 import Recipe from '../recipe/Recipe';
-import RecipeMenu from '../recipemenu/RecipeMenu';
-import Place from './Place.js';
-import './Feed.css';
+import Feed from './Feed.js';
+import './Home.css';
 
 
-class ModalSwitch extends React.Component {
+class HomeRouter extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,7 +36,7 @@ class ModalSwitch extends React.Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" component={Place} />
+          <Route exact path="/" component={Feed} />
           <Route path="/recipe/:id" component={Recipe} />
         </Switch>
       </div>
@@ -46,12 +44,12 @@ class ModalSwitch extends React.Component {
   }
 }
 
-function ModalGallery() {
+function Home() {
   return (
     <Router>
-      <Route component={ModalSwitch} />
+      <Route component={HomeRouter} />
     </Router>
   );
 }
 
-export default ModalGallery;
+export default Home;

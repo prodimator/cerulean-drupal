@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Navigation from '../navigation/Navigation';
-import Feed from '../feed/Feed';
+import Home from '../home/Home';
 import RecipeMenu from '../recipemenu/RecipeMenu';
 import About from '../about/About';
 
@@ -12,7 +12,7 @@ class Main extends Component {
 			<div>
 				<Navigation />
 			    <div>
-			    	<Route exact path="/" component={Feed}/>
+			    	<Route exact path="/" component={Home}/>
 					<Route path="/recipes" component={RecipeMenu}/>
 					<Route path="/about" component={About}/>
 			    </div>

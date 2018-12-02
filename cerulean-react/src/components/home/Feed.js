@@ -1,12 +1,12 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React, { Component } from "react";
+import { BrowserRouter as Route, Link } from "react-router-dom";
 import Scrollchor from 'react-scrollchor';
 import { Card, CardImg, CardTitle, CardText, CardDeck, CardSubtitle,CardBody, Col } from 'reactstrap';
 import { _AppConstants } from '../../index.constants';
 import Slideshow from '../slideshow/Slideshow';
 
 
-class Place extends React.Component {
+class Feed extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -71,4 +71,4 @@ class Place extends React.Component {
   }
 }
 
-export default Place;
+export default Feed;
