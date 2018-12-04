@@ -16,9 +16,8 @@ class Recipe extends Component {
     .then((results) => {
       return results.json();
     }).then((data) => {
-      let recipes = data.map((recipe) => {
+      let recipes = data.map(recipe => {
         let parsedTitle = recipe.title.split(' ');
-        console.log(parsedTitle);
         return ({
           id: recipe.id,
           title: recipe.title,
@@ -55,6 +54,10 @@ class Recipe extends Component {
             {recipe.title_slim}
           </div>
           <div className="recipe-body" dangerouslySetInnerHTML={{ __html: recipe.body_content }} />
+          <h3>Ingredients</h3>
+          <div className="recipe-ingredients" dangerouslySetInnerHTML={{ __html: recipe.ingredients }} />
+          <h3>Instructions</h3>
+          <div className="recipe-instructions" dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
         </div>
         </div>
     );

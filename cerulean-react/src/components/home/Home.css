@@ -28,5 +28,6 @@
 }
 
 .col-3 {
+	flex: 1 !important;
 	padding: 0px !important;
 }

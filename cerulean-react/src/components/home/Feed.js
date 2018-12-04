@@ -21,9 +21,12 @@ class Test extends Component {
         return results.json();
       }).then((data) => {
         let recipes = data.map(recipe => {
+          let parsedTitle = recipe.title.split(' ');
           return ({
             id: recipe.id,
             title: recipe.title,
+            title_bold: parsedTitle[0]+parsedTitle[1],
+            title_slim: parsedTitle[2],
             date: recipe.date,
             description: recipe.description,
             image: recipe.image_header,
@@ -44,7 +47,7 @@ class Test extends Component {
               pathname: `/recipe/${recipe.id}`
             }}
           >
-            <Card description={recipe.description} image={recipe.image} title={recipe.title}/>
+            <Card description={recipe.description} image={recipe.image} title_bold={recipe.title_bold} title_slim={recipe.title_slim}/>
           </Link>
         </div>
       );

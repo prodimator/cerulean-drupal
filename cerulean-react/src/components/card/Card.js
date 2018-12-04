@@ -15,7 +15,7 @@ class CardDescription extends Component {
 class CardTitle extends Component {
  render() {
   return(
-   <div>
+   <div className="title">
     {this.props.title}
    </div>
   )
@@ -27,16 +27,21 @@ class Card extends Component {
     let recipe_image=_AppConstants.api+this.props.image;
     return(
       <div>
-        <div className="card container">
+        <div className="container">
           <div className="content">
             <div className="content-overlay"></div>
-            <img className="content-image" src={recipe_image}/>
+            <img className="content-image" src={recipe_image} alt={recipe_image}/>
             <div className="card-description content-details fadeIn-top">
               <CardDescription description={this.props.description}/>
             </div>
           </div>
           <div className="card-title">
-            <CardTitle title={this.props.title}/>
+            <div className="card-title-bold">
+              <CardTitle title={this.props.title_bold}/>
+            </div>
+            <div className="card-title-slim">
+              <CardTitle title={this.props.title_slim}/>
+            </div>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@
 .title-slim{
   font-family: 'NexaLight';
 }
-.recipe-body{
+.recipe-body, .recipe-ingredients, .recipe-instructions {
   font-family: 'BellMT';
   font-size: 16px;
 }

@@ -7,12 +7,31 @@
 	font-family: 'NexaBold';
 	color: white;
 	text-align: center;
-	padding: 20%;
 }
 
 .card-title {
-	font-family: 'NexaBold';
+	background-color: black;
 	text-align: center;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 10px;
+}
+
+.title {
+	display: inline;
+}
+
+.card-title-bold {
+	display: inline;
+	color: white;
+	font-family: 'NexaBold';
+
+}
+
+.card-title-slim {
+	display: inline;
+	color: white;
+	font-family: 'NexaLight';
 }
 
 
@@ -27,9 +46,11 @@
 }
 
 .container{
-  padding: 1em 0;
-  float: left;
-  width: 50%;
+	padding: 0 !important;
+	height: 300px;
+	border-radius: 0 !important;
+	float: left;
+	width: 50%;
 }
 
 @media screen and (max-width: 640px){
@@ -47,8 +68,6 @@
 
 .content {
   position: relative;
-  width: 90%;
-  max-width: 400px;
   margin: auto;
   overflow: hidden;
 }
@@ -74,6 +93,7 @@
 
 .content-image{
   width: 100%;
+  height: 100% !important;
 }
 
 .content-details {
