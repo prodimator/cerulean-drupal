@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter as Route, Link } from "react-router-dom";
 import Scrollchor from 'react-scrollchor';
-import { Card, CardImg, CardTitle, CardText, CardDeck, CardSubtitle,CardBody, Col } from 'reactstrap';
 import { _AppConstants } from '../../index.constants';
 import Slideshow from '../slideshow/Slideshow';
+import Card from '../card/Card';
+import './Home.css';
 
 
-class Feed extends Component {
+class Test extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +20,7 @@ class Feed extends Component {
       .then((results) => {
         return results.json();
       }).then((data) => {
-        let recipes = data.map((recipe) => {
+        let recipes = data.map(recipe => {
           return ({
             id: recipe.id,
             title: recipe.title,
@@ -32,6 +33,25 @@ class Feed extends Component {
       })
   }
 
+  renderCard() {
+    let items = this.state.recipes.map(recipe => {
+      return ( 
+        <div className="col-3">
+          <Link
+            style={{ textDecoration: 'none', color: 'black' }}
+            key={recipe.id}
+            to={{
+              pathname: `/recipe/${recipe.id}`
+            }}
+          >
+            <Card description={recipe.description} image={recipe.image} title={recipe.title}/>
+          </Link>
+        </div>
+      );
+    });
+    return items;
+  }
+
   render() {
     return (
       <div>
@@ -40,29 +60,12 @@ class Feed extends Component {
           <Scrollchor to="#feed" className="nav-link"><span className="carousel-control-prev-icon mess"></span></Scrollchor>
         </div>
         <div className="cards" id="feed">
-          <CardDeck>
-            {this.state.recipes.map((item)=>
-              <Card>
-                <CardImg top width="100%" src={`${_AppConstants.api}${item.image}`} alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>
-                    <div>
-                      <Link
-                        key={item.id}
-                        to={{
-                          pathname: `/recipe/${item.id}`
-                        }}
-                      >
-                        <p>{item.title}</p>
-                      </Link>
-                    </div>
-                  </CardTitle>
-                  <CardSubtitle>{item.date}</CardSubtitle>
-                  <CardText>{item.description}</CardText>
-                </CardBody>
-              </Card>
-            )}
-          </CardDeck>
+          <div className="row-container">
+            {this.renderCard()}
+          </div>
+          <div className="row-container">
+            {this.renderCard()}
+          </div>
         </div>
 
         <Scrollchor to="" className="nav-link">Back to Top</Scrollchor>
@@ -71,4 +74,4 @@ class Feed extends Component {
   }
 }
 
-export default Feed;
+export default Test;

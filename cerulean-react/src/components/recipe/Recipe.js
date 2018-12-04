@@ -46,16 +46,16 @@ class Recipe extends Component {
 
     return (
       <div>
-            <header className="Recipe-header" style={{backgroundImage: `url(${_AppConstants.api}${recipe.image_header_url})`}} />
-            <div className="recipe-post">
-              <div className="recipe-title title-bold">
-                {recipe.title_bold}
-              </div>
-              <div className="recipe-title title-slim">
-                {recipe.title_slim}
-              </div>
-              <div className="recipe-body" dangerouslySetInnerHTML={{ __html: recipe.body_content }} />
-            </div>
+        <header className="recipe-header" style={{backgroundImage: `url(${_AppConstants.api}${recipe.image_header_url})`}} />
+        <div className="recipe-post">
+          <div className="recipe-title title-bold">
+            {recipe.title_bold}
+          </div>
+          <div className="recipe-title title-slim">
+            {recipe.title_slim}
+          </div>
+          <div className="recipe-body" dangerouslySetInnerHTML={{ __html: recipe.body_content }} />
+        </div>
         </div>
     );
   }
