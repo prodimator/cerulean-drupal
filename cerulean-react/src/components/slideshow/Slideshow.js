@@ -24,14 +24,17 @@ class Slideshow extends Component {
   }
 
   componentDidMount() {
-    fetch(_AppConstants.api + '/api/carousel_images?_format=json')
+    fetch(_AppConstants.api + '/api/recipes?_format=json')
       .then((results) => {
         return results.json();
       }).then((data) => {
         let images = data.map((img) => {
+          let parsedTitle = img.title.split(' ');
           return ({
           id: img.id,
           title: img.title,
+          title_bold: parsedTitle[0]+parsedTitle[1],
+          title_slim: parsedTitle[2],
           image_header_url: img.image_header,
         });
         })
@@ -68,6 +71,7 @@ class Slideshow extends Component {
     const { activeIndex } = this.state;
 
     let slides = this.state.images.map(img => {
+      let title = img.title_bold+img.title_slim
       return (
         <CarouselItem
           onExiting={this.onExiting}
@@ -75,7 +79,7 @@ class Slideshow extends Component {
           key={img.id}
         >
           <img src={_AppConstants.api+img.image_header_url} alt={img.title} />
-          <CarouselCaption captionText={img.title} captionHeader={img.title} />
+          <CarouselCaption captionText={title} />
         </CarouselItem>
       );
     });

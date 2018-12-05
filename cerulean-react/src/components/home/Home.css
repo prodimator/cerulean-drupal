@@ -17,5 +17,20 @@
 
 .col-3 {
 	flex: 1 !important;
-	padding: 0px !important;
+	padding: 2px !important;
+}
+
+.scroll-top {
+	text-align: center;
+	border: 1px solid black;
+	width: 10%;
+	padding: 10px;
+	margin: 50px;
+	bottom: 10%;
+	color: black;
+	font-family: 'NexaLight';
+}
+
+.nav-link:hover {
+	color: grey !important;
 }

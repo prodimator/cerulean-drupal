@@ -3,11 +3,22 @@
 }
 
 .carousel-item > img { 
-  width: 100%; 
+  width: 100%;
 }
 
 .carousel-caption {
 	text-align: left !important;
+	bottom: 20% !important;
+	font-family: 'NexaBold';
+	font-size: 50px;
+}
+
+.carousel-control-prev {
+	width: 5% !important;
+}
+
+.carousel-control-next {
+	width: 5% !important;
 }
 
 .scroll-jack {

@@ -67,8 +67,7 @@ class Feed extends Component {
             {this.renderCard()}
           </div>
         </div>
-
-        <Scrollchor to="" className="nav-link">Back to Top</Scrollchor>
+        <Scrollchor to="" className="nav-link scroll-top">BACK TO TOP</Scrollchor>
       </div>
     );
   }
