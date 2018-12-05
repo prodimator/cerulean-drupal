@@ -1,3 +1,23 @@
 .carousel-item { 
-    height: calc(100vh - 56px);
+    height: calc(100vh - 56px) !important;
+}
+
+.carousel-item > img { 
+  width: 100%; 
+}
+
+.carousel-caption {
+	text-align: left !important;
+}
+
+.scroll-jack {
+	position: absolute;
+	bottom: 2%;
+	left: 50%;
+	z-index: 22;
+	color: white;
+}
+
+.scroll-down {
+	-webkit-transform: rotate(270deg) !important;
 }

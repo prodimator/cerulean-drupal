@@ -7,7 +7,7 @@ import Card from '../card/Card';
 import './Home.css';
 
 
-class Test extends Component {
+class Feed extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,7 +39,7 @@ class Test extends Component {
   renderCard() {
     let items = this.state.recipes.map(recipe => {
       return ( 
-        <div className="col-3">
+        <div className="col-3" key={recipe.id}>
           <Link
             style={{ textDecoration: 'none', color: 'black' }}
             key={recipe.id}
@@ -59,9 +59,6 @@ class Test extends Component {
     return (
       <div>
         <Slideshow/>
-        <div className="feed">
-          <Scrollchor to="#feed" className="nav-link"><span className="carousel-control-prev-icon mess"></span></Scrollchor>
-        </div>
         <div className="cards" id="feed">
           <div className="row-container">
             {this.renderCard()}
@@ -77,4 +74,4 @@ class Test extends Component {
   }
 }
 
-export default Test;
+export default Feed;
