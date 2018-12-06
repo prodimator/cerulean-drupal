@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { _AppConstants } from '../../index.constants';
 import Recipe from '../recipe/Recipe';
 import Feed from './Feed.js';
+import RecipeMenu from '../recipemenu/RecipeMenu';
+import About from '../about/About';
+import Navigation from '../navigation/Navigation';
+import Nav from '../navigation/Nav';
 import './Home.css';
 
 
@@ -35,9 +39,12 @@ class HomeRouter extends Component {
   render() {
     return (
       <div>
+        <Nav/>
         <Switch>
           <Route exact path="/" component={Feed} />
           <Route path="/recipe/:id" component={Recipe} />
+          <Route path="/recipes" component={RecipeMenu}/>
+          <Route path="/about" component={About}/>
         </Switch>
       </div>
     );

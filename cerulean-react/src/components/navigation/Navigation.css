@@ -1,3 +1,56 @@
 .input-group {
 	width: 25% !important;
 }
+
+.row {
+	display: flex;
+}
+
+.col-container {
+	display: flex;
+	padding: 20px;
+	justify-content: center;
+}
+
+.custom-nav {
+	position: absolute;
+	width: 100%;
+	z-index: 22;
+	color: white;
+}
+
+.nav-headers {
+	font-family: 'NexaLight';
+}
+
+.nav-home {
+	
+}
+
+.nav-recipes {
+	padding: 10px;
+}
+
+.nav-about {
+	padding: 10px;
+}
+
+.nav-search {
+	position: absolute;
+	width: 100%;
+	z-index: 22;
+	color: white;
+	font-family: 'NexaLight';
+	padding: 50px;
+	justify-content: center;
+}
+
+.navbar {
+	position: absolute !important;
+	width: 100% !important;
+	z-index: 22 !important;
+	color: white !important;
+	font-family: 'NexaLight';
+	padding: 50px;
+	justify-content: center;
+}
