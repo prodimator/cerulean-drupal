@@ -10,13 +10,20 @@
 }
 
 .recipe-post {
+  font-family: 'BellMT';
+  font-size: 16px;
   position: relative;
   top: -100px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 0 20px;
  	background-color: #fdfdfd;
-  width: 900px;
-  margin: auto;
+}
+.recipe-post ol {
+  margin: 0px;
+  padding: 0 15px;
+}
+.recipe-post ul {
+  margin: 0px;
+  padding: 0 15px;
 }
 
 .recipe-title{
@@ -28,8 +35,4 @@
 }
 .title-slim{
   font-family: 'NexaLight';
-}
-.recipe-body, .recipe-ingredients, .recipe-instructions {
-  font-family: 'BellMT';
-  font-size: 16px;
 }
