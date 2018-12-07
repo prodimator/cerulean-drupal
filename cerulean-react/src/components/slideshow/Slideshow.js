@@ -5,7 +5,9 @@ import {
   CarouselControl,
   CarouselCaption } from 'reactstrap';
 import Scrollchor from 'react-scrollchor';
+import { BrowserRouter as Route, Link } from "react-router-dom";
 import { _AppConstants } from '../../index.constants';
+import Navigation from '../navigation/Navigation';
 import './Slideshow.css';
 
 class Slideshow extends Component {
@@ -90,9 +92,12 @@ class Slideshow extends Component {
         next={this.next}
         previous={this.previous}
       >
-        <Scrollchor to="#feed" className="scroll-jack">
-          <span className="carousel-control-prev-icon scroll-down"></span>
-        </Scrollchor>
+        <div>
+          <Navigation/>
+          <Scrollchor to="#feed" className="scroll-jack">
+            <span className="carousel-control-prev-icon scroll-down"></span>
+          </Scrollchor>
+        </div>
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />

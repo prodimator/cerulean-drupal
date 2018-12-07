@@ -5,8 +5,6 @@ import Recipe from '../recipe/Recipe';
 import Feed from './Feed.js';
 import RecipeMenu from '../recipemenu/RecipeMenu';
 import About from '../about/About';
-import Navigation from '../navigation/Navigation';
-import Nav from '../navigation/Nav';
 import './Home.css';
 
 
@@ -39,7 +37,6 @@ class HomeRouter extends Component {
   render() {
     return (
       <div>
-        <Nav/>
         <Switch>
           <Route exact path="/" component={Feed} />
           <Route path="/recipe/:id" component={Recipe} />
