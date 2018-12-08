@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Route, Link } from "react-router-dom";
 import './Navigation.css';
 
+import FbIcon from '../../svg/facebook.svg';
+import InstaIcon from '../../svg/instagram.svg';
+import TwitterIcon from '../../svg/twitter.svg';
+
+
 class Nav extends Component {
   render() {
     return (
@@ -34,7 +39,15 @@ class Nav extends Component {
               </Link>
             </div>
             <div className="col-container col-4 nav-social">
-              <div>Social media icons</div>
+              <a target="_blank" href="https://www.facebook.com/lapa.eats/">
+                <img src={FbIcon} className="social-icon"/>
+              </a>
+              <a target="_blank" href="https://www.instagram.com/lapa.eats/">
+                <img src={InstaIcon} className="social-icon"/>
+              </a>
+              <a target="_blank" href="http://www.google.com">
+                <img src={TwitterIcon} className="social-icon"/>
+              </a>
             </div>
           </div>
       </div>

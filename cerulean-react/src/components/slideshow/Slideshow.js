@@ -10,6 +10,7 @@ import { _AppConstants } from '../../index.constants';
 import Navigation from '../navigation/Navigation';
 import './Slideshow.css';
 
+
 class Slideshow extends Component {
 
   constructor(props) {
@@ -73,7 +74,7 @@ class Slideshow extends Component {
     const { activeIndex } = this.state;
 
     let slides = this.state.images.map(img => {
-      let title = img.title_bold+img.title_slim
+      let title = img.title_bold+img.title_slim;
       return (
         <CarouselItem
           onExiting={this.onExiting}
