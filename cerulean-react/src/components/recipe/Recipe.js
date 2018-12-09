@@ -30,7 +30,7 @@ class Recipe extends Component {
             body_content: recipe.body_content,
             ingredients: recipe.ingredients,
             instructions: recipe.instructions,
-            image_header_url: recipe.image_header,
+            image_header_url: recipe.image_3x2,
           });
         })
         this.setState({ recipes });

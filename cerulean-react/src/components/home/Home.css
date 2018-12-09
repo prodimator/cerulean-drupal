@@ -2,14 +2,6 @@
 	margin: 20px;
 }
 
-.card-deck {
-	justify-content: center;
-}
-
-.card {
-	border: none !important;
-}
-
 .row-container {
 	display: flex;
 	padding: 100px;

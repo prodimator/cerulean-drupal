@@ -38,7 +38,7 @@ class Slideshow extends Component {
           title: img.title,
           title_bold: parsedTitle[0]+parsedTitle[1],
           title_slim: parsedTitle[2],
-          image_header_url: img.image_header,
+          image_header_url: img.image_3x2,
         });
         })
         this.setState({images});

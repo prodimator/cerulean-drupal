@@ -30,7 +30,10 @@ class Feed extends Component {
             title_slim: parsedTitle[2],
             date: recipe.date,
             description: recipe.description,
-            image: recipe.image_header,
+            image_1x1: recipe.image_1x1,
+            image_2x1: recipe.image_2x1,
+            image_3x2: recipe.image_3x2,
+            image_3x4: recipe.image_3x4
           });
         })
         this.setState({recipes});
@@ -48,7 +51,7 @@ class Feed extends Component {
               pathname: `/recipe/${recipe.id}`
             }}
           >
-            <Card description={recipe.description} image={recipe.image} title_bold={recipe.title_bold} title_slim={recipe.title_slim}/>
+            <Card description={recipe.description} image={recipe.image_3x4} title_bold={recipe.title_bold} title_slim={recipe.title_slim}/>
           </Link>
         </div>
       );
@@ -70,7 +73,7 @@ class Feed extends Component {
               pathname: `/recipe/${img_one}`
             }}
           >
-            <FancyCard description={this.state.recipes[0].description} image={this.state.recipes[0].image} title_bold={this.state.recipes[0].title_bold} title_slim={this.state.recipes[0].title_slim}/>
+            <FancyCard description={this.state.recipes[0].description} image={this.state.recipes[0].image_1x1} title_bold={this.state.recipes[0].title_bold} title_slim={this.state.recipes[0].title_slim}/>
           </Link>
         </div>
         <div className="col-6 fancy-column-2">
@@ -82,7 +85,7 @@ class Feed extends Component {
                   pathname: `/recipe/${img_two}`
                 }}
               >
-                <FancyCard description={this.state.recipes[1].description} image={this.state.recipes[1].image} title_bold={this.state.recipes[1].title_bold} title_slim={this.state.recipes[1].title_slim}/>
+                <FancyCard description={this.state.recipes[1].description} image={this.state.recipes[1].image_1x1} title_bold={this.state.recipes[1].title_bold} title_slim={this.state.recipes[1].title_slim}/>
               </Link>
             </div>
             <div className="col-6">
@@ -92,7 +95,7 @@ class Feed extends Component {
                   pathname: `/recipe/${img_three}`
                 }}
               >
-                <FancyCard description={this.state.recipes[2].description} image={this.state.recipes[2].image} title_bold={this.state.recipes[2].title_bold} title_slim={this.state.recipes[2].title_slim}/>
+                <FancyCard description={this.state.recipes[2].description} image={this.state.recipes[2].image_1x1} title_bold={this.state.recipes[2].title_bold} title_slim={this.state.recipes[2].title_slim}/>
               </Link>
             </div>
           </div>
@@ -104,7 +107,7 @@ class Feed extends Component {
                   pathname: `/recipe/${img_four}`
                 }}
               >
-                <FancyCard description={this.state.recipes[3].description} image={this.state.recipes[3].image} title_bold={this.state.recipes[3].title_bold} title_slim={this.state.recipes[3].title_slim}/>
+                <FancyCard description={this.state.recipes[3].description} image={this.state.recipes[3].image_2x1} title_bold={this.state.recipes[3].title_bold} title_slim={this.state.recipes[3].title_slim}/>
               </Link>
             </div>
           </div>

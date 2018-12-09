@@ -27,7 +27,10 @@ class HomeRouter extends Component {
             title: recipe.title,
             date: recipe.date,
             description: recipe.description,
-            image: recipe.image_header,
+            image_1x1: recipe.image_1x1,
+            image_2x1: recipe.image_2x1,
+            image_3x2: recipe.image_3x2,
+            image_3x4: recipe.image_3x4
           });
         })
         this.setState({recipes});

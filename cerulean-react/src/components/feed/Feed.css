@@ -4,12 +4,12 @@
 
 .row-container {
 	display: flex;
-	padding: 100px;
 }
 
 .col-3 {
 	flex: 1 !important;
 	padding: 2px !important;
+	height: 500px;
 }
 
 .scroll-top {
