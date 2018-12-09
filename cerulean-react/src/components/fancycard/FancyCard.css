@@ -1,41 +1,27 @@
-/* ===== Card.js ======= */
-
-.card {
-	height: 300px;
-	border-radius: 0 !important;
+.fancy-card-content {
+  font-family: 'NexaLight';
+  color: white;
+  text-align: center;
 }
 
-.card-description {
-	font-family: 'NexaBold';
-	color: white;
-	text-align: center;
-}
-
-.card-title {
-	background-color: black;
-	text-align: center;
-	margin-left: 10%;
-	margin-right: 10%;
-	padding: 10px;
-}
-
-.title {
-	display: inline;
-}
-
-.card-title-bold {
-	display: inline;
-	color: white;
-	font-family: 'NexaBold';
+.fancy-card-title-bold {
+  font-size: 20px;
+  display: inline;
+  color: white;
+  font-family: 'NexaBold';
 
 }
 
-.card-title-slim {
-	display: inline;
-	color: white;
-	font-family: 'NexaLight';
+.fancy-card-title-slim {
+  font-size: 20px;
+  display: inline;
+  color: white;
+  font-family: 'NexaLight';
 }
 
+.fancy-container {
+  height: 100% !important;
+}
 
 /* ===== Hover effect ======= */
 
@@ -126,6 +112,6 @@
   font-size: 0.8em;
 }
 
-.fadeIn-top {
+.fadeIn-top{
   top: 20%;
 }

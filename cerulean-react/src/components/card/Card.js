@@ -1,26 +1,9 @@
 import React, { Component } from 'react';
+import CardDescription from '../carddescription/CardDescription';
+import CardTitle from '../cardtitle/CardTitle';
 import { _AppConstants } from '../../index.constants';
 import './Card.css';
 
-class CardDescription extends Component {
- render() {
-  return(
-   <div>
-    {this.props.description}
-   </div>
-  )
- }
-}
-
-class CardTitle extends Component {
- render() {
-  return(
-   <div className="title">
-    {this.props.title}
-   </div>
-  )
- }
-}
 
 class Card extends Component {
   render() {

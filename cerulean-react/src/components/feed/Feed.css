@@ -1,0 +1,50 @@
+.cards {
+	margin: 20px;
+}
+
+.row-container {
+	display: flex;
+	padding: 100px;
+}
+
+.col-3 {
+	flex: 1 !important;
+	padding: 2px !important;
+}
+
+.scroll-top {
+	text-align: center;
+	border: 1px solid black;
+	width: 10%;
+	padding: 10px;
+	margin: 50px;
+	bottom: 10%;
+	color: black;
+	font-family: 'NexaLight';
+}
+
+.nav-link:hover {
+	color: grey !important;
+}
+
+.col-6 {
+	padding: 2px !important;
+}
+
+.fancy-card-container {
+	display: flex;
+	justify-content: center;
+}
+
+.fancy-column-2 {
+	display: flex;
+	flex-direction: column;
+}
+
+.fancy-row-1 {
+	display: flex;
+}
+
+.fancy-row-2 {
+	
+}

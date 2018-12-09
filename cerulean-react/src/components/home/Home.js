@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { _AppConstants } from '../../index.constants';
 import Recipe from '../recipe/Recipe';
-import Feed from './Feed.js';
+import Feed from '../feed/Feed.js';
 import RecipeMenu from '../recipemenu/RecipeMenu';
 import About from '../about/About';
 import './Home.css';

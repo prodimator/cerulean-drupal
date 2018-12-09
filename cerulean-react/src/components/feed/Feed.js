@@ -4,6 +4,7 @@ import Scrollchor from 'react-scrollchor';
 import { _AppConstants } from '../../index.constants';
 import Slideshow from '../slideshow/Slideshow';
 import Card from '../card/Card';
+import FancyCard from '../fancycard/FancyCard';
 import './Feed.css';
 
 
@@ -55,11 +56,78 @@ class Feed extends Component {
     return items;
   }
 
+  renderFancyCard() { 
+    let img_one = this.state.recipes[0].id;
+    let img_two = this.state.recipes[1].id;
+    let img_three = this.state.recipes[2].id;
+    let img_four = this.state.recipes[3].id;
+    return (
+      <div className="fancy-card-container">
+        <div className="col-6">
+          <Link
+            key={img_one}
+            to={{
+              pathname: `/recipe/${img_one}`
+            }}
+          >
+            <FancyCard description={this.state.recipes[0].description} image={this.state.recipes[0].image} title_bold={this.state.recipes[0].title_bold} title_slim={this.state.recipes[0].title_slim}/>
+          </Link>
+        </div>
+        <div className="col-6 fancy-column-2">
+          <div className="fancy-row-1">
+            <div className="col-6">
+               <Link
+                key={img_two}
+                to={{
+                  pathname: `/recipe/${img_two}`
+                }}
+              >
+                <FancyCard description={this.state.recipes[1].description} image={this.state.recipes[1].image} title_bold={this.state.recipes[1].title_bold} title_slim={this.state.recipes[1].title_slim}/>
+              </Link>
+            </div>
+            <div className="col-6">
+               <Link
+                key={img_three}
+                to={{
+                  pathname: `/recipe/${img_three}`
+                }}
+              >
+                <FancyCard description={this.state.recipes[2].description} image={this.state.recipes[2].image} title_bold={this.state.recipes[2].title_bold} title_slim={this.state.recipes[2].title_slim}/>
+              </Link>
+            </div>
+          </div>
+          <div className="fancy-row-2">
+            <div>
+               <Link
+                key={img_four}
+                to={{
+                  pathname: `/recipe/${img_four}`
+                }}
+              >
+                <FancyCard description={this.state.recipes[3].description} image={this.state.recipes[3].image} title_bold={this.state.recipes[3].title_bold} title_slim={this.state.recipes[3].title_slim}/>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   render() {
+    let fancysection;
+    if (this.state.recipes.length > 0) {
+      fancysection = this.renderFancyCard()
+    }
+    else {
+      fancysection = <div>Loading...</div>
+    }
     return (
       <div>
         <Slideshow/>
         <div className="cards" id="feed">
+          <div className="row-container">
+            {fancysection}
+          </div>
           <div className="row-container">
             {this.renderCard()}
           </div>

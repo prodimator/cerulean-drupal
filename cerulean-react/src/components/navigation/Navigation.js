@@ -37,15 +37,16 @@ class Nav extends Component {
               >
                 LAPA
               </Link>
+              <div className="nav-search">Search</div>
             </div>
             <div className="col-container col-4 nav-social">
-              <a target="_blank" href="https://www.facebook.com/lapa.eats/">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lapa.eats/">
                 <img src={FbIcon} className="social-icon"/>
               </a>
-              <a target="_blank" href="https://www.instagram.com/lapa.eats/">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lapa.eats/">
                 <img src={InstaIcon} className="social-icon"/>
               </a>
-              <a target="_blank" href="http://www.google.com">
+              <a target="_blank" rel="noopener noreferrer" href="http://www.google.com">
                 <img src={TwitterIcon} className="social-icon"/>
               </a>
             </div>
