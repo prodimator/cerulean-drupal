@@ -3,6 +3,7 @@ import { BrowserRouter as Route, Link } from "react-router-dom";
 import Scrollchor from 'react-scrollchor';
 import { _AppConstants } from '../../index.constants';
 import Slideshow from '../slideshow/Slideshow';
+import HamburgerNav from '../hamburgernav/HamburgerNav';
 import Card from '../card/Card';
 import FancyCard from '../fancycard/FancyCard';
 import './Feed.css';
@@ -128,6 +129,7 @@ class Feed extends Component {
       <div>
         <Slideshow/>
         <div className="cards" id="feed">
+          <HamburgerNav/>
           <div className="row-container">
             {fancysection}
           </div>
