@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Route, Link } from "react-router-dom";
+import { Grid, Row, Col } from 'react-flexbox-grid';
+
 import './Navigation.css';
 
 import FbIcon from '../../svg/facebook.svg';
 import InstaIcon from '../../svg/instagram.svg';
 import TwitterIcon from '../../svg/twitter.svg';
+import LogoHeader from '../../images/logo_header.png';
 
 
 class Nav extends Component {
@@ -35,7 +38,7 @@ class Nav extends Component {
                 style={{ textDecoration: 'none', color: 'white' }}
                 to="/"
               >
-                LAPA
+                <img src={LogoHeader} className="logo-header"/>
               </Link>
               <div className="nav-search">Search</div>
             </div>

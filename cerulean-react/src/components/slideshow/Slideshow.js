@@ -38,7 +38,7 @@ class Slideshow extends Component {
           title: img.title,
           title_bold: parsedTitle[0]+parsedTitle[1],
           title_slim: parsedTitle[2],
-          image_header_url: img.image_3x2,
+          image_header_url: img.image_gradient,
         });
         })
         this.setState({images});
@@ -94,6 +94,7 @@ class Slideshow extends Component {
         previous={this.previous}
       >
         <div>
+          {/* <div className="gradient-overlay"></div> */}
           <Navigation/>
           <Scrollchor to="#feed" className="scroll-jack">
             <span className="carousel-control-prev-icon scroll-down"></span>
