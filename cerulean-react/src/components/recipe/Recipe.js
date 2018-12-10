@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { _AppConstants } from '../../index.constants';
+import HamburgerNav from '../hamburgernav/HamburgerNav';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import './Recipe.css';
@@ -47,6 +48,7 @@ class Recipe extends Component {
 
     return (
       <div>
+        <HamburgerNav />
         <Row>
           <Col md={12}>
             <header className="recipe-header" style={{ backgroundImage: `url(${_AppConstants.api}${recipe.image_header_url})` }} />
@@ -55,7 +57,7 @@ class Recipe extends Component {
         <Row center="md">
           <Col lg={9}>
             <div className="recipe-post">
-              <Row center="md">
+              <Row start="md">
                 <Col md>
                   <div className="recipe-title title-bold">
                     {recipe.title_bold}
