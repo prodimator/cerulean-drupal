@@ -38,7 +38,7 @@ class Nav extends Component {
                 style={{ textDecoration: 'none', color: 'white' }}
                 to="/"
               >
-                <img src={LogoHeader} className="logo-header"/>
+                <img src={LogoHeader} className="logo-header" alt="Logo header"/>
               </Link>
               <div className="nav-search">Search</div>
             </div>

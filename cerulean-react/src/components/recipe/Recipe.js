@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { _AppConstants } from '../../index.constants';
-import HamburgerNav from '../hamburgernav/HamburgerNav';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
+import { _AppConstants } from '../../index.constants';
+import HamburgerNav from '../hamburgernav/HamburgerNav';
+import Hamburger from '../hamburger/Hamburger';
 import './Recipe.css';
 
 
@@ -48,6 +49,7 @@ class Recipe extends Component {
 
     return (
       <div>
+        <Hamburger />
         <HamburgerNav />
         <Row>
           <Col md={12}>

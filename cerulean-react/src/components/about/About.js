@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 
+import HamburgerNav from '../hamburgernav/HamburgerNav';
+import Hamburger from '../hamburger/Hamburger';
+
 
 class About extends Component {
 	render() {
     return (
-		<div>
-			<p>About page in progress</p>
-	    </div>
+  		<div>
+        <Hamburger />
+        <HamburgerNav />
+  			<p>About page in progress</p>
+      </div>
 		);
 	}
 }

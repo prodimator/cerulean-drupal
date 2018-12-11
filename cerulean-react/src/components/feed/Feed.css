@@ -1,9 +1,11 @@
-.cards {
-
+.recipe-burger {
+  position: absolute;
+  top: 102vh;
 }
 
 .row-container {
 	display: flex;
+	padding: 100px;
 }
 
 .col-3 {

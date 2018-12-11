@@ -5,7 +5,6 @@ import {
   CarouselControl,
   CarouselCaption } from 'reactstrap';
 import Scrollchor from 'react-scrollchor';
-import { BrowserRouter as Route, Link } from "react-router-dom";
 import { _AppConstants } from '../../index.constants';
 import Navigation from '../navigation/Navigation';
 import './Slideshow.css';

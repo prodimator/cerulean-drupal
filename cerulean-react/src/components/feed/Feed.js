@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Route, Link } from "react-router-dom";
 import Scrollchor from 'react-scrollchor';
+import { slide as Menu } from 'react-burger-menu'
 import { _AppConstants } from '../../index.constants';
 import Slideshow from '../slideshow/Slideshow';
 import HamburgerNav from '../hamburgernav/HamburgerNav';
@@ -127,6 +128,11 @@ class Feed extends Component {
     }
     return (
       <div>
+        <Menu burgerButtonClassName={ "recipe-burger" }>
+          <a id="home" className="menu-item" href="/">Home</a>
+          <a id="recipes" className="menu-item" href="/recipes">Recipes</a>
+          <a id="about" className="menu-item" href="/about">About</a>
+        </Menu>
         <Slideshow/>
         <div className="cards" id="feed">
           <HamburgerNav/>
