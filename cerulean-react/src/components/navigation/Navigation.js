@@ -17,16 +17,14 @@ class Nav extends Component {
         <div className="row custom-nav">
             <div className="col-container col-4 nav-headers">
               <div className="nav-recipes">
-                <Link
-                  style={{ textDecoration: 'none', color: 'white' }}
+                <Link className="navigation-link"
                   to="/recipes"
                 >
                   RECIPES
                 </Link>
               </div>
               <div className="nav-about">
-                <Link
-                  style={{ textDecoration: 'none', color: 'white' }}
+                <Link className="navigation-link"
                   to="/about"
                 >
                   ABOUT
@@ -34,8 +32,7 @@ class Nav extends Component {
               </div>
             </div>
             <div className="col-container col-4 nav-home">
-              <Link
-                style={{ textDecoration: 'none', color: 'white' }}
+              <Link className="navigation-link"
                 to="/"
               >
                 <img src={LogoHeader} className="logo-header" alt="Logo header"/>

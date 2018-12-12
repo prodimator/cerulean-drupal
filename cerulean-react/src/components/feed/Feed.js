@@ -47,7 +47,6 @@ class Feed extends Component {
       return ( 
         <div className="col-3" key={recipe.id}>
           <Link
-            style={{ textDecoration: 'none', color: 'black' }}
             key={recipe.id}
             to={{
               pathname: `/recipe/${recipe.id}`
