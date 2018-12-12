@@ -1,3 +1,28 @@
+input {
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: white;
+  background-color: transparent;
+  color: white;
+  width: 250px;
+}
+
+::placeholder {
+	color: white;
+	font-size: 11px;
+	font-family: 'NexaLight';
+	letter-spacing: 5px;
+}
+
+input[type="text"] {
+    font-size: 11px;
+    font-family: 'NexaLight';
+}
+
+input:focus {
+  border-color: grey;
+}
+
 .custom-nav {
 	position: absolute;
 	top: 2%;
@@ -43,12 +68,6 @@
 .logo-header{
 	height: 130px;
 	margin-bottom: 50px;
-}
-
-.nav-search {
-	font-size: 11px;
-	width: 250px;
-	border-bottom: 1px solid #f8f8f8;
 }
 
 .nav-social {
