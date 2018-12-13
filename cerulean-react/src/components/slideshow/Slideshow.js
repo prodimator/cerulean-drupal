@@ -69,11 +69,23 @@ class Slideshow extends Component {
     this.setState({ activeIndex: newIndex });
   }
 
+  prettyTitle(recipe) {
+    return (
+      <div>
+        <div className="slideshow-recipe-title slideshow-title-bold">
+          {recipe.title_bold}
+        </div>
+        <div className="slideshow-recipe-title slideshow-title-slim">
+          {recipe.title_slim}
+        </div>
+      </div>
+    );
+  }
+
   render() {
     const { activeIndex } = this.state;
-
     let slides = this.state.images.map(img => {
-      let title = img.title_bold+img.title_slim;
+      let title = this.prettyTitle(img);
       return (
         <CarouselItem
           onExiting={this.onExiting}
