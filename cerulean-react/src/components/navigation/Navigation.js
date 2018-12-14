@@ -37,7 +37,7 @@ class Nav extends Component {
               >
                 <img src={LogoHeader} className="logo-header" alt="Logo header"/>
               </Link>
-              <input placeholder="Search" type="text" />
+              <input placeholder="SEARCH" type="text" />
             </div>
             <div className="col-container col-4 nav-social">
               <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lapa.eats/">
