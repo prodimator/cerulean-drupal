@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import { _AppConstants } from '../../index.constants';
-import HamburgerNav from '../hamburgernav/HamburgerNav';
-import Hamburger from '../hamburger/Hamburger';
-import './Recipe.css';
+import HamburgerNav from '../../components/hamburgernav/HamburgerNav';
+import Hamburger from '../../components/hamburger/Hamburger';
+import './Recipe.scss';
 
 
 class Recipe extends Component {
@@ -61,10 +61,10 @@ class Recipe extends Component {
             <div className="recipe-post">
               <Row start="md">
                 <Col md>
-                  <div className="recipe-title title-bold">
+                  <div className="title title-bold">
                     {recipe.title_bold}
                   </div>
-                  <div className="recipe-title title-slim">
+                  <div className="title title-slim">
                     {recipe.title_slim}
                   </div>
                 </Col>
@@ -74,18 +74,22 @@ class Recipe extends Component {
                   <div className="recipe-body" dangerouslySetInnerHTML={{ __html: recipe.body_content }} />
                 </Col>
               </Row>
-              <Row start="md">
+              <Row start="md" className="recipe-info">
                 <Col md={6} className="recipe-ingredients">
                   <h3>Ingredients</h3>
                   <div dangerouslySetInnerHTML={{ __html: recipe.ingredients }} />
                 </Col>
-              </Row>
-              <Row start="md">
                 <Col md={6} className="recipe-instructions">
                   <h3>Instructions</h3>
                   <div dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
                 </Col>
               </Row>
+              {/* <Row start="md">
+                <Col md={6} className="recipe-instructions">
+                  <h3>Instructions</h3>
+                  <div dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
+                </Col>
+              </Row> */}
             </div>
           </Col>
         </Row>

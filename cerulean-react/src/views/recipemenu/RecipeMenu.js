@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import HamburgerNav from '../hamburgernav/HamburgerNav';
-import Hamburger from '../hamburger/Hamburger';
+import HamburgerNav from '../../components/hamburgernav/HamburgerNav';
+import Hamburger from '../../components/hamburger/Hamburger';
 
 
 class RecipeMenu extends Component {

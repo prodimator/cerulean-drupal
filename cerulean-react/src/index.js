@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import Home from './components/home/Home';
-import './index.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Home from './views/home/Home';
+import Construction from './views/construction/Construction';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './index.scss';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <BrowserRouter>
-        <Home />
+        <Home/>
     </BrowserRouter>
     , document.getElementById('root'));
 
