@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import { BrowserRouter as Route, Link } from "react-router-dom";
 import Scrollchor from 'react-scrollchor';
 import { slide as Menu } from 'react-burger-menu'
@@ -77,8 +78,8 @@ class Feed extends Component {
     let img_three = this.state.recipes[2].id;
     let img_four = this.state.recipes[3].id;
     return (
-      <div className="fancy-card-container">
-        <div className="col-6">
+      <Row center="md">
+        <Col md={6} className="fancy-col">
           <Link
             key={img_one}
             to={{
@@ -87,11 +88,11 @@ class Feed extends Component {
           >
             <FancyCard description={this.state.recipes[0].description} image={this.state.recipes[0].image_1x1} title_bold={this.state.recipes[0].title_bold} title_slim={this.state.recipes[0].title_slim}/>
           </Link>
-        </div>
-        <div className="col-6 fancy-column-2">
-          <div className="fancy-row-1">
-            <div className="col-6">
-               <Link
+        </Col>
+        <Col md={6}>
+          <Row>
+            <Col md={6} className="fancy-col">
+              <Link
                 key={img_two}
                 to={{
                   pathname: `/recipe/${img_two}`
@@ -99,9 +100,9 @@ class Feed extends Component {
               >
                 <FancyCard description={this.state.recipes[1].description} image={this.state.recipes[1].image_1x1} title_bold={this.state.recipes[1].title_bold} title_slim={this.state.recipes[1].title_slim}/>
               </Link>
-            </div>
-            <div className="col-6">
-               <Link
+            </Col>
+            <Col md={6} className="fancy-col">
+              <Link
                 key={img_three}
                 to={{
                   pathname: `/recipe/${img_three}`
@@ -109,11 +110,11 @@ class Feed extends Component {
               >
                 <FancyCard description={this.state.recipes[2].description} image={this.state.recipes[2].image_1x1} title_bold={this.state.recipes[2].title_bold} title_slim={this.state.recipes[2].title_slim}/>
               </Link>
-            </div>
-          </div>
-          <div className="fancy-row-2">
-            <div>
-               <Link
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12} className="fancy-col">
+              <Link
                 key={img_four}
                 to={{
                   pathname: `/recipe/${img_four}`
@@ -121,10 +122,10 @@ class Feed extends Component {
               >
                 <FancyCard description={this.state.recipes[3].description} image={this.state.recipes[3].image_2x1} title_bold={this.state.recipes[3].title_bold} title_slim={this.state.recipes[3].title_slim}/>
               </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     );
   }
 

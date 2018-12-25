@@ -12,6 +12,9 @@
 }
 
 .card-title {
+  position: relative;
+  z-index: 22;
+  margin-top: -20px;
 	background-color: #31343C;
 	text-align: center;
 	margin-left: 10%;

@@ -35,7 +35,12 @@
 	padding: 2px !important;
 }
 
-.fancy-card-container {
+.fancy-col {
+	padding: 2px !important;
+}
+
+
+/*.fancy-card-container {
 	display: flex;
 	justify-content: center;
 }
@@ -45,10 +50,6 @@
 	flex-direction: column;
 }
 
-.fancy-row-1 {
-	display: flex;
-}
-
 .fancy-row-2 {
 	padding: 2px;
-}
+}*/
