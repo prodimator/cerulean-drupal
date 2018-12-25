@@ -43,21 +43,32 @@ class Feed extends Component {
   }
 
   renderCard() {
-    let items = this.state.recipes.map(recipe => {
-      return ( 
-        <div className="col-3" key={recipe.id}>
-          <Link
-            key={recipe.id}
-            to={{
-              pathname: `/recipe/${recipe.id}`
-            }}
-          >
-            <Card description={recipe.description} image={recipe.image_3x4} title_bold={recipe.title_bold} title_slim={recipe.title_slim}/>
-          </Link>
-        </div>
-      );
+    let columns=[];
+    this.state.recipes.map((recipe,idx) => {
+
+      columns.push(
+          <div className="col-3" key={idx}>
+            <Link
+              key={recipe.id}
+              to={{
+                pathname: `/recipe/${recipe.id}`
+              }}
+            >
+              <Card description={recipe.description} image={recipe.image_3x4} title_bold={recipe.title_bold} title_slim={recipe.title_slim}/>
+            </Link>
+          </div>
+      )
+
+      // force wrap to next row every 4 columns
+      if ((idx+1)%4===0) {columns.push(<div className="w-100"></div>)}
     });
-    return items;
+
+
+    return (
+      <div className="row">
+      {columns}
+      </div>
+    )
   }
 
   renderFancyCard() { 
@@ -137,9 +148,6 @@ class Feed extends Component {
           <HamburgerNav/>
           <div className="row-container">
             {fancysection}
-          </div>
-          <div className="row-container">
-            {this.renderCard()}
           </div>
           <div className="row-container">
             {this.renderCard()}
