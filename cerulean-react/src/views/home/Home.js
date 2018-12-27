@@ -5,6 +5,7 @@ import Recipe from '../recipe/Recipe';
 import Feed from '../../components/feed/Feed'
 import RecipeMenu from '../recipemenu/RecipeMenu';
 import About from '../about/About';
+import Contact from '../contact/Contact';
 import './Home.css';
 
 
@@ -45,6 +46,7 @@ class HomeRouter extends Component {
           <Route path="/recipe/:id" component={Recipe} />
           <Route path="/recipes" component={RecipeMenu}/>
           <Route path="/about" component={About}/>
+          <Route path="/contact" component={Contact}/>
         </Switch>
       </div>
     );

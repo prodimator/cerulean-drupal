@@ -22,8 +22,6 @@
 .carousel-caption {
 	text-align: left !important;
 	bottom: 20% !important;
-	font-family: 'NexaBold';
-	font-size: 50px;
 }
 
 .carousel-control-prev {
@@ -48,7 +46,7 @@
 
 .slideshow-recipe-title {
   display: inline;
-  font-size: 50px;
+  font-size: 80px;
 }
 .slideshow-title-bold {
   font-family: 'NexaBold';

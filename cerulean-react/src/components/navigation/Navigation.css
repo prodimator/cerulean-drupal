@@ -57,6 +57,11 @@ input:focus {
 
 .nav-about {
 	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.nav-contact {
+	padding-left: 10px;
 }
 
 .nav-home {

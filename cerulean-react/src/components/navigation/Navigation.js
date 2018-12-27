@@ -30,6 +30,13 @@ class Nav extends Component {
                   ABOUT
                 </Link>
               </div>
+              <div className="nav-contact">
+                <Link className="navigation-link"
+                  to="/contact"
+                >
+                  CONTACT
+                </Link>
+              </div>
             </div>
             <div className="col-container col-4 nav-home">
               <Link className="navigation-link"

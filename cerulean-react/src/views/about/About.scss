@@ -1,0 +1,63 @@
+@import '../../styles/colors/colors.scss';
+
+.recipe-header {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  background-size: cover;
+  height: 75vmin;
+  width: 100%;
+  z-index: -1;
+}
+ul, ol {
+  list-style: none;
+
+  li{
+    border-bottom: 1px dotted $darkGrey;
+    padding: 10px 0;
+
+    p{
+      margin: 0;
+    }
+  }
+}
+
+.recipe-post {
+  position: relative;
+  top: -100px;
+  padding: 0 50px;
+  background-color: $offWhite;
+
+  .title{
+    font-size: 7vw;
+  }
+
+  .title-mobile{
+    font-size: 2rem;
+  }
+
+  .recipe-info{
+    background: $lightGrey;
+    margin: 0;
+    padding: 20px 10px;
+  }
+}
+
+.mobile{
+  .mobile-header-img{
+    width: 100%;
+  }
+  .title-mobile{
+    font-size: 1.5rem;
+  }
+
+  .recipe-body-mobile{
+    padding: 0px 20px;
+  }
+  .recipe-info-mobile{
+    padding: 0px 10px;
+  }
+  
+}
+
