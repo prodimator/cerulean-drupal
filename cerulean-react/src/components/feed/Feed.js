@@ -48,16 +48,16 @@ class Feed extends Component {
     this.state.recipes.map((recipe,idx) => {
 
       columns.push(
-          <div className="col-3" key={idx}>
-            <Link
-              key={recipe.id}
-              to={{
-                pathname: `/recipe/${recipe.id}`
-              }}
-            >
-              <Card description={recipe.description} image={recipe.image_3x4} title_bold={recipe.title_bold} title_slim={recipe.title_slim}/>
-            </Link>
-          </div>
+        <div className="col-3" key={idx}>
+          <Link
+            key={recipe.id}
+            to={{
+              pathname: `/recipe/${recipe.id}`
+            }}
+          >
+            <Card description={recipe.description} image={recipe.image_3x4} title_bold={recipe.title_bold} title_slim={recipe.title_slim}/>
+          </Link>
+        </div>
       )
 
       // force wrap to next row every 4 columns
