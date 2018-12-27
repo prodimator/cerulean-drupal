@@ -74,7 +74,7 @@ class Recipe extends Component {
           <Row center="md">
             <Col lg={9}>
               <div className="recipe-post">
-                <Row start="md">
+                <Row start="md" middle="md" center="md" className="pop-header">
                   <Col md>
                     <div className="title title-bold">
                       {recipe.title_bold}
