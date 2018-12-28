@@ -4,12 +4,12 @@ input {
   border-color: white;
   background-color: transparent;
   color: white;
-  width: 250px;
+  width: 400px;
 }
 
 ::placeholder {
 	color: white;
-	font-size: 11px;
+	font-size: 16px;
 	font-family: 'NexaLight';
 	letter-spacing: 5px;
 }
@@ -71,7 +71,7 @@ input:focus {
 	font-size: 30px;
 }
 .logo-header{
-	height: 130px;
+	height: 170px;
 	margin-bottom: 50px;
 }
 

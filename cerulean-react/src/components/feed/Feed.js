@@ -155,12 +155,16 @@ class Feed extends Component {
         <Slideshow/>
         <div className="cards" id="feed">
           <HamburgerNav/>
-          <div className="row-container">
-            {fancysection}
-          </div>
-          <div className="row-container">
-            {this.renderCard()}
-          </div>
+          <Row center="md" className="fancy-div">
+            <Col md={9}>
+              {fancysection}
+            </Col>
+          </Row>
+          <Row center="md" className="card-div">
+            <Col md={9}>
+              {this.renderCard()}
+            </Col>
+          </Row>
         </div>
         <div onClick={this.scrollToTop}>
           <Scrollchor to="" className="nav-link scroll-top">BACK TO TOP</Scrollchor>
