@@ -17,6 +17,7 @@ class Feed extends Component {
     this.state = {
       recipes: []
     };
+    this.scrollToTop = this.scrollToTop.bind(this);
   }
 
   componentDidMount() {
@@ -129,6 +130,12 @@ class Feed extends Component {
     );
   }
 
+  scrollToTop(){
+    if (window.history.replaceState) {
+       window.history.replaceState({}, '/', '/');
+    }
+  }
+
   render() {
     let fancysection;
     if (this.state.recipes.length > 0) {
@@ -155,7 +162,9 @@ class Feed extends Component {
             {this.renderCard()}
           </div>
         </div>
-        <Scrollchor to="" className="nav-link scroll-top">BACK TO TOP</Scrollchor>
+        <div onClick={this.scrollToTop}>
+          <Scrollchor to="" className="nav-link scroll-top">BACK TO TOP</Scrollchor>
+        </div>
       </div>
     );
   }

@@ -4,9 +4,9 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import './Navigation.css';
 
+import MailIcon from '../../svg/mail.svg';
 import FbIcon from '../../svg/facebook.svg';
 import InstaIcon from '../../svg/instagram.svg';
-import TwitterIcon from '../../svg/twitter.svg';
 import LogoHeader from '../../images/logo_header.png';
 
 
@@ -47,14 +47,14 @@ class Nav extends Component {
               <input placeholder="SEARCH" type="text" />
             </div>
             <div className="col-container col-4 nav-social">
+              <a target="_blank" rel="noopener noreferrer" href="http://www.google.com">
+                <img src={MailIcon} className="social-icon" alt="Mail icon"/>
+              </a>
               <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lapa.eats/">
                 <img src={FbIcon} className="social-icon" alt="Facebook icon"/>
               </a>
               <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lapa.eats/">
                 <img src={InstaIcon} className="social-icon" alt="Instagram icon"/>
-              </a>
-              <a target="_blank" rel="noopener noreferrer" href="http://www.google.com">
-                <img src={TwitterIcon} className="social-icon" alt="Twitter icon"/>
               </a>
             </div>
           </div>
