@@ -37,6 +37,7 @@ class Slideshow extends Component {
             title: img.title,
             title_bold: parsedTitle[0]+parsedTitle[1],
             title_slim: parsedTitle[2],
+            description: img.slideshow_description,
             image_header_url: img.image_gradient,
           });
         })
@@ -77,6 +78,9 @@ class Slideshow extends Component {
         </div>
         <div className="slideshow-recipe-title slideshow-title-slim">
           {recipe.title_slim}
+        </div>
+        <div className="slideshow-description">
+          {recipe.description}
         </div>
       </div>
     );
