@@ -23,6 +23,21 @@ input:focus {
   border-color: grey;
 }
 
+.suggestions li {
+  font-size: 16px;
+}
+
+.suggestions li:hover {
+  color: grey;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.no-suggestions {
+	padding: 50px;
+	font-size: 16px;
+}
+
 .custom-nav {
 	position: absolute;
 	top: 2%;
