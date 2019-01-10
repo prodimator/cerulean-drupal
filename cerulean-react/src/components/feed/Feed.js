@@ -61,7 +61,7 @@ class Feed extends Component {
         </div>
       )
 
-      // force wrap to next row every 4 columns
+      // every 4 columns, force wrap to next line
       if ((idx+1)%4===0) {columns.push(<div className="w-100"></div>)}
     });
 
@@ -130,7 +130,7 @@ class Feed extends Component {
     );
   }
 
-  scrollToTop(){
+  scrollToTop() {
     if (window.history.replaceState) {
        window.history.replaceState({}, '/', '/');
     }

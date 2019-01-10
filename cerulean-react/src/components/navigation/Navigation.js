@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Route, Link } from "react-router-dom";
+import { BrowserRouter as Route, Link, Redirect } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import { _AppConstants } from '../../index.constants';
@@ -25,8 +25,10 @@ class Search extends Component {
       showSuggestions: false,
       // What the user has entered
       userInput: "",
+      recipes: [],
       suggestions: [],
-      results: [],
+      id: 0,
+      redirect: false,
     };
   }
 
@@ -35,10 +37,13 @@ class Search extends Component {
       .then((results) => {
         return results.json();
       }).then((data) => {
-        let suggestions = data.map(recipe => {
-          return (recipe.title);
+        let recipes = data.map(recipe => {
+          return ({
+            id: recipe.id,
+            title: recipe.title
+          });
         })
-        this.setState({suggestions});
+        this.setState({recipes});
       })
   }
 
@@ -48,11 +53,26 @@ class Search extends Component {
     // User pressed the enter key, update the input and close the
     // suggestions
     if (e.keyCode === 13) {
+      console.log("dont ignore me");
       this.setState({
         activeSuggestion: 0,
         showSuggestions: false,
-        userInput: filteredSuggestions[activeSuggestion]
+        userInput: filteredSuggestions[activeSuggestion],
+        redirect: true,
       });
+      this.state.recipes.map((recipe) => {
+        console.log("how many times are we gonna have to do this");
+        console.log(recipe.title);
+        console.log(this.state.userInput);
+        if (recipe.title === this.state.userInput) {
+          console.log(recipe.id);
+          this.setState({
+            id: recipe.id
+          });
+        }
+      });
+      console.log("wow hello there");
+      console.log(this.state.userInput);
     }
     // User pressed the up arrow, decrement the index
     else if (e.keyCode === 38) {
@@ -73,11 +93,20 @@ class Search extends Component {
   };
 
   onChange = e => {
-    console.log("this is gonna be a sick test man");
-    console.log(this.state.suggestions);
     const userInput = e.currentTarget.value;
 
-    // Filter our suggestions that don't contain the user's input
+    console.log(this.state.recipes);
+    let input = [];
+    this.state.recipes.map((recipe) => {
+      input.push(recipe.title);
+    });
+    console.log(input);
+    this.setState({
+      suggestions: input
+    });
+    console.log("what do you know now");
+    console.log(this.state.suggestions);
+    // Filter out suggestions that don't contain the user's input
     const filteredSuggestions = this.state.suggestions.filter(
       suggestion =>
         suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
@@ -103,16 +132,23 @@ class Search extends Component {
     });
   };
 
+  clearSelection = e => {
+    this.setState({
+      userInput: ""
+    });
+  }
+
   render() {
     const {
       onChange,
       onClick,
       onKeyDown,
+      clearSelection,
       state: {
         activeSuggestion,
         filteredSuggestions,
         showSuggestions,
-        userInput
+        userInput = "",
       }
     } = this;
 
@@ -121,7 +157,7 @@ class Search extends Component {
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         suggestionsListComponent = (
-          <ul class="suggestions">
+          <ul className="suggestions">
             {filteredSuggestions.map((suggestion, index) => {
               let className;
 
@@ -144,12 +180,17 @@ class Search extends Component {
         );
       } else {
         suggestionsListComponent = (
-          <div class="no-suggestions">
+          <div className="no-suggestions">
             <em>Yikes, no results found!</em>
           </div>
         );
       }
     }
+
+    console.log("here is your darn input");
+    console.log(userInput);
+    console.log(this.state.id);
+
     return (
       <div>
         <div className="row custom-nav">
@@ -182,13 +223,24 @@ class Search extends Component {
               >
                 <img src={LogoHeader} className="logo-header" alt="Logo header"/>
               </Link>
-              <input 
-                placeholder="SEARCH" 
-                type="text"
-                value={userInput}
-                onKeyDown={onKeyDown}
-                onChange={onChange}
-              />
+              <form className="search-form">
+                <div>
+                  <input
+                    className="search-box"
+                    placeholder="SEARCH"
+                    type="text"
+                    value={userInput}
+                    onKeyDown={onKeyDown}
+                    onChange={onChange}
+                  />
+                  <button className="close-icon" type="reset" onClick={clearSelection}></button>
+                </div>
+              </form>
+              {this.state.redirect &&
+                <Redirect to={{
+                  pathname: `/recipe/${this.state.id}`
+                }}/>
+              }
               {suggestionsListComponent}
             </div>
             <div className="col-container col-4 nav-social">
