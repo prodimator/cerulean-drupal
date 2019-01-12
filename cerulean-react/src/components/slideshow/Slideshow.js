@@ -4,7 +4,6 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselCaption } from 'reactstrap';
-import Scrollchor from 'react-scrollchor';
 import { _AppConstants } from '../../index.constants';
 import Navigation from '../navigation/Navigation';
 import './Slideshow.css';
@@ -86,6 +85,11 @@ class Slideshow extends Component {
     );
   }
 
+  scrollToFeed() {
+    let elmnt = document.getElementById("feed");
+    elmnt.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   render() {
     const { activeIndex } = this.state;
     let slides = this.state.images.map(img => {
@@ -111,9 +115,9 @@ class Slideshow extends Component {
         <div>
           {/* <div className="gradient-overlay"></div> */}
           <Navigation/>
-          <Scrollchor to="#feed" className="scroll-jack">
+          <div className="scroll-jack" onClick={this.scrollToFeed}>
             <span className="carousel-control-prev-icon scroll-down"></span>
-          </Scrollchor>
+          </div>
         </div>
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />

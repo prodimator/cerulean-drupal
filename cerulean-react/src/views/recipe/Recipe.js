@@ -64,10 +64,9 @@ class Recipe extends Component {
     if (!isMobile){
       return (
         <div>
-          <Hamburger />
           <HamburgerNav />
           <Row>
-            <Col md={12}>
+            <Col md={12} className="no-padding">
               <header className="recipe-header" style={{ backgroundImage: `url(${_AppConstants.api}${recipe.image_header_url})` }} />
             </Col>
           </Row>

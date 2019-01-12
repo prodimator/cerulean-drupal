@@ -64,27 +64,29 @@ class About extends Component {
         <div>
           <Hamburger />
           <HamburgerNav />
-          <Row>
-            <Col md={12}>
-              <header className="recipe-header" style={{ backgroundImage: `url(${_AppConstants.api}${aboutsection.image})` }} />
+          <Row center="md" className="about-container">
+            <Col md={6}>
+              <img className="about-image" src="/aboutTemp.jpg" alt="About Us Image" />
             </Col>
-          </Row>
-          <Row center="md">
-            <Col lg={9}>
-              <div className="recipe-post">
-                <Row start="md">
-                  <Col md>
-                    <div className="title title-bold">
-                      { aboutsection.title }
-                    </div>
-                  </Col>
-                </Row>
-                <Row start="md" className="recipe-info">
-                  <Col md={12} className="recipe-ingredients">
-                    <div dangerouslySetInnerHTML={{ __html: aboutsection.body }} />
-                  </Col>
-                </Row>
-              </div>
+            <Col md={6} className="about-text">
+              <Row center="md">
+                <Col md={9} className="text-align-left">
+                  <div className="title title-bold">
+                    About
+                  </div>
+                  <div className="title title-slim">
+                    Us
+                  </div>
+                </Col>
+              </Row>
+              <Row center="md">
+                <Col md={9}>
+                  <div className="about-us-body text-align-left">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at tellus at urna. Sem fringilla ut morbi tincidunt augue interdum velit. Nisi est sit amet facilisis magna. Habitant morbi tristique senectus et netus et malesuada. Bibendum enim facilisis gravida neque convallis a cras semper. Euismod quis viverra nibh cras pulvinar. Porta non pulvinar neque laoreet. Dolor sit amet consectetur adipiscing. Libero id faucibus nisl tincidunt. Enim nulla aliquet porttitor lacus luctus accumsan tortor. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Pretium viverra suspendisse potenti nullam ac tortor vitae purus. Suscipit adipiscing bibendum est ultricies integer quis auctor. Mus mauris vitae ultricies leo integer. Et tortor at risus viverra adipiscing. Etiam dignissim diam quis enim lobortis scelerisque. Venenatis tellus in metus vulputate eu scelerisque. Vulputate eu scelerisque felis imperdiet. Pellentesque id nibh tortor id aliquet lectus.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget duis at tellus at urna. Sem fringilla ut morbi tincidunt augue interdum velit. Nisi est sit amet facilisis magna. Habitant morbi tristique senectus et netus et malesuada. Bibendum enim facilisis gravida neque convallis a cras semper. Euismod quis viverra nibh cras pulvinar. Porta non pulvinar neque laoreet. Dolor sit amet consectetur adipiscing. Libero id faucibus nisl tincidunt. Enim nulla aliquet porttitor lacus luctus accumsan tortor. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Pretium viverra suspendisse potenti nullam ac tortor vitae purus.</p>
+                  </div>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </div>

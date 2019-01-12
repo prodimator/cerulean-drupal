@@ -39,6 +39,10 @@
 	left: 50%;
 	z-index: 22;
 	color: white;
+	opacity: .50;
+}
+.scroll-jack:hover{
+	opacity: 1;
 }
 
 .scroll-down {

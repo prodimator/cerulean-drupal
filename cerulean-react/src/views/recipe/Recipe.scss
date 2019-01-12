@@ -1,12 +1,15 @@
 @import '../../styles/colors/colors.scss';
 
+.no-padding{
+  padding: 0px !important;
+}
 .recipe-header {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
   background-size: cover;
-  height: 75vmin;
+  height: 80vh;
   width: 100%;
   z-index: -1;
 }
