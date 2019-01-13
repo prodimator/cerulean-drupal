@@ -4,6 +4,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { _AppConstants } from '../../index.constants';
 import HamburgerNav from '../../components/hamburgernav/HamburgerNav';
 import Hamburger from '../../components/hamburger/Hamburger';
+import Footer from '../../components/footer/Footer';
 import './Recipe.scss';
 
 
@@ -27,6 +28,7 @@ class Recipe extends Component {
   };
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     fetch(_AppConstants.api + '/api/recipes?_format=json' + '&id='+ this.props.match.params.id)
       .then((results) => {
         return results.json();
@@ -101,6 +103,7 @@ class Recipe extends Component {
               </div>
             </Col>
           </Row>
+          <Footer />
         </div>
       );
     }

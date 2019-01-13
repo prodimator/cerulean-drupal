@@ -8,6 +8,7 @@ import Slideshow from '../slideshow/Slideshow';
 import HamburgerNav from '../hamburgernav/HamburgerNav';
 import Card from '../card/Card';
 import FancyCard from '../fancycard/FancyCard';
+import Footer from '../footer/Footer';
 import './Feed.css';
 
 
@@ -15,12 +16,33 @@ class Feed extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipes: []
+      recipes: [],
+      feedYOffset: ''
     };
     this.scrollToTop = this.scrollToTop.bind(this);
   }
 
+  mouseScroll(e){
+    e.preventDefault();
+    if (window.pageYOffset < this.state.feedYOffset){
+      let elmnt = document.getElementById("feed");
+      elmnt.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+  keyScroll(e) {
+    if (e.key == 'ArrowDown' && window.pageYOffset < this.state.feedYOffset){
+      e.preventDefault();
+      let elmnt = document.getElementById("feed");
+      elmnt.scrollIntoView({behavior: "smooth", block: "start"});
+    }
+  }
+
+
   componentDidMount() {
+    window.scrollTo(0, 0);
+    window.addEventListener("keydown", this.keyScroll.bind(this));
+    //window.addEventListener("scroll", this.mouseScroll.bind(this));
+
     fetch(_AppConstants.api + '/api/recipes?_format=json')
       .then((results) => {
         return results.json();
@@ -40,8 +62,15 @@ class Feed extends Component {
             image_3x4: recipe.image_3x4
           });
         })
-        this.setState({recipes});
+        this.setState({
+          recipes: recipes,
+          feedYOffset: document.getElementById('feed').getBoundingClientRect().top
+        });
       })
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener("keypress", this.keyScroll.bind(this));
   }
 
   renderCard() {
@@ -169,6 +198,7 @@ class Feed extends Component {
         <div onClick={this.scrollToTop}>
           <Scrollchor to="" className="nav-link scroll-top">BACK TO TOP</Scrollchor>
         </div>
+        <Footer />
       </div>
     );
   }

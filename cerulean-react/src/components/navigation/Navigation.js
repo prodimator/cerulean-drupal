@@ -243,7 +243,7 @@ class Search extends Component {
               }
               {suggestionsListComponent}
             </div>
-            <div className="col-container col-4 nav-social">
+            <div className="col-container col-2 nav-social">
               <a target="_blank" rel="noopener noreferrer" href="http://www.google.com">
                 <img src={MailIcon} className="social-icon" alt="Mail icon"/>
               </a>

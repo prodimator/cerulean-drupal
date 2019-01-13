@@ -44,17 +44,18 @@ ul, ol {
   }
   @media screen and (min-width: 1024px){
     .pop-header{
+      padding-top: 10px;
       height: 100px;
     }
   }
   @media screen and (min-width: 1200px) {
     .title {
-      font-size: 4.5rem;
+      font-size: 4rem;
     }
   }
   @media screen and (min-width: 1400px) {
     .title {
-      font-size: 5.25rem;
+      font-size: 4.9rem;
     }
   }
 
