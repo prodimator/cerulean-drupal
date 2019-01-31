@@ -10,9 +10,15 @@
   }
   .about-text{
     background-color: #ECD6C6;
+    padding: 5px;
 
     .title{
       font-size: 2.5rem;
+    }
+
+    .sub-header{
+      font-family: 'NexaLight';
+      letter-spacing: 5px;
     }
 
     .text-align-left{

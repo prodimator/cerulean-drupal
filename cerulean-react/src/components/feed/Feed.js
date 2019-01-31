@@ -75,7 +75,8 @@ class Feed extends Component {
 
   renderCard() {
     let columns=[];
-    this.state.recipes.map((recipe,idx) => {
+    var cards = this.state.recipes.slice(4, 8);
+    cards.map((recipe,idx) => {
 
       columns.push(
         <div className="col-3" key={idx}>
