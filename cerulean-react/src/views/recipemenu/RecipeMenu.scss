@@ -9,6 +9,16 @@
     font-family: 'NexaLight';
     letter-spacing: 5px;
     margin-bottom: 5px;
+
+    .category-link {
+      text-decoration: none;
+      color: white;
+    }
+
+    .category-link:hover {
+      text-decoration: none;
+      color: grey;
+    }
   }
 
   .recipe-menu-item:hover {

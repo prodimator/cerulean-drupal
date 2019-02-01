@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { BrowserRouter as Route, Link, Redirect } from "react-router-dom";
 
 import HamburgerNav from '../../components/hamburgernav/HamburgerNav';
 import Hamburger from '../../components/hamburger/Hamburger';
@@ -17,58 +18,74 @@ class RecipeMenu extends Component {
           <Col md={12}>
             <Row className="recipe-menu-item breakfast-menu">
               <Col md={12}>
-                <div>
+                <Link className="category-link"
+                  to="/recipes/breakfast"
+                >
                   Breakfast
-                </div>
+                </Link>
               </Col>
             </Row>
             <Row className="recipe-menu-item apps-menu">
               <Col md={12}>
-                <div>
+                <Link className="category-link"
+                  to="/recipes/appetizers"
+                >
                   Appetizers
-                </div>
+                </Link>
               </Col>
             </Row>
             <Row className="recipe-menu-item soup-menu">
               <Col md={12}>
-                <div>
+                <Link className="category-link"
+                  to="/recipes/soup"
+                >
                   Soup
-                </div>
+                </Link>
               </Col>
             </Row>
             <Row className="recipe-menu-item salad-menu">
               <Col md={12}>
-                <div>
+                <Link className="category-link"
+                  to="/recipes/salad"
+                >
                   Salad
-                </div>
+                </Link>
               </Col>
             </Row>
             <Row className="recipe-menu-item mains-menu">
               <Col md={12}>
-                <div>
+                <Link className="category-link"
+                  to="/recipes/entrees"
+                >
                   Main Dishes
-                </div>
+                </Link>
               </Col>
             </Row>
             <Row className="recipe-menu-item sides-menu">
               <Col md={12}>
-                <div>
+                <Link className="category-link"
+                  to="/recipes/sides"
+                >
                   Sides
-                </div>
+                </Link>
               </Col>
             </Row>
             <Row className="recipe-menu-item drinks-menu">
               <Col md={12}>
-                <div>
+                <Link className="category-link"
+                  to="/recipes/drinks"
+                >
                   Drinks
-                </div>
+                </Link>
               </Col>
             </Row>
             <Row className="recipe-menu-item dessert-menu">
               <Col md={12}>
-                <div>
+                <Link className="category-link"
+                  to="/recipes/dessert"
+                >
                   Dessert
-                </div>
+                </Link>
               </Col>
             </Row>
           </Col>
