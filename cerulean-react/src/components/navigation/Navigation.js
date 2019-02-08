@@ -13,8 +13,8 @@ import LogoHeader from '../../images/logo_header.png';
 
 class Search extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       // The active selection's index

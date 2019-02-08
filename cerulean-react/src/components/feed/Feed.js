@@ -13,8 +13,8 @@ import './Feed.css';
 
 
 class Feed extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       recipes: [],
       feedYOffset: ''
@@ -75,7 +75,7 @@ class Feed extends Component {
 
   renderCard() {
     let columns=[];
-    var cards = this.state.recipes.slice(4, 8);
+    let cards = this.state.recipes.slice(4, 8);
     cards.map((recipe,idx) => {
 
       columns.push(

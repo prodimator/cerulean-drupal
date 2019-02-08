@@ -10,9 +10,8 @@ import './Slideshow.css';
 
 
 class Slideshow extends Component {
-
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       images: [],
       activeIndex: 0

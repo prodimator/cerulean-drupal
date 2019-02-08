@@ -14,14 +14,7 @@ const Home = () => (
   <div>
     <Switch>
       <Route exact path="/" component={Feed} />
-      <Route exact path="/recipes/breakfast" component={RecipesByCategory} />
-      <Route exact path="/recipes/appetizers" component={RecipesByCategory} />
-      <Route exact path="/recipes/soup" component={RecipesByCategory} />
-      <Route exact path="/recipes/salad" component={RecipesByCategory} />
-      <Route exact path="/recipes/entrees" component={RecipesByCategory} />
-      <Route exact path="/recipes/sides" component={RecipesByCategory} />
-      <Route exact path="/recipes/drinks" component={RecipesByCategory} />
-      <Route exact path="/recipes/dessert" component={RecipesByCategory} />
+      <Route exact path="/recipes/:tag" component={RecipesByCategory} />
       <Route path="/recipe/:id" component={Recipe} />
       <Route path="/recipes" component={RecipeMenu} />
       <Route path="/about" component={About} />

@@ -32,6 +32,7 @@ class RecipeMenu extends Component {
             title_slim: parsedTitle[2],
             date: recipe.date,
             description: recipe.description,
+            labels: recipe.labels,
             image_1x1: recipe.image_1x1,
             image_2x1: recipe.image_2x1,
             image_3x2: recipe.image_3x2,
@@ -45,12 +46,22 @@ class RecipeMenu extends Component {
   }
 
   renderCard() {
+    let category = this.props.match.params.tag;
     let columns=[];
-    var cards = this.state.recipes;
-    cards.map((recipe,idx) => {
-
+    let cards = this.state.recipes;
+    let recipes = cards.filter(function (recipe) {
+      let includeCard = false;
+      let labels = recipe.labels.split(', ');
+      labels.map((label) => {
+        if (label === category) {
+          includeCard = true;
+        }
+      });
+      return includeCard;
+    });
+    recipes.map((recipe,idx) => {
       columns.push(
-        <div className="col-3" key={idx}>
+        <div className="col-3">
           <Link
             key={recipe.id}
             to={{
@@ -61,11 +72,7 @@ class RecipeMenu extends Component {
           </Link>
         </div>
       )
-
-      // every 4 columns, force wrap to next line
-      if ((idx+1)%4===0) {columns.push(<div className="w-100"></div>)}
     });
-
 
     return (
       <div className="row">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { BrowserRouter as Route, Link, Redirect } from "react-router-dom";
 
+import { _AppConstants } from '../../index.constants';
 import HamburgerNav from '../../components/hamburgernav/HamburgerNav';
 import Hamburger from '../../components/hamburger/Hamburger';
 import Footer from '../../components/footer/Footer';
@@ -9,85 +10,68 @@ import './RecipeMenu.scss';
 
 
 class RecipeMenu extends Component {
+  constructor() {
+    super();
+    this.state = {
+      recipes: [],
+      labels: []
+    };
+  }
+
+  componentDidMount() {
+    fetch(_AppConstants.api + '/api/recipes?_format=json')
+      .then((results) => {
+        return results.json();
+      }).then((data) => {
+        let recipes = data.map(recipe => {
+          return ({
+            id: recipe.id,
+            labels: recipe.labels
+          });
+        })
+        this.setState({
+          recipes: recipes,
+          labels: ['breakfast', 'appetizers', 'soup', 'salad', 'entrees', 'sides', 'drinks', 'dessert']
+        });
+      })
+  }
+
+  renderCategories() {
+    let categories=[];
+    var tags = this.state.labels;
+    tags.map((category) => {
+
+      categories.push(
+        <Row className="recipe-menu-item breakfast-menu">
+          <Col md={12}>
+            <Link
+              className="category-link"
+              to={{
+                pathname: `/recipes/${category}`
+              }}
+            >
+              {category}
+            </Link>
+          </Col>
+        </Row>
+      )
+    });
+
+    return (
+      <div>
+        {categories}
+      </div>
+    )
+  }
+
 	render() {
     return (
   		<div>
         <Hamburger />
         <HamburgerNav />
-		    <Row center="md" className="recipe-menu">
+        <Row center="md" className="recipe-menu">
           <Col md={12}>
-            <Row className="recipe-menu-item breakfast-menu">
-              <Col md={12}>
-                <Link className="category-link"
-                  to="/recipes/breakfast"
-                >
-                  Breakfast
-                </Link>
-              </Col>
-            </Row>
-            <Row className="recipe-menu-item apps-menu">
-              <Col md={12}>
-                <Link className="category-link"
-                  to="/recipes/appetizers"
-                >
-                  Appetizers
-                </Link>
-              </Col>
-            </Row>
-            <Row className="recipe-menu-item soup-menu">
-              <Col md={12}>
-                <Link className="category-link"
-                  to="/recipes/soup"
-                >
-                  Soup
-                </Link>
-              </Col>
-            </Row>
-            <Row className="recipe-menu-item salad-menu">
-              <Col md={12}>
-                <Link className="category-link"
-                  to="/recipes/salad"
-                >
-                  Salad
-                </Link>
-              </Col>
-            </Row>
-            <Row className="recipe-menu-item mains-menu">
-              <Col md={12}>
-                <Link className="category-link"
-                  to="/recipes/entrees"
-                >
-                  Main Dishes
-                </Link>
-              </Col>
-            </Row>
-            <Row className="recipe-menu-item sides-menu">
-              <Col md={12}>
-                <Link className="category-link"
-                  to="/recipes/sides"
-                >
-                  Sides
-                </Link>
-              </Col>
-            </Row>
-            <Row className="recipe-menu-item drinks-menu">
-              <Col md={12}>
-                <Link className="category-link"
-                  to="/recipes/drinks"
-                >
-                  Drinks
-                </Link>
-              </Col>
-            </Row>
-            <Row className="recipe-menu-item dessert-menu">
-              <Col md={12}>
-                <Link className="category-link"
-                  to="/recipes/dessert"
-                >
-                  Dessert
-                </Link>
-              </Col>
-            </Row>
+		        {this.renderCategories()}
           </Col>
         </Row>
         <Footer />
