@@ -12,7 +12,6 @@ class RecipeMenu extends Component {
 	render() {
     return (
   		<div>
-        <Hamburger />
         <HamburgerNav />
 		    <Row center="md" className="recipe-menu">
           <Col md={12}>

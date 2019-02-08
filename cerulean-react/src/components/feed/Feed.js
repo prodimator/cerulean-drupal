@@ -176,12 +176,12 @@ class Feed extends Component {
     }
     return (
       <div>
-        <Menu burgerButtonClassName={ "recipe-burger" }>
+{/*         <Menu burgerButtonClassName={ "recipe-burger" }>
           <a id="home" className="menu-item" href="/">Home</a>
           <a id="recipes" className="menu-item" href="/recipes">Recipes</a>
           <a id="about" className="menu-item" href="/about">About</a>
           <a id="contact" className="menu-item" href="/contact">Contact</a>
-        </Menu>
+        </Menu> */}
         <Slideshow/>
         <div className="cards" id="feed">
           <HamburgerNav/>

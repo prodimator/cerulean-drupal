@@ -111,7 +111,6 @@ class Recipe extends Component {
     if (isMobile){
       return(
         <div className="mobile">
-          <Hamburger />
           <HamburgerNav />
           <Row>
             <Col>
