@@ -75,7 +75,6 @@ class About extends Component {
       let about_image = _AppConstants.api+aboutsection.image;
       return (
         <div>
-          <Hamburger />
           <HamburgerNav />
           <Row center="md" className="about-container">
             <Col md={6}>
@@ -155,7 +154,6 @@ class About extends Component {
     if (isMobile){
       return(
         <div className="mobile">
-          <Hamburger />
           <HamburgerNav />
           <Row>
             <Col>

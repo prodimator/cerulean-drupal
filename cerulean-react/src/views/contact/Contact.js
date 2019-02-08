@@ -8,7 +8,6 @@ class Contact extends Component {
   render() {
     return (
       <div>
-        <Hamburger />
         <HamburgerNav />
           <p>Contact page in progress</p>
       </div>
