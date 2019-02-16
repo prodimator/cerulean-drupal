@@ -2,29 +2,35 @@ import React, { Component } from 'react';
 import CardDescription from '../carddescription/CardDescription';
 import CardTitle from '../cardtitle/CardTitle';
 import { _AppConstants } from '../../index.constants';
-import './Card.css';
+import './Card.scss';
+import Fork from '../../svg/fork.svg';
+
 
 
 class Card extends Component {
+  
   render() {
-    let recipe_image=_AppConstants.api+this.props.image;
-    return(
+    let recipe_image = _AppConstants.api + this.props.image;
+    return (
       <div>
-        <div className="container">
+        <div className="card-container">
           <div className="content">
             <div className="content-overlay"></div>
-            <img className="content-image" src={recipe_image} alt={recipe_image}/>
-            <div className="card-description content-details fadeIn-top">
-              <CardDescription description={this.props.description}/>
+            <img className="content-image" src={recipe_image} alt={recipe_image} />
+            <div className="content-details fadeIn-top">
+              <p>{this.props.description}</p>
             </div>
           </div>
-          <div className="card-title">
-            <div className="card-title-bold">
-              <CardTitle title={this.props.title_bold}/>
-            </div>
-            <div className="card-title-slim">
-              <CardTitle title={this.props.title_slim}/>
-            </div>
+          <div className="title-container">
+            <p className="recipe-date">
+              {this.props.date}
+            </p>
+            <p className="card-title">
+              {this.props.title}
+            </p>
+            <p className="see-recipe">
+              <img src={Fork} className="fork" alt="Fork" /> See Recipe
+            </p>
           </div>
         </div>
       </div>
