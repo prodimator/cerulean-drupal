@@ -178,7 +178,7 @@ class Feed extends Component {
       <div>
         <Slideshow/>
         <div className="cards" id="feed">
-          
+          <HamburgerNav/>
           <Row center="md" className="fancy-div">
             <Col md={9}>
               {fancysection}
