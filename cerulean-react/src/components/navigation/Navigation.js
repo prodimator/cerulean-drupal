@@ -3,7 +3,7 @@ import { BrowserRouter as Route, Link, Redirect } from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import { _AppConstants } from '../../index.constants';
-import './Navigation.css';
+import './Navigation.scss';
 
 import MailIcon from '../../svg/mail.svg';
 import FbIcon from '../../svg/facebook.svg';
@@ -194,67 +194,67 @@ class Search extends Component {
     return (
       <div>
         <div className="row custom-nav">
-            <div className="col-container col-4 nav-headers">
-              <div className="nav-recipes">
-                <Link className="navigation-link"
-                  to="/recipes"
-                >
-                  RECIPES
-                </Link>
-              </div>
-              <div className="nav-about">
-                <Link className="navigation-link"
-                  to="/about"
-                >
-                  ABOUT
-                </Link>
-              </div>
-              <div className="nav-contact">
-                <Link className="navigation-link"
-                  to="/contact"
-                >
-                  CONTACT
-                </Link>
-              </div>
-            </div>
-            <div className="col-container col-4 nav-home">
+          <div className="col-container col-4 nav-headers">
+            <div className="nav-recipes">
               <Link className="navigation-link"
-                to="/"
+                to="/recipes"
               >
-                <img src={LogoHeader} className="logo-header" alt="Logo header"/>
+                RECIPES
               </Link>
-              <form className="search-form">
-                <div>
-                  <input
-                    className="search-box"
-                    placeholder="SEARCH"
-                    type="text"
-                    value={userInput}
-                    onKeyDown={onKeyDown}
-                    onChange={onChange}
-                  />
-                  <button className="close-icon" type="reset" onClick={clearSelection}></button>
-                </div>
-              </form>
-              {this.state.redirect &&
-                <Redirect to={{
-                  pathname: `/recipe/${this.state.id}`
-                }}/>
-              }
-              {suggestionsListComponent}
             </div>
-            <div className="col-container col-2 nav-social">
-              <a target="_blank" rel="noopener noreferrer" href="http://www.google.com">
-                <img src={MailIcon} className="social-icon" alt="Mail icon"/>
-              </a>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lapa.eats/">
-                <img src={FbIcon} className="social-icon" alt="Facebook icon"/>
-              </a>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lapa.eats/">
-                <img src={InstaIcon} className="social-icon" alt="Instagram icon"/>
-              </a>
+            <div className="nav-about">
+              <Link className="navigation-link"
+                to="/about"
+              >
+                ABOUT
+              </Link>
+            </div>
+            <div className="nav-contact">
+              <Link className="navigation-link"
+                to="/contact"
+              >
+                CONTACT
+              </Link>
             </div>
           </div>
+          <div className="col-container col-4 nav-home">
+            <Link className="navigation-link"
+              to="/"
+            >
+              <img src={LogoHeader} className="logo-header" alt="Logo header"/>
+            </Link>
+            <form className="search-form">
+              <div>
+                <input
+                  className="search-box"
+                  placeholder="SEARCH"
+                  type="text"
+                  value={userInput}
+                  onKeyDown={onKeyDown}
+                  onChange={onChange}
+                />
+                <button className="close-icon" type="reset" onClick={clearSelection}></button>
+              </div>
+            </form>
+            {this.state.redirect &&
+              <Redirect to={{
+                pathname: `/recipe/${this.state.id}`
+              }}/>
+            }
+            {suggestionsListComponent}
+          </div>
+          <div className="col-container col-2 nav-social">
+            <a target="_blank" rel="noopener noreferrer" href="http://www.google.com">
+              <img src={MailIcon} className="social-icon" alt="Mail icon"/>
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lapa.eats/">
+              <img src={FbIcon} className="social-icon" alt="Facebook icon"/>
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lapa.eats/">
+              <img src={InstaIcon} className="social-icon" alt="Instagram icon"/>
+            </a>
+          </div>
+        </div>
       </div>
     );
   }
