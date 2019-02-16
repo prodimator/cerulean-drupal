@@ -47,13 +47,36 @@ class Search extends Component {
       })
   }
 
+  filterSuggestions(e) {
+    let userInput = e.currentTarget.value;
+    let input = [];
+    this.state.recipes.map((recipe) => {
+      input.push(recipe.title);
+    });
+    this.setState({
+      suggestions: input
+    });
+    // Filter out suggestions that don't contain the user's input
+    let updateSuggestions = this.state.suggestions.filter(
+      suggestion => suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+    );
+
+    // Update the user input and filtered suggestions, reset the active
+    // suggestion and make sure the suggestions are shown
+    this.setState({
+      activeSuggestion: 0,
+      filteredSuggestions: updateSuggestions,
+      showSuggestions: true,
+      userInput: e.currentTarget.value
+    });
+  }
+
   onKeyDown = e => {
     const { activeSuggestion, filteredSuggestions } = this.state;
 
     // User pressed the enter key, update the input and close the
     // suggestions
     if (e.keyCode === 13) {
-      console.log("dont ignore me");
       this.setState({
         activeSuggestion: 0,
         showSuggestions: false,
@@ -61,18 +84,12 @@ class Search extends Component {
         redirect: true,
       });
       this.state.recipes.map((recipe) => {
-        console.log("how many times are we gonna have to do this");
-        console.log(recipe.title);
-        console.log(this.state.userInput);
         if (recipe.title === this.state.userInput) {
-          console.log(recipe.id);
           this.setState({
             id: recipe.id
           });
         }
       });
-      console.log("wow hello there");
-      console.log(this.state.userInput);
     }
     // User pressed the up arrow, decrement the index
     else if (e.keyCode === 38) {
@@ -90,36 +107,16 @@ class Search extends Component {
 
       this.setState({ activeSuggestion: activeSuggestion + 1 });
     }
+    // Handle when user starts searching
+    else {
+      if (filteredSuggestions.length === 0) {
+        this.filterSuggestions(e);
+      }
+    }
   };
 
   onChange = e => {
-    const userInput = e.currentTarget.value;
-
-    console.log(this.state.recipes);
-    let input = [];
-    this.state.recipes.map((recipe) => {
-      input.push(recipe.title);
-    });
-    console.log(input);
-    this.setState({
-      suggestions: input
-    });
-    console.log("what do you know now");
-    console.log(this.state.suggestions);
-    // Filter out suggestions that don't contain the user's input
-    const filteredSuggestions = this.state.suggestions.filter(
-      suggestion =>
-        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
-    );
-
-    // Update the user input and filtered suggestions, reset the active
-    // suggestion and make sure the suggestions are shown
-    this.setState({
-      activeSuggestion: 0,
-      filteredSuggestions,
-      showSuggestions: true,
-      userInput: e.currentTarget.value
-    });
+    this.filterSuggestions(e);
   };
 
   onClick = e => {
@@ -154,6 +151,11 @@ class Search extends Component {
 
     let suggestionsListComponent;
 
+    console.log("here is your darn input");
+    console.log(userInput);
+    console.log(userInput.length);
+    console.log(filteredSuggestions.length);
+
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         suggestionsListComponent = (
@@ -186,10 +188,6 @@ class Search extends Component {
         );
       }
     }
-
-    console.log("here is your darn input");
-    console.log(userInput);
-    console.log(this.state.id);
 
     return (
       <div>
