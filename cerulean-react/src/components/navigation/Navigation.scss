@@ -4,7 +4,7 @@
 	position: absolute;
 	top: 2%;
 	z-index: 22;
-	color: white;
+	color: $white;
 	width: 100%;
 	font-family: 'NexaLight';
 	text-decoration: none;
@@ -12,7 +12,7 @@
 	font-weight: 800;
 
 	.nav-headers {
-		font-size: 13px;
+		font-size: 1rem;
 		display: flex;
 		justify-content: center;
 
@@ -48,19 +48,19 @@
 				outline: 0;
 				border-width: 0 0 0;
 				background-color: transparent;
-				color: white;
+				color: $white;
 				width: 400px;
 			}
 
 			::placeholder {
-				color: white;
-				font-size: 16px;
+				color: $white;
+				font-size: 1rem;
 				font-family: 'NexaLight';
 				letter-spacing: 5px;
 			}
 
 			.search-box[type="text"] {
-				font-size: 16px;
+				font-size: 1rempx;
 				font-family: 'NexaLight';
 			}
 
@@ -85,9 +85,9 @@
 				margin: auto;
 				padding: 2px;
 				text-align: center;
-				color: white;
+				color: $white;
 				font-weight: normal;
-				font-size: 16px;
+				font-size: 1rem;
 				cursor: pointer;
 			}
 
@@ -109,7 +109,7 @@
 
 	.navigation-link {
 		text-decoration: none;
-		color: white;
+		color: $white;
 	}
 
 	.navigation-link:hover {
