@@ -11,19 +11,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+a, a:hover{
+  color: $darkGrey;
+  text-decoration: none;
+}
 
-  .title-bold{
-    display: inline;
-    font-family: "NexaBold";
-  }
+.title-bold{
+  display: inline;
+  font-family: "NexaBold";
+}
 
-  .title-slim{
-    display: inline;
-    font-family: "NexaLight";
-  }
+.title-slim{
+  display: inline;
+  font-family: "NexaLight";
+}
 
-  .nav-title{
-    font-family: "NexaLight";
-    letter-spacing: 8px;
-    padding-left: 15px;
-  }
+.nav-title{
+  font-family: "NexaLight";
+  letter-spacing: 8px;
+  padding-left: 15px;
+}

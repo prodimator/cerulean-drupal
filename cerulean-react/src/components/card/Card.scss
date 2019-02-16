@@ -1,0 +1,101 @@
+@import '../../styles/colors/colors.scss';
+
+.card-container {
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.1);
+  
+  .content {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+
+    p{
+      font-size: 1rem;
+    }
+
+    .content-overlay {
+      background: rgba(0,0,0,0.7);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      -webkit-transition: all 0.4s ease-in-out 0s;
+      -moz-transition: all 0.4s ease-in-out 0s;
+      transition: all 0.4s ease-in-out 0s;
+    }
+
+    .content-details {
+      position: absolute;
+      text-align: left;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      -moz-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    .fadeIn-top {
+      top: 20%;
+    }
+  }
+
+  .title-container{
+    position: relative;
+    background: $white;
+    padding: 16px 16px; 
+    height: 150px;
+    text-align: left;
+
+    .recipe-date{
+      font-family: 'NexaLight';
+      line-height: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .card-title{
+      display: inline;
+      font-family: 'NexaBold';
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+
+    .see-recipe{
+      font-family: 'NexaBold';
+      text-transform: uppercase;  
+      line-height: 1rem;
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 16px;
+
+      .fork{
+        display: inline;
+        margin-top: -4px;
+        width: 20px;
+      }
+    }
+    @media screen and (max-width: 1300px){
+      .card-title{
+        font-size: 1.5rem;
+        line-height: 1.5rem;  
+      }
+    }
+    @media screen and (max-width: 640px){
+      .card-title{
+        font-size: 1.25rem;
+        line-height: 1.25rem;  
+      }
+    }
+  }
+}
+
+
+
+

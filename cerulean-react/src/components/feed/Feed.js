@@ -74,17 +74,17 @@ class Feed extends Component {
 
   renderCard() {
     let columns=[];
-    let cards = this.state.recipes.slice(4, 8);
+    let cards = this.state.recipes.slice(4, 7);
     cards.map((recipe,idx) => {
       columns.push(
-        <div className="col-3" key={idx}>
+        <div className="col-4" key={idx}>
           <Link
             key={recipe.id}
             to={{
               pathname: `/recipe/${recipe.id}`
             }}
           >
-            <Card description={recipe.description} image={recipe.image_3x4} title_bold={recipe.title_bold} title_slim={recipe.title_slim}/>
+          <Card description={recipe.description} image={recipe.image_3x4} title={recipe.title} date={recipe.date} id={recipe.id}/>
           </Link>
         </div>
       )
@@ -176,13 +176,13 @@ class Feed extends Component {
     }
     return (
       <div>
-{/*         <Menu burgerButtonClassName={ "recipe-burger" }>
+        {/*<Menu burgerButtonClassName={ "recipe-burger" }>
           <a id="home" className="menu-item" href="/">Home</a>
           <a id="recipes" className="menu-item" href="/recipes">Recipes</a>
           <a id="about" className="menu-item" href="/about">About</a>
           <a id="contact" className="menu-item" href="/contact">Contact</a>
-        </Menu> */}
-        <Slideshow/>
+        </Menu> 
+        <Slideshow/>*/}
         <div className="cards" id="feed">
           <HamburgerNav/>
           <Row center="md" className="fancy-div">
