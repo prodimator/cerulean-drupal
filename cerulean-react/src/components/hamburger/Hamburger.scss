@@ -1,3 +1,5 @@
+@import '../../styles/colors/colors.scss';
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: absolute;
@@ -9,7 +11,7 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: white;
+  background: $white;
 }
 
 /* Position and sizing of clickable cross button */
@@ -25,7 +27,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #31343C;
+  background: $navGrey;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -45,7 +47,7 @@
 .bm-item {
   display: inline-block;
   text-decoration: none;
-  color: white;
+  color: $white;
   font-family: 'NexaLight';
   letter-spacing: 5px;
   font-weight: 800;

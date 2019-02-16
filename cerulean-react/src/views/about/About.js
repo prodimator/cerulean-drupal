@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 
 import { _AppConstants } from '../../index.constants';
 import HamburgerNav from '../../components/hamburgernav/HamburgerNav';
-import Hamburger from '../../components/hamburger/Hamburger';
 import Footer from '../../components/footer/Footer';
 import './About.scss';
 
@@ -157,7 +156,7 @@ class About extends Component {
           <HamburgerNav />
           <Row>
             <Col>
-              <img className="mobile-header-img" src={_AppConstants.api + aboutsection.image}></img>
+              <img className="mobile-header-img" alt="mobile header img" src={_AppConstants.api + aboutsection.image}></img>
             </Col>
           </Row>
           <Row center="xs" middle="xs">

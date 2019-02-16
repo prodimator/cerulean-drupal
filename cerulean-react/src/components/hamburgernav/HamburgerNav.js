@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import { slide as Menu } from 'react-burger-menu';
+import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
 import { BrowserRouter as Route, Link } from "react-router-dom";
 import SearchIcon from '../../svg/search.svg';
 

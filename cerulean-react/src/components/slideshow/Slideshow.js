@@ -6,7 +6,7 @@ import {
   CarouselCaption } from 'reactstrap';
 import { _AppConstants } from '../../index.constants';
 import Navigation from '../navigation/Navigation';
-import './Slideshow.css';
+import './Slideshow.scss';
 
 
 class Slideshow extends Component {

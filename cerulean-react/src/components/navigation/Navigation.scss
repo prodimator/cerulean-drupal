@@ -1,0 +1,137 @@
+@import '../../styles/colors/colors.scss';
+
+.custom-nav {
+	position: absolute;
+	top: 2%;
+	z-index: 22;
+	color: $white;
+	width: 100%;
+	font-family: 'NexaLight';
+	text-decoration: none;
+	letter-spacing: 5px;
+	font-weight: 800;
+
+	.nav-headers {
+		font-size: 1rem;
+		display: flex;
+		justify-content: center;
+
+		.nav-recipes {
+			padding-right: 10px;
+		}
+
+		.nav-about {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		.nav-contact {
+			padding-left: 10px;
+		}
+	}
+
+	.nav-home {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: 30px;
+
+		.logo-header{
+			height: 170px;
+			margin-bottom: 50px;
+		}
+
+		.search-form {
+			border-bottom: 1px solid white;
+
+			.search-box {
+				outline: 0;
+				border-width: 0 0 0;
+				background-color: transparent;
+				color: $white;
+				width: 400px;
+			}
+
+			::placeholder {
+				color: $white;
+				font-size: 1rem;
+				font-family: 'NexaLight';
+				letter-spacing: 5px;
+			}
+
+			.search-box[type="text"] {
+				font-size: 1rempx;
+				font-family: 'NexaLight';
+			}
+
+			.search-box:not(:valid) ~ .close-icon {
+				display: none;
+			}
+
+			.close-icon {
+				background-color: transparent;
+				display: inline-block;
+				vertical-align: middle;
+				cursor: pointer;
+				border: none;
+			}
+
+			.close-icon:after {
+				content: "X";
+				display: block;
+				width: 15px;
+				height: 15px;
+				z-index:1;
+				margin: auto;
+				padding: 2px;
+				text-align: center;
+				color: $white;
+				font-weight: normal;
+				font-size: 1rem;
+				cursor: pointer;
+			}
+
+			button:focus {outline:0 !important;}
+		}
+	}
+
+	.nav-social {
+		display: flex;
+		justify-content: center;
+		height: 100%;
+
+		.social-icon {
+			width: 25px;
+			height: 25px;
+			margin: 5px;
+		}
+	}
+
+	.navigation-link {
+		text-decoration: none;
+		color: $white;
+	}
+
+	.navigation-link:hover {
+		text-decoration: none;
+		color: grey;
+	}
+}
+
+
+.suggestions li {
+  font-size: 16px;
+}
+
+.suggestion-active, .suggestions li:hover {
+  color: grey;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.no-suggestions {
+	padding: 50px;
+	font-size: 16px;
+}
+
+

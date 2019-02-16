@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Route, Link, Redirect } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import { _AppConstants } from '../../index.constants';
-import './Navigation.css';
+import './Navigation.scss';
 
 import MailIcon from '../../svg/mail.svg';
 import FbIcon from '../../svg/facebook.svg';
@@ -47,32 +46,51 @@ class Search extends Component {
       })
   }
 
+  filterSuggestions(e) {
+    let userInput = e.currentTarget.value;
+    let input = [];
+    this.state.recipes.map((recipe) => {
+      input.push(recipe.title);
+      return input;
+    });
+    this.setState({
+      suggestions: input
+    });
+    // Filter out suggestions that don't contain the user's input
+    let updateSuggestions = this.state.suggestions.filter(
+      suggestion => suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+    );
+
+    // Update the user input and filtered suggestions, reset the active
+    // suggestion and make sure the suggestions are shown
+    this.setState({
+      activeSuggestion: 0,
+      filteredSuggestions: updateSuggestions,
+      showSuggestions: true,
+      userInput: e.currentTarget.value
+    });
+  }
+
   onKeyDown = e => {
     const { activeSuggestion, filteredSuggestions } = this.state;
 
     // User pressed the enter key, update the input and close the
     // suggestions
     if (e.keyCode === 13) {
-      console.log("dont ignore me");
       this.setState({
         activeSuggestion: 0,
         showSuggestions: false,
         userInput: filteredSuggestions[activeSuggestion],
         redirect: true,
       });
-      this.state.recipes.map((recipe) => {
-        console.log("how many times are we gonna have to do this");
-        console.log(recipe.title);
-        console.log(this.state.userInput);
+      let recipes = this.state.recipes.map((recipe) => {
         if (recipe.title === this.state.userInput) {
-          console.log(recipe.id);
           this.setState({
             id: recipe.id
           });
         }
+      return recipes;
       });
-      console.log("wow hello there");
-      console.log(this.state.userInput);
     }
     // User pressed the up arrow, decrement the index
     else if (e.keyCode === 38) {
@@ -90,36 +108,16 @@ class Search extends Component {
 
       this.setState({ activeSuggestion: activeSuggestion + 1 });
     }
+    // Handle when user starts searching
+    else {
+      if (filteredSuggestions.length === 0) {
+        this.filterSuggestions(e);
+      }
+    }
   };
 
   onChange = e => {
-    const userInput = e.currentTarget.value;
-
-    console.log(this.state.recipes);
-    let input = [];
-    this.state.recipes.map((recipe) => {
-      input.push(recipe.title);
-    });
-    console.log(input);
-    this.setState({
-      suggestions: input
-    });
-    console.log("what do you know now");
-    console.log(this.state.suggestions);
-    // Filter out suggestions that don't contain the user's input
-    const filteredSuggestions = this.state.suggestions.filter(
-      suggestion =>
-        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
-    );
-
-    // Update the user input and filtered suggestions, reset the active
-    // suggestion and make sure the suggestions are shown
-    this.setState({
-      activeSuggestion: 0,
-      filteredSuggestions,
-      showSuggestions: true,
-      userInput: e.currentTarget.value
-    });
+    this.filterSuggestions(e);
   };
 
   onClick = e => {
@@ -187,74 +185,70 @@ class Search extends Component {
       }
     }
 
-    console.log("here is your darn input");
-    console.log(userInput);
-    console.log(this.state.id);
-
     return (
       <div>
         <div className="row custom-nav">
-            <div className="col-container col-4 nav-headers">
-              <div className="nav-recipes">
-                <Link className="navigation-link"
-                  to="/recipes"
-                >
-                  RECIPES
-                </Link>
-              </div>
-              <div className="nav-about">
-                <Link className="navigation-link"
-                  to="/about"
-                >
-                  ABOUT
-                </Link>
-              </div>
-              <div className="nav-contact">
-                <Link className="navigation-link"
-                  to="/contact"
-                >
-                  CONTACT
-                </Link>
-              </div>
-            </div>
-            <div className="col-container col-4 nav-home">
+          <div className="col-container col-4 nav-headers">
+            <div className="nav-recipes">
               <Link className="navigation-link"
-                to="/"
+                to="/recipes"
               >
-                <img src={LogoHeader} className="logo-header" alt="Logo header"/>
+                RECIPES
               </Link>
-              <form className="search-form">
-                <div>
-                  <input
-                    className="search-box"
-                    placeholder="SEARCH"
-                    type="text"
-                    value={userInput}
-                    onKeyDown={onKeyDown}
-                    onChange={onChange}
-                  />
-                  <button className="close-icon" type="reset" onClick={clearSelection}></button>
-                </div>
-              </form>
-              {this.state.redirect &&
-                <Redirect to={{
-                  pathname: `/recipe/${this.state.id}`
-                }}/>
-              }
-              {suggestionsListComponent}
             </div>
-            <div className="col-container col-2 nav-social">
-              <a target="_blank" rel="noopener noreferrer" href="http://www.google.com">
-                <img src={MailIcon} className="social-icon" alt="Mail icon"/>
-              </a>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lapa.eats/">
-                <img src={FbIcon} className="social-icon" alt="Facebook icon"/>
-              </a>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lapa.eats/">
-                <img src={InstaIcon} className="social-icon" alt="Instagram icon"/>
-              </a>
+            <div className="nav-about">
+              <Link className="navigation-link"
+                to="/about"
+              >
+                ABOUT
+              </Link>
+            </div>
+            <div className="nav-contact">
+              <Link className="navigation-link"
+                to="/contact"
+              >
+                CONTACT
+              </Link>
             </div>
           </div>
+          <div className="col-container col-4 nav-home">
+            <Link className="navigation-link"
+              to="/"
+            >
+              <img src={LogoHeader} className="logo-header" alt="Logo header"/>
+            </Link>
+            <form className="search-form">
+              <div>
+                <input
+                  className="search-box"
+                  placeholder="SEARCH"
+                  type="text"
+                  value={userInput}
+                  onKeyDown={onKeyDown}
+                  onChange={onChange}
+                />
+                <button className="close-icon" type="reset" onClick={clearSelection}></button>
+              </div>
+            </form>
+            {this.state.redirect &&
+              <Redirect to={{
+                pathname: `/recipe/${this.state.id}`
+              }}/>
+            }
+            {suggestionsListComponent}
+          </div>
+          <div className="col-container col-2 nav-social">
+            <a target="_blank" rel="noopener noreferrer" href="http://www.google.com">
+              <img src={MailIcon} className="social-icon" alt="Mail icon"/>
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lapa.eats/">
+              <img src={FbIcon} className="social-icon" alt="Facebook icon"/>
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lapa.eats/">
+              <img src={InstaIcon} className="social-icon" alt="Instagram icon"/>
+            </a>
+          </div>
+        </div>
       </div>
     );
   }

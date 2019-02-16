@@ -1,13 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { _AppConstants } from '../../index.constants';
 import Recipe from '../recipe/Recipe';
 import Feed from '../../components/feed/Feed'
 import RecipeMenu from '../recipemenu/RecipeMenu';
 import RecipesByCategory from '../recipesbycategory/RecipesByCategory';
 import About from '../about/About';
 import Contact from '../contact/Contact';
-import './Home.css';
 
 
 const Home = () => (

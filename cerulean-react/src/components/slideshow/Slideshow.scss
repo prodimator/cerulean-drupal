@@ -1,17 +1,14 @@
-/* .gradient-overlay {
-	position: absolute;
-	width: 100%; 
-	height: 100%; 
-	top: 0; 
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: linear-gradient(to top, rgba(0,0,0,.75) 0%,rgba(255, 255, 255, 0) 50%);
-	z-index: 2; 
-} */
+@import '../../styles/colors/colors.scss';
 
+/* Embedded in CarouselItem */
 .carousel-item { 
     height: 100vh !important;
+
+    .carousel-caption {
+		text-align: left !important;
+		bottom: 100px !important;
+		left: 100px !important;
+	}
 }
 
 .carousel-item > img { 
@@ -19,11 +16,7 @@
   min-width: 1200px;
 }
 
-.carousel-caption {
-	text-align: left !important;
-	bottom: 100px !important;
-	left: 100px !important;
-}
+/* Embedded in Carousel */
 
 .carousel-control-prev {
 	width: 5% !important;
@@ -33,25 +26,28 @@
 	width: 5% !important;
 }
 
+/* Other CSS */
+
 .scroll-jack {
 	position: absolute;
 	bottom: 2%;
 	left: 50%;
 	z-index: 22;
-	color: white;
+	color: $white;
 	opacity: .50;
+
+	.scroll-down {
+		-webkit-transform: rotate(270deg) !important;
+	}
 }
+
 .scroll-jack:hover{
 	opacity: 1;
 }
 
-.scroll-down {
-	-webkit-transform: rotate(270deg) !important;
-}
-
 .slideshow-recipe-title {
   display: inline;
-  font-size: 70px;
+  font-size: 4rem;
 }
 
 .slideshow-title-bold {
@@ -64,6 +60,6 @@
 
 .slideshow-description {
 	margin-top: -20px;
-	font-size: 20px;
+	font-size: 1.25rem;
 	font-family: 'BellMT';
 }

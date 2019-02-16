@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import { BrowserRouter as Route, Link, Redirect } from "react-router-dom";
+import { Row, Col } from 'react-flexbox-grid';
+import { BrowserRouter as Route, Link } from "react-router-dom";
 
 import { _AppConstants } from '../../index.constants';
 import HamburgerNav from '../../components/hamburgernav/HamburgerNav';
-import Hamburger from '../../components/hamburger/Hamburger';
 import Footer from '../../components/footer/Footer';
 import Card from '../../components/card/Card';
 import './RecipesByCategory.scss';
@@ -56,6 +55,7 @@ class RecipeMenu extends Component {
         if (label === category) {
           includeCard = true;
         }
+        return includeCard;
       });
       return includeCard;
     });
@@ -72,6 +72,7 @@ class RecipeMenu extends Component {
           </Link>
         </div>
       )
+      return columns;
     });
 
     return (

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 
 import { _AppConstants } from '../../index.constants';
 import HamburgerNav from '../../components/hamburgernav/HamburgerNav';
