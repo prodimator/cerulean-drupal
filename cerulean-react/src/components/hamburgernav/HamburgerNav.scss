@@ -1,0 +1,30 @@
+@import '../../styles/colors/colors.scss';
+
+.hamburger{
+  position: relative !important;
+  margin-top: -50px;
+}
+
+.hamburger-nav {
+  height: 50px;
+  width: 100vw;
+  background-color: $navGrey;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+}
+
+.hamburger-nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.hamburger-nav-link:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+.search-icon {
+  width: 20px;
+  float: right;
+}

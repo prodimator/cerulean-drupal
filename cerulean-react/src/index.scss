@@ -1,0 +1,29 @@
+@import 'styles/fonts/fonts.scss';
+@import 'styles/colors/colors.scss';
+
+body {
+  background: $offWhite !important;
+  margin: 0;
+  padding: 0;
+  font-family: $BellMT;
+  font-size: 16px;
+  color: $darkGrey !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+  .title-bold{
+    display: inline;
+    font-family: "NexaBold";
+  }
+
+  .title-slim{
+    display: inline;
+    font-family: "NexaLight";
+  }
+
+  .nav-title{
+    font-family: "NexaLight";
+    letter-spacing: 8px;
+    padding-left: 15px;
+  }

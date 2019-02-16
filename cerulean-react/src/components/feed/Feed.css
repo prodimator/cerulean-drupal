@@ -1,0 +1,41 @@
+.recipe-burger {
+  position: absolute;
+  top: 102vh;
+}
+
+.col-3 {
+	flex: 1 !important;
+	padding: 2px !important;
+	height: 500px;
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
+
+.scroll-top {
+	text-align: center;
+	border: 1px solid black;
+	width: 10%;
+	padding: 10px;
+	margin: 50px;
+	bottom: 10%;
+	color: black;
+	font-family: 'NexaLight';
+}
+
+.nav-link:hover {
+	color: grey !important;
+}
+
+.card-div {
+	padding-top: 100px;
+	margin: 0 !important;
+}
+
+.fancy-col {
+	padding: 2px !important;
+}
+
+.fancy-div {
+	padding-top: 100px;
+	margin: 0 !important;
+}
