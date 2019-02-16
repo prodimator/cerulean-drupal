@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Route, Link, Redirect } from "react-router-dom";
-import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import { _AppConstants } from '../../index.constants';
 import './Navigation.scss';
@@ -52,6 +51,7 @@ class Search extends Component {
     let input = [];
     this.state.recipes.map((recipe) => {
       input.push(recipe.title);
+      return input;
     });
     this.setState({
       suggestions: input
@@ -83,12 +83,13 @@ class Search extends Component {
         userInput: filteredSuggestions[activeSuggestion],
         redirect: true,
       });
-      this.state.recipes.map((recipe) => {
+      let recipes = this.state.recipes.map((recipe) => {
         if (recipe.title === this.state.userInput) {
           this.setState({
             id: recipe.id
           });
         }
+      return recipes;
       });
     }
     // User pressed the up arrow, decrement the index
@@ -150,11 +151,6 @@ class Search extends Component {
     } = this;
 
     let suggestionsListComponent;
-
-    console.log("here is your darn input");
-    console.log(userInput);
-    console.log(userInput.length);
-    console.log(filteredSuggestions.length);
 
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {

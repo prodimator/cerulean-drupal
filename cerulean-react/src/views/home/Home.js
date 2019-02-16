@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { _AppConstants } from '../../index.constants';
 import Recipe from '../recipe/Recipe';
 import Feed from '../../components/feed/Feed'
 import RecipeMenu from '../recipemenu/RecipeMenu';

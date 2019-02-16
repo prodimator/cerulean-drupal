@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import { BrowserRouter as Route, Link, Redirect } from "react-router-dom";
 
 import { _AppConstants } from '../../index.constants';
 import HamburgerNav from '../../components/hamburgernav/HamburgerNav';
-import Hamburger from '../../components/hamburger/Hamburger';
 import Footer from '../../components/footer/Footer';
 import './RecipeMenu.scss';
 
@@ -40,7 +39,6 @@ class RecipeMenu extends Component {
     let categories=[];
     var tags = this.state.labels;
     tags.map((category) => {
-
       categories.push(
         <Row className="recipe-menu-item breakfast-menu">
           <Col md={12}>
@@ -55,6 +53,7 @@ class RecipeMenu extends Component {
           </Col>
         </Row>
       )
+      return categories;
     });
 
     return (

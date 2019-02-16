@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import { BrowserRouter as Route, Link } from "react-router-dom";
 import Scrollchor from 'react-scrollchor';
-import { slide as Menu } from 'react-burger-menu'
 import { _AppConstants } from '../../index.constants';
 import Slideshow from '../slideshow/Slideshow';
 import HamburgerNav from '../hamburgernav/HamburgerNav';
@@ -30,7 +29,7 @@ class Feed extends Component {
     }
   }
   keyScroll(e) {
-    if (e.key == 'ArrowDown' && window.pageYOffset < this.state.feedYOffset){
+    if (e.key === 'ArrowDown' && window.pageYOffset < this.state.feedYOffset){
       e.preventDefault();
       let elmnt = document.getElementById("feed");
       elmnt.scrollIntoView({behavior: "smooth", block: "start"});
@@ -77,7 +76,6 @@ class Feed extends Component {
     let columns=[];
     let cards = this.state.recipes.slice(4, 8);
     cards.map((recipe,idx) => {
-
       columns.push(
         <div className="col-3" key={idx}>
           <Link
@@ -93,6 +91,8 @@ class Feed extends Component {
 
       // every 4 columns, force wrap to next line
       if ((idx+1)%4===0) {columns.push(<div className="w-100"></div>)}
+
+      return columns;
     });
 
 
