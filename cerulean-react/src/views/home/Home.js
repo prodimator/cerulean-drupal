@@ -7,7 +7,6 @@ import RecipeMenu from '../recipemenu/RecipeMenu';
 import RecipesByCategory from '../recipesbycategory/RecipesByCategory';
 import About from '../about/About';
 import Contact from '../contact/Contact';
-import './Home.css';
 
 
 const Home = () => (
