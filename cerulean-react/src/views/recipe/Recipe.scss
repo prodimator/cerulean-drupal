@@ -30,7 +30,8 @@ ul, ol {
   position: relative;
   top: -100px;
   padding: 0 50px;
-  background-color: $offWhite;
+  background-color: $white;
+  padding-bottom: 50px;
 
   @media screen and (min-width: 500px) {
     .title {
@@ -64,9 +65,10 @@ ul, ol {
   }
 
   .recipe-info{
-    background: $lightGrey;
+    background: $white;
     margin: 0;
     padding: 20px 10px;
+    border: 1px solid $darkGrey;
   }
 }
 

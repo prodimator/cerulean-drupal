@@ -13,7 +13,7 @@ class Card extends Component {
     let recipe_image = _AppConstants.api + this.props.image;
     return (
       <div>
-        <div className="card-container">
+        <div className="card-container drop-shadow">
           <div className="content">
             <div className="content-overlay"></div>
             <img className="content-image" src={recipe_image} alt={recipe_image} />
