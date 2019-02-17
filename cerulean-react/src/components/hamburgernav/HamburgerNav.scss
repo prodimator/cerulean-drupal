@@ -7,7 +7,7 @@
 
 .hamburger-nav {
   height: 50px;
-  width: 100vw;
+  width: calc(100vw + 15px);
   background-color: $navGrey;
   position: fixed;
   top: 0;
