@@ -12,17 +12,17 @@
 
     .category-link {
       text-decoration: none;
-      color: white;
+      color: $white;
     }
 
     .category-link:hover {
       text-decoration: none;
-      color: grey;
+      color: $hoverGrey;
     }
   }
 
   .recipe-menu-item:hover {
-    color: white;
+    color: $white;
   }
 
   .breakfast-menu {
