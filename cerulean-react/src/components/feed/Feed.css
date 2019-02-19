@@ -1,16 +1,3 @@
-.recipe-burger {
-  position: absolute;
-  top: 102vh;
-}
-
-.col-3 {
-	flex: 1 !important;
-	padding: 2px !important;
-	height: 500px;
-	margin-bottom: 20px;
-	margin-top: 50px;
-}
-
 .scroll-top {
 	text-align: center;
 	border: 1px solid black;
