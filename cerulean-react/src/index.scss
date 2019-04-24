@@ -1,0 +1,41 @@
+@import 'styles/fonts/fonts.scss';
+@import 'styles/colors.scss';
+
+body {
+  margin: 0;
+  padding: 0 5rem;
+  height: 100%;
+  font-family: $NexaLight;
+  box-sizing: border-box;
+  border: 20px solid $black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.canvas{
+  font-family: $MadeCanvas;
+}
+.canvasBlack{
+  font-family: $MadeCanvasBlack;
+}
+
+h1{
+  font-family: $NexaBold;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+a{
+  font-family: $NexaLight;
+  font-size: .7rem;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $black;
+}
+a.active{
+  background: linear-gradient(to top,$purple,$purple 100%,transparent 100%,transparent);
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+}

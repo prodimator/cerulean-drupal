@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "NexaBold";
+    src: url("./styles/fonts/NexaBold.otf")
+}
+@font-face {
+    font-family: "NexaLight";
+    src: url("./styles/fonts/NexaLight.otf")
+}
+@font-face {
+    font-family: "MadeCanvas";
+    src: url("./styles/fonts/MadeCanvas.otf")
+}
+@font-face {
+    font-family: "MadeCanvasBlack";
+    src: url("./styles/fonts/MadeCanvasBlack.otf")
+}
+@font-face {
+    font-family: "BellMT";
+    src: url("./styles/fonts/BellMT.ttf")
+}
+
+$NexaBold: "NexaBold";
+$NexaLight: "NexaLight";
+$MadeCanvas: "MadeCanvas";
+$MadeCanvasBlack: "MadeCanvasBlack";
+$BellMT: "BellMT";
