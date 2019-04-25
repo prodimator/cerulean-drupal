@@ -12,10 +12,14 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="Home">
+      <div className="home">
         <Nav />
         <Splash />
-
+        <div className="latest">
+            <span className="bar" />
+            <div className="latest canvas">Latest</div>   
+            <span className="bar" />
+        </div>
         <div className="recipe-row">
           <div className="item">
             <RecipePreview id='13' />
