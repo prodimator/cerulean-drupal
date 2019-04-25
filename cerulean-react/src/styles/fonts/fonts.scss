@@ -18,9 +18,15 @@
     font-family: "BellMT";
     src: url("./styles/fonts/BellMT.ttf")
 }
+@font-face {
+    font-family: "OpenSans";
+    src: url("./styles/fonts/OpenSans-Regular.ttf");
+}
+
 
 $NexaBold: "NexaBold";
 $NexaLight: "NexaLight";
 $MadeCanvas: "MadeCanvas";
 $MadeCanvasBlack: "MadeCanvasBlack";
 $BellMT: "BellMT";
+$OpenSans: "OpenSans";

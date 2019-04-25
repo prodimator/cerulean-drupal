@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0 5rem;
   height: 100%;
-  font-family: $NexaLight;
+  font-family: $OpenSans;
   box-sizing: border-box;
   border: 20px solid $black;
   -webkit-font-smoothing: antialiased;
@@ -17,6 +17,9 @@ body {
 }
 .canvasBlack{
   font-family: $MadeCanvasBlack;
+}
+.nexaBold{
+  font-family: $NexaBold;
 }
 
 h1{

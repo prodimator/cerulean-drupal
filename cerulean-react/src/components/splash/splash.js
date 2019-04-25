@@ -17,7 +17,7 @@ export default function Splash() {
                     <p>Photography</p>
                 </div>
             </div>
-            <img className="splash-image" src={image_url} />
+            <img className="splash-image" src={image_url} alt="Splash" />
         </div>
     );
 }
