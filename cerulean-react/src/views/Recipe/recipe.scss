@@ -1,0 +1,22 @@
+@import '../../styles/colors.scss';
+
+
+.recipe{
+
+    .recipe-container{
+
+        background: #fff;
+        img{
+            width: 100%;
+        }
+
+        .recipe-content{
+            font-size: .9rem;
+            padding: 0 20px 20px 20px;
+
+            .title{
+                font-size: 3rem;
+            }
+        }
+    }
+}

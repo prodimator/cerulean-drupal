@@ -5,7 +5,7 @@ import RecipePreview from '../../components/recipePreview/recipePreview';
 import Footer from '../../components/footer/footer';
 import './home.scss';
 
-export default class App extends Component {
+export default class Home extends Component {
   // constructor(props) {
   //   super(props);
   // };
