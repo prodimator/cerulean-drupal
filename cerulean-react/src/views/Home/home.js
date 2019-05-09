@@ -12,6 +12,7 @@ export default class Home extends Component {
 
   render() {
     return (
+      <>
       <div className="home">
         <Nav />
         <Splash />
@@ -28,8 +29,9 @@ export default class Home extends Component {
             <RecipePreview id='12' />
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
+      </>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as CONSTANTS from '../../Constants';
-import Nav from '../../components/nav/nav';
+import NavSmall from '../../components/navSmall/navSmall';
 import Footer from '../../components/footer/footer';
 import axios from 'axios';
 import './recipe.scss';
@@ -13,6 +13,8 @@ export default class Recipe extends Component {
       title: '',
       description: '',
       content: '',
+      ingredients: '',
+      instructions: '',
       img: '',
     };
   };
@@ -25,7 +27,9 @@ export default class Recipe extends Component {
           title: res.data[0].title,
           description: res.data[0].description,
           content: res.data[0].body_content,
-          img: CONSTANTS.BASE_URL + res.data[0].image_3x2,
+          ingredients: res.data[0].ingredients,
+          instructions: res.data[0].instructions,
+          img: CONSTANTS.BASE_URL + res.data[0].image_3x4,
         });
       })
   }
@@ -37,16 +41,39 @@ export default class Recipe extends Component {
   render() {
     return (
       <div className="recipe">
-        <Nav />
-        <div className="recipe-container">
-          <img src={this.state.img} alt="Recipe" />
+        <div className="recipe-left">
+          <NavSmall />
           <div className="recipe-content">
-            <div className="title nexaBold">{this.state.title}</div>
+            <p className="title canvas">{this.state.title}</p>
             <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
+            <div start="md" className="recipe-info">
+              <div className="recipe-ingredients">
+                <span className="info-title canvas">Ingredients</span>
+                <div dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
+              </div>
+              <div className="recipe-instructions">
+                <span className="info-title canvas">Instructions</span>
+                <div dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
+              </div>
+            </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
+        <div className="recipe-right">
+          <img src={this.state.img} alt="Recipe" />
+        </div>
       </div>
+      // <div className="recipe">
+      //   <Nav />
+      //   <div className="recipe-container">
+      //     <img src={this.state.img} alt="Recipe" />
+      //     <div className="recipe-content">
+      //       <div className="title nexaBold">{this.state.title}</div>
+      //       <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
+      //     </div>
+      //   </div>
+      //   <Footer />
+      // </div>
     );
   }
 }

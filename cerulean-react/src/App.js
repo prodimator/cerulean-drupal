@@ -6,7 +6,8 @@ import './App.scss';
 function App() {
   return (
     <div className="App">
-      <Recipe id='13' />
+      <Home />
+      {/* <Recipe id='11' /> */}
     </div>
   );
 }

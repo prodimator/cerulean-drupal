@@ -6,7 +6,7 @@ import './footer.scss';
 
 export default function Footer() {
     let imageStyle = {
-        width: '50%',
+        width: '100%',
         maxWidth:'500px',
         backgroundImage: `url("${FooterImage}")`,
         backgroundSize: 'contain',
