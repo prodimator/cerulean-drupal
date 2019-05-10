@@ -22,12 +22,10 @@ export default class Home extends Component {
             <span className="bar" />
         </div>
         <div className="recipe-row">
-          <div className="item">
-            <RecipePreview id='13' />
-          </div>
-          <div className="item">
-            <RecipePreview id='12' />
-          </div>
+            <RecipePreview id='15' />
+        </div>
+        <div className="item">
+          <RecipePreview id='13' />
         </div>
       </div>
       <Footer />

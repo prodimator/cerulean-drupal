@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import * as CONSTANTS from '../../Constants';
 import axios from 'axios';
 
@@ -35,13 +36,15 @@ export default class RecipePreview extends Component {
         return (
             <div className="recipePreview">
                 <div className="image">
-                    <img className="image-1x1" src={this.state.img} alt="Recipe" />
+                    <Link to={`/recipe/${this.state.id}`}>
+                        <img className="image-1x1" src={this.state.img} alt="Recipe" />
+                    </Link>
                 </div>
                 <div className="details">
-                    <p className="title canvas">{this.state.title}</p>
+                    <p className="title canvas" >{this.state.title}</p>
                     <p className="description nexaBold">{this.state.description}</p>
                     <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
-                    <p class="more nexaBold">...</p>
+                    <p className="more nexaBold">...</p>
                 </div>
             </div>
         );

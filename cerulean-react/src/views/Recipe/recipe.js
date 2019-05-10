@@ -9,7 +9,7 @@ export default class Recipe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.id,
+      id: this.props.match.params.id,
       title: '',
       description: '',
       content: '',
@@ -22,7 +22,6 @@ export default class Recipe extends Component {
   componentDidMount() {
     axios.get(`http://35.199.10.212/api/recipes?_format=json&id=${this.state.id}`)
       .then(res => {
-        console.log(res.data);
         this.setState({
           title: res.data[0].title,
           description: res.data[0].description,
@@ -63,17 +62,6 @@ export default class Recipe extends Component {
           <img src={this.state.img} alt="Recipe" />
         </div>
       </div>
-      // <div className="recipe">
-      //   <Nav />
-      //   <div className="recipe-container">
-      //     <img src={this.state.img} alt="Recipe" />
-      //     <div className="recipe-content">
-      //       <div className="title nexaBold">{this.state.title}</div>
-      //       <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
-      //     </div>
-      //   </div>
-      //   <Footer />
-      // </div>
     );
   }
 }
