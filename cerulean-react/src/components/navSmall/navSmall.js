@@ -1,22 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import './navSmall.scss';
 
 export default function NavSmall() {
     return (
         <div className="navSmall">
-            <Link to={'/'}>
-                <span className="active" id="home">Home</span>
-            </Link>
-            <Link to={'#'}>
-                <span id="home">Recipes</span>
-            </Link>
-            <Link to={'/about'}>
-                <span id="home">About</span>
-            </Link>
-            <Link to={'#'}>
-                <span href="#" id="home">Contact</span>
-            </Link>
+            <NavLink exact activeClassName="active" to={'/'}>
+                <span id="home">Home</span>
+            </NavLink>
+            <NavLink to={'/recipes'}>
+                <span id="recipes">Recipes</span>
+            </NavLink>
+            <NavLink to={'/about'}>
+                <span id="about">About</span>
+            </NavLink>
+            <NavLink to={'/contact'}>
+                <span id="contact">Contact</span>
+            </NavLink>
         </div>
     );
 }
