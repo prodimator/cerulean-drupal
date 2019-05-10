@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as CONSTANTS from '../../Constants';
 import NavSmall from '../../components/navSmall/navSmall';
+import NavMobile from '../../components/navMobile/navMobile';
 import Footer from '../../components/footer/footer';
 import axios from 'axios';
 import './recipe.scss';
@@ -16,6 +17,7 @@ export default class Recipe extends Component {
       ingredients: '',
       instructions: '',
       img: '',
+      width: window.innerWidth
     };
   };
 
@@ -33,35 +35,70 @@ export default class Recipe extends Component {
       })
   }
 
+  componentWillMount = () => {
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
+  };
+
   createContentMarkup = () => {
     return { __html: this.state.content };
   }
 
   render() {
-    return (
-      <div className="recipe">
-        <div className="recipe-left">
-          <NavSmall />
-          <div className="recipe-content">
-            <p className="title canvas">{this.state.title}</p>
-            <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
-            <div start="md" className="recipe-info">
-              <div className="recipe-ingredients">
-                <span className="info-title canvas">Ingredients</span>
-                <div dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
-              </div>
-              <div className="recipe-instructions">
-                <span className="info-title canvas">Instructions</span>
-                <div dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
+
+    const { width } = this.state;
+    const isMobile = width <= 650;
+
+    if (!isMobile) {
+      return (
+        <div className="recipe">
+          <div className="recipe-left">
+            <NavSmall />
+            <div className="recipe-content">
+              <p className="title canvas">{this.state.title}</p>
+              <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
+              <div start="md" className="recipe-info">
+                <div className="recipe-ingredients">
+                  <span className="info-title canvas">Ingredients</span>
+                  <div dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
+                </div>
+                <div className="recipe-instructions">
+                  <span className="info-title canvas">Instructions</span>
+                  <div dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
+                </div>
               </div>
             </div>
+            <Footer />
           </div>
-          <Footer />
+          <div className="recipe-right">
+            <img src={this.state.img} alt="Recipe" />
+          </div>
         </div>
-        <div className="recipe-right">
-          <img src={this.state.img} alt="Recipe" />
+      );
+    }
+    else{
+      return(
+        <div className="recipe-mobile">
+          <NavMobile />
+          <div className="recipe-preview-mobile">
+            <img className="image-1x1" src={this.state.img} alt="Recipe" />
+            <p className="title canvas">{this.state.title}</p>
+            <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
+            <div className="recipe-info">
+              <span className="info-title canvas">Ingredients</span>
+              <div dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
+
+              <span className="info-title canvas">Instructions</span>
+              <div dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
+            </div>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }

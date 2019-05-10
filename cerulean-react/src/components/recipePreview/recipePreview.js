@@ -11,10 +11,22 @@ export default class RecipePreview extends Component {
         this.state = {
             id: this.props.id,
             title: '',
+            date: '',
             description: '',
             content: '',
             img: '',
+            width: window.innerWidth
         };
+    };
+
+    componentWillMount = () => {
+        window.addEventListener('resize', this.handleWindowSizeChange);
+    }
+    componentWillUnmount = () => {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+    handleWindowSizeChange = () => {
+        this.setState({ width: window.innerWidth });
     };
 
     componentDidMount() {
@@ -24,6 +36,7 @@ export default class RecipePreview extends Component {
                     title: res.data[0].title,
                     description: res.data[0].description,
                     content: res.data[0].body_content,
+                    date: res.data[0].date,
                     img: CONSTANTS.BASE_URL+res.data[0].image_1x1,
                 });
             })
@@ -33,22 +46,39 @@ export default class RecipePreview extends Component {
     }
 
     render() {
-        return (
-            <div className="recipePreview">
-                <div className="image">
+        const { width } = this.state;
+        const isMobile = width <= 650;
+
+        if (!isMobile) {
+            return (
+                <div className="recipePreview">
+                    <div className="image">
+                        <Link to={`/recipe/${this.state.id}`}>
+                            <img className="image-1x1" src={this.state.img} alt="Recipe" />
+                        </Link>
+                    </div>
+                    <div className="details">
+                        <p className="title canvas">{this.state.title}</p>
+                        <p className="description nexaBold">{this.state.description}</p>
+                        <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
+                        <Link to={`/recipe/${this.state.id}`}>
+                            <p className="more nexaBold">...</p>
+                        </Link>
+                    </div>
+                </div>
+            );
+        }
+        else {
+            return (
+                <div className="recipe-preview-mobile">
                     <Link to={`/recipe/${this.state.id}`}>
                         <img className="image-1x1" src={this.state.img} alt="Recipe" />
+                        <p className="title canvas">{this.state.title}</p>
+                        <p className="date nexaLight">{this.state.date}</p>
                     </Link>
+                    <div className="border" />
                 </div>
-                <div className="details">
-                    <p className="title canvas">{this.state.title}</p>
-                    <p className="description nexaBold">{this.state.description}</p>
-                    <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
-                    <Link to={`/recipe/${this.state.id}`}>
-                        <p className="more nexaBold">...</p>
-                    </Link>
-                </div>
-            </div>
-        );
+            )
+        }
     }
 }
