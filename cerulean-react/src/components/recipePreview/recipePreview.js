@@ -41,10 +41,12 @@ export default class RecipePreview extends Component {
                     </Link>
                 </div>
                 <div className="details">
-                    <p className="title canvas" >{this.state.title}</p>
+                    <p className="title canvas">{this.state.title}</p>
                     <p className="description nexaBold">{this.state.description}</p>
                     <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
-                    <p className="more nexaBold">...</p>
+                    <Link to={`/recipe/${this.state.id}`}>
+                        <p className="more nexaBold">...</p>
+                    </Link>
                 </div>
             </div>
         );
