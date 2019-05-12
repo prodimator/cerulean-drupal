@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as CONSTANTS from '../../Constants';
 import NavSmall from '../../components/navSmall/navSmall';
+import NavMobile from '../../components/navMobile/navMobile';
 import Footer from '../../components/footer/footer';
 import axios from 'axios';
 import './about.scss';
@@ -15,6 +16,7 @@ export default class About extends Component {
             intro: '',
             what_is_lapa: '',
             who_are_we: '',
+            width: window.innerWidth
         };
     };
 
@@ -45,27 +47,60 @@ export default class About extends Component {
         return { __html: this.state.who_are_we };
     }
 
+    componentWillMount = () => {
+        window.addEventListener('resize', this.handleWindowSizeChange);
+    }
+    componentWillUnmount = () => {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+    handleWindowSizeChange = () => {
+        this.setState({ width: window.innerWidth });
+    };
+
     render() {
-        return (
-            <div className="recipe">
-                <div className="recipe-left">
-                    <NavSmall />
+        const { width } = this.state;
+        const isMobile = width <= 650;
+
+        if (!isMobile) {
+            return ( 
+                <div className="recipe">
+                    <div className="recipe-left">
+                        <NavSmall />
+                        <div className="recipe-content">
+                            <p className="title canvas">{this.state.title}</p>
+                            <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
+                            <h3>What Is Lapa</h3>
+                            <div className="what-is" dangerouslySetInnerHTML={this.createWhatIsMarkup()} />
+                            <h3>Who We Are</h3>
+                            <div className="who-we-are" dangerouslySetInnerHTML={this.createWhoAreWeMarkup()} />
+                            <h3>About the Site</h3>
+                            <div className="about-site" dangerouslySetInnerHTML={this.createAboutSiteMarkup()} />
+                        </div>
+                        <Footer />
+                    </div>
+                    <div className="recipe-right">
+                        <img src={this.state.img} alt="Recipe" />
+                    </div>
+                </div>
+            );
+        }
+        else{
+            return(
+                <div className="mobile-about">
+                    <NavMobile />
                     <div className="recipe-content">
                         <p className="title canvas">{this.state.title}</p>
                         <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
-                        <h3>What Is Lapa</h3>
+                        <h2>What Is Lapa</h2>
                         <div className="what-is" dangerouslySetInnerHTML={this.createWhatIsMarkup()} />
-                        <h3>Who We Are</h3>
+                        <h2>Who We Are</h2>
                         <div className="who-we-are" dangerouslySetInnerHTML={this.createWhoAreWeMarkup()} />
-                        <h3>About the Site</h3>
+                        <h2>About the Site</h2>
                         <div className="about-site" dangerouslySetInnerHTML={this.createAboutSiteMarkup()} />
                     </div>
-                    <Footer />
                 </div>
-                <div className="recipe-right">
-                    <img src={this.state.img} alt="Recipe" />
-                </div>
-            </div>
-        );
+            );
+        }
+
     }
 }
