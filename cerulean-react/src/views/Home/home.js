@@ -18,7 +18,7 @@ export default class Home extends Component {
   };
 
   componentDidMount() {
-    axios.get(CONSTANTS.BASE_URL + '/api/recipes?_format=json')
+    axios.get(CONSTANTS.BASE_URL + '/api/recipes?_format=json&items_per_page=5')
       .then(res => {
         let recipes = res.data.map(recipe => {
           return ({
