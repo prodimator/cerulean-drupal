@@ -4,15 +4,37 @@ import NavMobile from '../../components/navMobile/navMobile';
 import Splash from '../../components/splash/splash';
 import RecipePreview from '../../components/recipePreview/recipePreview';
 import Footer from '../../components/footer/footer';
+import * as CONSTANTS from '../../Constants';
+import axios from 'axios';
 import './home.scss';
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      recipes: [],
       width: window.innerWidth
     };
   };
+
+  componentDidMount() {
+    axios.get(CONSTANTS.BASE_URL + '/api/recipes?_format=json')
+      .then(res => {
+        let recipes = res.data.map(recipe => {
+          return ({
+            id: recipe.id,
+            title: recipe.title,
+            description: recipe.description,
+            content: recipe.body_content,
+            date: recipe.date,
+            img: CONSTANTS.BASE_URL+recipe.image_1x1,
+          })
+        })
+        this.setState({
+            recipes: recipes
+        });
+      })
+  }
 
   componentWillMount = () =>{
     window.addEventListener('resize', this.handleWindowSizeChange);
@@ -39,12 +61,11 @@ export default class Home extends Component {
               <div className="latest canvas">Latest</div>   
               <span className="bar" />
           </div>
-          <div className="recipe-row">
-              <RecipePreview id='15' />
-          </div>
-          <div className="item">
-            <RecipePreview id='13' />
-          </div>
+          {this.state.recipes.map((recipe, index) => (
+            <div className="recipe-row item" key={index}>
+              <RecipePreview id={recipe.id} />
+            </div>
+          ))}
         </div>
         <Footer />
         </>
@@ -55,12 +76,11 @@ export default class Home extends Component {
         <>
           <div className="mobile-home">
             <NavMobile />
-            <div className="recipe-row">
-              <RecipePreview id='15' />
-            </div>
-            <div className="recipe-row">
-              <RecipePreview id='11' />
-            </div>
+            {this.state.recipes.map((recipe, index) => (
+              <div className="recipe-row item" key={index}>
+                <RecipePreview id={recipe.id} />
+              </div>
+            ))}
           </div>
           {/* <Footer /> */}
         </> 
