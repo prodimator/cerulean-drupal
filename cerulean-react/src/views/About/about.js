@@ -63,10 +63,10 @@ export default class About extends Component {
 
         if (!isMobile) {
             return ( 
-                <div className="recipe">
-                    <div className="recipe-left">
+                <div className="about">
+                    <div className="about-left">
                         <NavSmall />
-                        <div className="recipe-content">
+                        <div className="about-content">
                             <p className="title canvas">{this.state.title}</p>
                             <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
                             <h3>What Is Lapa</h3>
@@ -78,7 +78,7 @@ export default class About extends Component {
                         </div>
                         <Footer />
                     </div>
-                    <div className="recipe-right">
+                    <div className="about-right">
                         <img src={this.state.img} alt="Recipe" />
                     </div>
                 </div>
@@ -88,7 +88,7 @@ export default class About extends Component {
             return(
                 <div className="mobile-about">
                     <NavMobile />
-                    <div className="recipe-content">
+                    <div className="about-content">
                         <p className="title canvas">{this.state.title}</p>
                         <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
                         <h2>What Is Lapa</h2>
