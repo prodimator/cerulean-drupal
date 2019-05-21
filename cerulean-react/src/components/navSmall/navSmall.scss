@@ -1,13 +1,12 @@
 @import '../../styles/colors.scss';
 
 .navSmall{
-    // box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.05);
     display: flex;
     align-items: center;
     justify-content:space-around;
-    height: 100px;
-    max-width: 40%;
-    margin: auto;
+    height: 70px;
+    margin: 0 auto 50px auto;
 
     span{
         margin: 0 20px;

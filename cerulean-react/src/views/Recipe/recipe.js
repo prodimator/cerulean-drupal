@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as CONSTANTS from '../../Constants';
 import NavSmall from '../../components/navSmall/navSmall';
 import NavMobile from '../../components/navMobile/navMobile';
-import Footer from '../../components/footer/footer';
+import FooterSmall from '../../components/footerSmall/footerSmall';
 import axios from 'axios';
 import './recipe.scss';
 
@@ -73,7 +73,7 @@ export default class Recipe extends Component {
                 </div>
               </div>
             </div>
-            <Footer />
+            <FooterSmall />
           </div>
           <div className="recipe-right">
             <img src={this.state.img} alt="Recipe" />
