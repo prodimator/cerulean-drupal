@@ -18,8 +18,12 @@
     font-family: "OpenSans";
     src: url("./styles/fonts/OpenSans-Regular.ttf");
 }
+@font-face {
+    font-family: "Noe";
+    src: url("./styles/fonts/noe-display.ttf");
+}
 
-
+$Noe: "Noe";
 $NexaBold: "NexaBold";
 $NexaLight: "NexaLight";
 $MadeCanvas: "MadeCanvas";

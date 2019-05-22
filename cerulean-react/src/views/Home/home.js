@@ -18,7 +18,7 @@ export default class Home extends Component {
   };
 
   componentDidMount() {
-    axios.get(CONSTANTS.BASE_URL + '/api/recipes?_format=json&items_per_page=5')
+    axios.get(CONSTANTS.BASE_URL + '/api/recipes?_format=json&items_per_page=6')
       .then(res => {
         let recipes = res.data.map(recipe => {
           return ({
@@ -61,11 +61,22 @@ export default class Home extends Component {
               <div className="latest canvas">Latest</div>   
               <span className="bar" />
           </div>
-          {this.state.recipes.map((recipe, index) => (
-            <div className="recipe-row item" key={index}>
-              <RecipePreview id={recipe.id} />
-            </div>
-          ))}
+          <div className="recipe-row">
+              {this.state.recipes.map((recipe, index) => (
+                <div className="item" key={index}>
+                  <RecipePreview id={recipe.id} />
+                </div>
+              ))}
+          </div>
+
+            {/* <div className="recipe-row">
+              <div className="item">
+                <RecipePreview id='15' />
+              </div>
+              <div className="item">
+                <RecipePreview id='15' />
+              </div>
+            </div> */}
         </div>
         <Footer />
         </>

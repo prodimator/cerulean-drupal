@@ -30,9 +30,8 @@
 	position: fixed;
 	left: 0;
     top: 60px;
-    transition: transform .3s
-              cubic-bezier(0, .52, 0, 1);
-	//transform: translate3d(-100vw, 0, 0);
+    transition: transform .5s
+              cubic-bezier(0, .5, 0, 1);
 		
 	width: 100vw;
     height: calc(100vh - 60px);
