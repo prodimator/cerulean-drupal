@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import * as CONSTANTS from '../../Constants';
 import NavSmall from '../../components/navSmall/navSmall';
 import NavMobile from '../../components/navMobile/navMobile';
-import Footer from '../../components/footer/footer';
-import axios from 'axios';
+import FooterSmall from '../../components/footerSmall/footerSmall';
+import './contact.scss';
+
 
 export default class Contact extends Component {
     constructor(props) {
@@ -26,23 +26,41 @@ export default class Contact extends Component {
     render() {
         const { width } = this.state;
         const isMobile = width <= 650;
+        const textDisplay = "Like what you see? Please us a message and tell us what you think! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
         if (!isMobile) {
-            return ( 
-                <div className="contact">
-                    <div className="contact-left">
-                        <NavSmall />
-                        <div className="contact-content">
+            return (
+                <>
+                    <NavSmall />
+                    <div className="contact">
+                        <div className="contact-left">
+                            <div className="contact-content">
+                                <p className="title canvas">Leave us a message!</p>
+                                <div className="content">
+                                    <p>{textDisplay}</p>
+                                </div>
+                            </div>
                         </div>
-                        <Footer />
+                        <div className="contact-right">
+                            <form>
+                                <p>Your Email</p>
+                                <input type="text" name="email" />
+                                <p>Your Name</p>
+                                <input type="text" name="name" />
+                                <p>Subject</p>
+                                <input type="text" name="subject" />
+                                <p>Message</p>
+                                <textarea name="message" />
+                                <button>Submit</button>
+                            </form>
+                        </div>
                     </div>
-                    <div className="contact-right">
-                    </div>
-                </div>
+                    <FooterSmall />
+                </>
             );
         }
-        else{
-            return(
+        else {
+            return (
                 <div className="mobile-contact">
                     <NavMobile />
                     <div className="contact-content">
