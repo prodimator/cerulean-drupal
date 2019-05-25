@@ -2,7 +2,7 @@
 
 
 .recipe-categories{
-    height: calc(100vh - 260px);
+    min-height: calc(100vh - 260px);
 
     .latest{
         display: flex;
@@ -22,15 +22,40 @@
         justify-content: center;
         flex-wrap: wrap;
         width: 70%;
-        margin: auto;
+        margin: 40px auto;
 
         .card{
-            flex-grow: 1;
-            max-width: 335px;
-            padding: 10px;
+            min-width: 40%;
+            max-width: 100%;
+            padding:10px;
 
-            img{
-                position: absolute;
+            .wrapper{
+                margin: auto;
+                position: relative;
+
+                a{
+                    color: $white;
+                    bottom: 0;
+                    margin: 20px;
+                    position: absolute;
+                    z-index: 10;
+                }
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                &:after {
+                    content:'';
+                    width:100%;
+                    height:100%;    
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    
+                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $black 100%);
+                }
             }
         }
     }

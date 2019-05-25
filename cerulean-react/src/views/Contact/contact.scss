@@ -3,7 +3,7 @@
 
 .contact{
     display: flex;
-    height: calc(100vh - 260px);
+    min-height: calc(100vh - 260px);
 
     .contact-left{
         width: 60%;

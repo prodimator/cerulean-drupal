@@ -39,8 +39,9 @@ export default class RecipeCategories extends Component {
     generateCard = (category) => {
         return(
             <div className="wrapper">
-                <img className="image-1x1" src={CONSTANTS.BASE_URL + category[1]} alt="Category" />
-                <p>{category[0]}</p>
+                <a>{category[0]}</a>
+                <img className="image" src={CONSTANTS.BASE_URL + category[1]} alt="Category" />
+
             </div>
         );
     }
@@ -57,7 +58,7 @@ export default class RecipeCategories extends Component {
                 <div className="recipe-categories">
                     <div className="latest">
                         <span className="bar" />
-                        <div className="latest canvas">Latest</div>
+                        <div className="latest canvas">Categories</div>
                         <span className="bar" />
                     </div>
                     <div className="categories">
