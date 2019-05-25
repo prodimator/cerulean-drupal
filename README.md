@@ -4,6 +4,10 @@
 
 `npm start` to get the app running at `localhost:3000`
 
+#### Icons
+
+Check out this Font Awesome link for how to use React with FA: https://fontawesome.com/how-to-use/on-the-web/using-with/react
+
 ### DevOps Stuff
 
 #### Setting up deployment pipeline

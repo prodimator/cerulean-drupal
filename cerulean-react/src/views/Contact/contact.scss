@@ -23,27 +23,35 @@
                 font-size: .8rem;
             }
 
-            .contact-info{
-                border: 1px solid $black;
-                font-size: .8rem;
-                padding: 1rem;
+            .contact-social-media{
+                display: flex;
+                flex-direction: column;
+                padding-top: 20px;
 
-                p{
-                    margin: 0;
+                .fb-icon{
+                    display: flex;
+                    padding: 5px;
+
+                    .fb{
+                        padding-left: 10px;
+                    }
                 }
 
-                .info-title{
-                    font-size: 1.2rem;
-                    font-weight: 400;
+                .ig-icon{
+                    display: flex;
+                    padding: 5px;
+
+                    .ig{
+                        padding-left: 10px;
+                    }
                 }
 
-                ul, ol {
-                    list-style: none;
-                    padding: 0;
+                .pin-icon{
+                    display: flex;
+                    padding: 5px;
 
-                    li{
-                        border-bottom: 1px dotted $black;
-                        padding: 10px 0;
+                    .pin{
+                        padding-left: 10px;
                     }
                 }
             }
@@ -92,7 +100,7 @@
 }
 
 @media only screen and (max-width: 650px) {
-  .contact-mobile{
+  .mobile-contact{
       padding: 0 20px;
       font-size: .8rem;
 
@@ -109,29 +117,40 @@
             justify-content: center;
             text-transform: none;
         }
-        .contact-info{
-                border: 1px solid $black;
-                font-size: .8rem;
-                padding: 1rem;
 
-                p{
-                    margin: 0;
-                }
-
-                .info-title{
-                    font-size: 1.2rem;
-                    font-weight: 400;
-                }
-
-                ul, ol {
-                    list-style: none;
-                    padding: 0;
-
-                    li{
-                        border-bottom: 1px dotted $black;
-                        padding: 10px 0;
-                    }
-                }
+        form{
+            font-size: .8rem;
+            padding: 15px;
+            input{
+                width: 100%;
+                height: 25px;
+                margin-bottom: 15px;
+                border: 1px solid $gray;
             }
+
+            button{
+                width: 100px;
+                height: 35px;
+                background: $purple;
+                border: 1px solid $gray;
+                color: $white;
+                font-family: inherit;
+                font-size: inherit;
+            }
+
+            textarea{
+                height: 100px;
+                width: 100%;
+                resize: none;
+                font-family: inherit;
+                border: 1px solid $gray;
+                margin-bottom: 15px;
+            }
+
+            p{
+                margin: 5px 0;
+            }
+
+        }
     }
 }

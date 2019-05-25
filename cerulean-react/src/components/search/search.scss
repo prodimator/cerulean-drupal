@@ -1,2 +1,8 @@
 @import '../../styles/colors.scss';
 
+.search-form{
+	display: flex;
+	.search-icon{
+		padding: 5px;
+	}
+}

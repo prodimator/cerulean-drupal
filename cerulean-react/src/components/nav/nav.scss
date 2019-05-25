@@ -3,6 +3,7 @@
 .nav-bar{
 
     display: flex;
+    align-items: center;
     .nav{
         display: flex;
         align-items: center;
@@ -26,5 +27,6 @@
     }
 
     .search{
+        
     }
 }
