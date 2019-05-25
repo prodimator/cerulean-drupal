@@ -22,12 +22,13 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        margin-bottom: 25px;
 
         .item {
             flex-grow: 1;
             flex-basis: 500px;
             max-width: 750px;
-            padding-right: 50px;
+            padding: 0 25px;
         }
     }
 }

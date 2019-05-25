@@ -68,15 +68,6 @@ export default class Home extends Component {
                 </div>
               ))}
           </div>
-
-            {/* <div className="recipe-row">
-              <div className="item">
-                <RecipePreview id='15' />
-              </div>
-              <div className="item">
-                <RecipePreview id='15' />
-              </div>
-            </div> */}
         </div>
         <Footer />
         </>
