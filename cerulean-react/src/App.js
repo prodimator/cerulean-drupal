@@ -5,6 +5,7 @@ import Recipe from './views/Recipe/recipe';
 import About from './views/About/about'
 import Contact from './views/Contact/contact'
 import RecipeFilter from './views/RecipeFilter/recipefilter'
+import RecipeCategories from './views/recipeCategories/recipeCategories';
 import './App.scss';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 
         <Route exact path="/" component={Home} />
         <Route exact path="/recipe/:id" component={Recipe} />
+        <Route path="/recipes" component={RecipeCategories} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/results/:filter" component={RecipeFilter} />

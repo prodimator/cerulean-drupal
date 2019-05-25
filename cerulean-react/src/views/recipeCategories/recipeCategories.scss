@@ -1,7 +1,8 @@
 @import '../../styles/colors.scss';
 
-.home{
-    padding: 0 5rem;
+
+.recipe-categories{
+    height: calc(100vh - 260px);
 
     .latest{
         display: flex;
@@ -11,29 +12,34 @@
         padding: 0 50px;
         text-transform: uppercase;
     }
-
     .bar{
         width: 100px;
         margin-bottom: 1rem;
         border-bottom: 2px solid $purple;
     }
-
-    .recipe-row{
+    .categories{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
 
-        .item {
+        .card{
             flex-grow: 1;
-            flex-basis: 500px;
-            max-width: 750px;
-            padding-right: 50px;
+            max-width: 335px;
+            padding: 10px;
+
+            img{
+                position: absolute;
+            }
         }
     }
 }
 
 @media only screen and (max-width: 650px) {
-  .mobile-home{
+  .recipe-categories-mobile{
       padding: 0 20px;
-  }
+      font-size: .8rem;
+
+    }
 }
