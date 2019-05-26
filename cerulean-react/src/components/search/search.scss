@@ -1,7 +1,20 @@
 @import '../../styles/colors.scss';
 
 .search-form{
-	display: flex;
+
+	.search{
+		background: $white;
+		border: none;
+		font-family: inherit;
+		width: 0px;
+		-webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
+		transition: width .5s;
+		outline: none;
+	}
+	.search.show{
+		width: 100px;
+		border-bottom: 2px solid $black;
+	}
 	.search-icon{
 		padding: 5px;
 	}

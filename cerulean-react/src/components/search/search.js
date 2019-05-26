@@ -13,7 +13,8 @@ class Search extends Component {
 	    this.state = {
 	    	searchString: "",
 	    	recipes: [],
-	    	tags: [],
+			tags: [],
+			visible: 'hide',
 	    };
 	}
 
@@ -32,15 +33,44 @@ class Search extends Component {
 
 	onSearch = (e) => {
 		e.preventDefault();
-		console.log(this.state.searchString);
-		this.props.history.push(`/results/${this.state.searchString}`)
-  	}
+		if (this.state.visible == 'hide'){
+			this.toggleMenu();
+			document.getElementById("search").focus();
+		}
+		else{
+			//this.toggleMenu();
+			this.props.history.push(`/results/${this.state.searchString}`)
+		}
+	}
+
+	  
+	toggleMenu = () => {
+		if (this.state.visible === 'show') {
+			this.setState({
+				visible: 'hide'
+			});
+		}
+		if (this.state.visible === 'hide') {
+			this.setState({
+				visible: 'show'
+			});
+		}
+	}
+	closeMenu = () => {
+		if (this.state.visible === 'show') {
+			this.setState({
+				visible: 'hide'
+			});
+		}
+	}
 
 	render() {
 		return (
 			<div>
 				<form className="search-form" onSubmit={this.onSearch}>
-					<input
+					<input 
+					className={`search ${this.state.visible}`}
+					id="search"
 					type="text"
 					value={this.state.searchString}
 					ref="search"
