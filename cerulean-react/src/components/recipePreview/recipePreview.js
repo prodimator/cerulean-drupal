@@ -9,8 +9,8 @@ export default class RecipePreview extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: '',
-            title: this.props.title,
+            id: this.props.id,
+            title: '',
             date: '',
             description: '',
             content: '',
@@ -30,7 +30,7 @@ export default class RecipePreview extends Component {
     };
 
     componentDidMount() {
-        axios.get(`http://35.199.10.212/api/recipes?_format=json&title=${this.state.title}`)
+        axios.get(`http://35.199.10.212/api/recipes?_format=json&id=${this.state.id}`)
             .then(res => {
                 this.setState({
                     title: res.data[0].title,
@@ -53,7 +53,7 @@ export default class RecipePreview extends Component {
             return (
                 <div className="recipePreview">
                     <div className="image">
-                        <Link to={`/${this.state.title}`}>
+                        <Link to={`/recipe/${this.state.id}`}>
                             <img className="image-1x1" src={this.state.img} alt="Recipe" />
                         </Link>
                     </div>
@@ -61,7 +61,7 @@ export default class RecipePreview extends Component {
                         <p className="title canvas">{this.state.title}</p>
                         <p className="description nexaBold">{this.state.description}</p>
                         <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
-                        <Link to={`/${this.state.title}`}>
+                        <Link to={`/recipe/${this.state.id}`}>
                             <p className="more nexaBold">...</p>
                         </Link>
                     </div>
@@ -71,7 +71,7 @@ export default class RecipePreview extends Component {
         else {
             return (
                 <div className="recipe-preview-mobile">
-                    <Link to={`/${this.state.title}`}>
+                    <Link to={`/recipe/${this.state.id}`}>
                         <img className="image-1x1" src={this.state.img} alt="Recipe" />
                         <p className="title canvas">{this.state.title}</p>
                         <p className="date nexaLight">{this.state.date}</p>
