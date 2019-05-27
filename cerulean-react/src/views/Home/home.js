@@ -64,7 +64,7 @@ export default class Home extends Component {
           <div className="recipe-row">
               {this.state.recipes.map((recipe, index) => (
                 <div className="item" key={index}>
-                  <RecipePreview id={recipe.id} />
+                  <RecipePreview title={recipe.title} />
                 </div>
               ))}
           </div>
@@ -80,7 +80,7 @@ export default class Home extends Component {
             <NavMobile />
             {this.state.recipes.map((recipe, index) => (
               <div className="recipe-row item" key={index}>
-                <RecipePreview id={recipe.id} />
+                <RecipePreview title={recipe.title} />
               </div>
             ))}
           </div>

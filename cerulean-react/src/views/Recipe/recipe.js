@@ -10,8 +10,8 @@ export default class Recipe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.match.params.id,
-      title: '',
+      id: '',
+      title: this.props.match.params.title,
       description: '',
       content: '',
       ingredients: '',
@@ -22,7 +22,7 @@ export default class Recipe extends Component {
   };
 
   componentDidMount() {
-    axios.get(`http://35.199.10.212/api/recipes?_format=json&id=${this.state.id}`)
+    axios.get(`http://35.199.10.212/api/recipes?_format=json&title=${this.state.title}`)
       .then(res => {
         this.setState({
           title: res.data[0].title,

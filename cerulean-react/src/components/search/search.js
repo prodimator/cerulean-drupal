@@ -12,8 +12,6 @@ class Search extends Component {
 	    super(props);
 	    this.state = {
 	    	searchString: "",
-	    	recipes: [],
-			tags: [],
 			visible: 'hide',
 	    };
 	}
