@@ -80,7 +80,14 @@ export default class RecipeCategories extends Component {
             return (
                 <div className="recipe-categories-mobile">
                     <NavMobile />
-                    Recipe Categories!
+                    <div className="title canvas">Categories</div>
+                    <div className="categories">
+                        {this.state.categories.map((category, index) => (
+                            <div className="card" key={index}>
+                                {this.generateCard(category)}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             );
         }

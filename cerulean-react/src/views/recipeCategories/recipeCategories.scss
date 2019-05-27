@@ -62,9 +62,58 @@
 }
 
 @media only screen and (max-width: 650px) {
-  .recipe-categories-mobile{
-      padding: 0 20px;
-      font-size: .8rem;
+    .recipe-categories-mobile{
+        padding: 0 20px;
+        font-size: .8rem;
 
+        .title{
+            display: flex;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            justify-content: center;
+            margin: 10px 0;
+            text-transform: none;
+        }
+        .categories{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: auto;
+
+            .card{
+                padding: 10px 0;
+                width: 100%;
+
+                .wrapper{
+                    margin: auto;
+                    position: relative;
+
+                    a{
+                        color: $white;
+                        bottom: 0;
+                        margin: 20px;
+                        position: absolute;
+                        z-index: 1;
+                    }
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    
+                    &:after {
+                        content:'';
+                        width:100%;
+                        height:100%;    
+                        position:absolute;
+                        left:0;
+                        top:0;
+                        
+                        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $black 100%);
+                    }
+                }
+            }
+        }
     }
 }
