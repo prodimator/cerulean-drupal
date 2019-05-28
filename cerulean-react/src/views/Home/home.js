@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../../components/nav/nav';
 import NavMobile from '../../components/navMobile/navMobile';
 import Splash from '../../components/splash/splash';
+import MobileSplash from '../../components/mobileSplash/mobileSplash';
 import RecipePreview from '../../components/recipePreview/recipePreview';
 import Footer from '../../components/footer/footer';
 import * as CONSTANTS from '../../Constants';
@@ -76,8 +77,10 @@ export default class Home extends Component {
     else{
       return(
         <>
+          <NavMobile />
           <div className="mobile-home">
-            <NavMobile />
+            <MobileSplash />
+            <div className="title canvas">Latest</div>
             {this.state.recipes.map((recipe, index) => (
               <div className="recipe-row item" key={index}>
                 <RecipePreview title={recipe.title} />

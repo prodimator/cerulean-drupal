@@ -1,0 +1,70 @@
+@import '../../styles/colors.scss';
+
+.mobile-splash{
+    height: calc(100vh - 60px);
+
+    .circle { 
+        width: 1000px;
+        height: 1000px;
+        background: $lightPurple; 
+        -moz-border-radius: 500px; 
+        -webkit-border-radius: 500px; 
+        border-radius: 500px;
+        top:-200px;
+        left: -100px;
+        position: absolute;
+        z-index: -10;
+    }
+
+    .welcome{
+        margin: 50px 0 0 0;
+
+        p{
+            font-size: 3rem;
+            margin: 0;
+        }
+    }
+    .summary{
+        font-size: .8rem;
+        margin: 50px 0 0 0;
+    }
+
+    .what-do{
+        color: $gray;
+        margin: 50px 0 0 0;
+        text-transform: uppercase;
+
+        p{
+            margin: 10px 0;
+            font-size: .8rem;
+            font-weight: 800;
+        }
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-around;
+        margin: 50px 0 0 0;
+
+        button{
+            width: 100px;
+            height: 35px;
+            border: 1px solid $gray;
+            font-family: inherit;
+            font-size: inherit;
+        }
+        button.recipes{
+            background: $purple;
+            color: $white;
+        }
+        button.hello{
+            background: $white;
+            color: $purple;
+        }
+    }
+    .links{
+        font-size: 1.8rem;
+        display: flex;
+        justify-content: space-around;
+        margin: 50px 0 0 0;
+    }
+}

@@ -8,7 +8,7 @@ export default function Splash() {
     return (
         <div className="splash">
             <div className="splash-text">
-                <span className="canvas">We Are</span>
+                <span className="canvas">Welcome to</span>
                 <span className="canvasBlack"> Lapa</span>
                 <div className="subtext">
                     <span className="underline"></span>

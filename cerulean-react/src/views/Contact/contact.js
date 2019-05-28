@@ -55,37 +55,37 @@ export default class Contact extends Component {
 
         axios.get(CONSTANTS.BASE_URL + '/session/token').then(result => {
             console.log(result);
-            if (result.status === 200 ) {
+            if (result.status === 200) {
                 const csrfToken = result.data;
                 fetch(CONSTANTS.BASE_URL + '/webform_rest/submit?_format=json', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-Token': csrfToken
-                  },
-                  body: JSON.stringify({
-                    // webform_id is the id name of the webform template
-                    'webform_id':'contact',
-                    'entity_type' : null,
-                    'entity_id' : null,
-                    'in_draft' : false,
-                    'uri' : ['/webform/webform_id/api'],
-                    'name' : name,
-                    'email' : email,
-                    'subject' : subject,
-                    'message': message,
-                  }),
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': csrfToken
+                    },
+                    body: JSON.stringify({
+                        // webform_id is the id name of the webform template
+                        'webform_id': 'contact',
+                        'entity_type': null,
+                        'entity_id': null,
+                        'in_draft': false,
+                        'uri': ['/webform/webform_id/api'],
+                        'name': name,
+                        'email': email,
+                        'subject': subject,
+                        'message': message,
+                    }),
                 })
-                .then(response => response.json())
-                .then(
-                  (data) => {
-                    //on success you do whatever you will want
-                    console.log('success', data);
-                  },
-                  (error) => {
-                    console.log('error', error);
-                  }
-                );
+                    .then(response => response.json())
+                    .then(
+                        (data) => {
+                            //on success you do whatever you will want
+                            console.log('success', data);
+                        },
+                        (error) => {
+                            console.log('error', error);
+                        }
+                    );
             }
         });
     }
@@ -141,26 +141,28 @@ export default class Contact extends Component {
         }
         else {
             return (
-                <div className="mobile-contact">
+                <>
                     <NavMobile />
-                    <div className="contact-content">
-                        <p className="title canvas">{this.state.title}</p>
-                        <div dangerouslySetInnerHTML={this.createContactMarkup()} />
+                    <div className="mobile-contact">
+                        <div className="contact-content">
+                            <p className="title canvas">{this.state.title}</p>
+                            <div dangerouslySetInnerHTML={this.createContactMarkup()} />
+                        </div>
+                        <div className="mobile-contact-form">
+                            <form onSubmit={this.handleSubmit}>
+                                <p>Your Email</p>
+                                <input type="text" name="email" />
+                                <p>Your Name</p>
+                                <input type="text" name="name" />
+                                <p>Subject</p>
+                                <input type="text" name="subject" />
+                                <p>Message</p>
+                                <textarea name="message" />
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
                     </div>
-                    <div className="mobile-contact-form">
-                        <form onSubmit={this.handleSubmit}>
-                            <p>Your Email</p>
-                            <input type="text" name="email" />
-                            <p>Your Name</p>
-                            <input type="text" name="name" />
-                            <p>Subject</p>
-                            <input type="text" name="subject" />
-                            <p>Message</p>
-                            <textarea name="message" />
-                            <button type="submit">Submit</button>
-                        </form>
-                    </div>
-                </div>
+                </>
             );
         }
 

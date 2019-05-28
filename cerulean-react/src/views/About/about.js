@@ -62,7 +62,7 @@ export default class About extends Component {
         const isMobile = width <= 650;
 
         if (!isMobile) {
-            return ( 
+            return (
                 <div className="about">
                     <div className="about-left">
                         <NavSmall />
@@ -84,21 +84,23 @@ export default class About extends Component {
                 </div>
             );
         }
-        else{
-            return(
-                <div className="mobile-about">
+        else {
+            return (
+                <>
                     <NavMobile />
-                    <div className="about-content">
-                        <p className="title canvas">{this.state.title}</p>
-                        <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
-                        <h2>What Is Lapa</h2>
-                        <div className="what-is" dangerouslySetInnerHTML={this.createWhatIsMarkup()} />
-                        <h2>Who We Are</h2>
-                        <div className="who-we-are" dangerouslySetInnerHTML={this.createWhoAreWeMarkup()} />
-                        <h2>About the Site</h2>
-                        <div className="about-site" dangerouslySetInnerHTML={this.createAboutSiteMarkup()} />
+                    <div className="mobile-about">
+                        <div className="about-content">
+                            <p className="title canvas">{this.state.title}</p>
+                            <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
+                            <h2>What Is Lapa</h2>
+                            <div className="what-is" dangerouslySetInnerHTML={this.createWhatIsMarkup()} />
+                            <h2>Who We Are</h2>
+                            <div className="who-we-are" dangerouslySetInnerHTML={this.createWhoAreWeMarkup()} />
+                            <h2>About the Site</h2>
+                            <div className="about-site" dangerouslySetInnerHTML={this.createAboutSiteMarkup()} />
+                        </div>
                     </div>
-                </div>
+                </>
             );
         }
 
