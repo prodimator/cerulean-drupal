@@ -11,16 +11,16 @@ export default function Nav() {
                     <NavLink exact activeClassName="active" to={'/'}>
                         <span id="home">Home</span>
                     </NavLink>
-                    <NavLink to={'/recipes'}>
+                    <NavLink exact activeClassName="active" to={'/recipes'}>
                         <span id="recipes">Recipes</span>
                     </NavLink>
                 </div>
                 <h1 className="nav-title"> Lapa</h1>
                 <div className="right">
-                    <NavLink to={'/about'}>
+                    <NavLink exact activeClassName="active" to={'/about'}>
                         <span id="about">About</span>
                     </NavLink>
-                    <NavLink to={'/contact'}>
+                    <NavLink exact activeClassName="active" to={'/contact'}>
                         <span id="contact">Contact</span>
                     </NavLink>
                 </div>

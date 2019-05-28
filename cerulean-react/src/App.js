@@ -14,11 +14,11 @@ function App() {
       <div className="App">
 
         <Route exact path="/" component={Home} />
-        <Route exact path="/recipe/:id" component={Recipe} />
-        <Route path="/recipes" component={RecipeCategories} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/results/:filter" component={RecipeFilter} />
+        <Route exact path="/recipes" component={RecipeCategories} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/recipes/:title" component={Recipe} />
+        <Route exact path="/results/:filter" component={RecipeFilter} />
       </div>
     </Router>
   );

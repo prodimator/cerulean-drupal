@@ -60,7 +60,7 @@ export default class RecipeFilter extends Component {
 				<div className="row">
 					{this.state.recipes.map((recipe, index) => (
 						<div className="item" key={index}>
-							<RecipePreview id={recipe.id} />
+							<RecipePreview title={recipe.title} />
 						</div>
 					))}
 				</div>
