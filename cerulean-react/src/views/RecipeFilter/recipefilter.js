@@ -89,15 +89,16 @@ export default class RecipeFilter extends Component {
 		}
 		else {
 			return (
-				<div className="recipe-filtered-mobile">
+				<>
 					<NavMobile />
-					<div className="results">
-						<p className="search nexaLight">your search results for</p>
-						<p className="query canvas">{this.state.filter}</p>
-						{this.isResults()}
+					<div className="recipe-filtered-mobile">
+						<div className="results">
+							<p className="search nexaLight">your search results for</p>
+							<p className="query canvas">{this.state.filter}</p>
+							{this.isResults()}
+						</div>
 					</div>
-					
-				</div>
+				</>
 			);
 		}
 
