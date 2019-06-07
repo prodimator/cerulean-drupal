@@ -4,6 +4,12 @@
 .recipe-categories{
     min-height: calc(100vh - 260px);
 
+    .categories-intro{
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+    }
+
     .latest{
         display: flex;
         justify-content: center;

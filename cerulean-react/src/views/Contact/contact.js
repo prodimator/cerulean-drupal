@@ -107,16 +107,22 @@ export default class Contact extends Component {
                                 </div>
                                 <div className="contact-social-media">
                                     <div className="fb-icon">
-                                        <FontAwesomeIcon icon={faFacebookF} />
-                                        <div className="fb">lapa.eats</div>
+                                        <a href="https://www.facebook.com/lapa.eats" target="_blank">
+                                            <FontAwesomeIcon icon={faFacebookF} />
+                                            <div className="fb">lapa.eats</div>
+                                        </a>
                                     </div>
                                     <div className="ig-icon">
-                                        <FontAwesomeIcon icon={faInstagram} />
-                                        <div className="ig">lapa.eats</div>
+                                        <a href="https://www.instagram.com/lapa.eats" target="_blank">
+                                            <FontAwesomeIcon icon={faInstagram} />
+                                            <div className="ig">lapa.eats</div>
+                                        </a>
                                     </div>
                                     <div className="pin-icon">
-                                        <FontAwesomeIcon icon={faPinterestP} />
-                                        <div className="pin">lapaeats</div>
+                                        <a href="https://www.pinterest.com/lapaeats" target="_blank">
+                                            <FontAwesomeIcon icon={faPinterestP} />
+                                            <div className="pin">lapaeats</div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -162,6 +168,7 @@ export default class Contact extends Component {
                             </form>
                         </div>
                     </div>
+                    <FooterSmall />
                 </>
             );
         }

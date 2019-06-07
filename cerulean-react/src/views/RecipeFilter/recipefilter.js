@@ -98,6 +98,7 @@ export default class RecipeFilter extends Component {
 							{this.isResults()}
 						</div>
 					</div>
+					<FooterSmall />
 				</>
 			);
 		}

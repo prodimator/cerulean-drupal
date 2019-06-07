@@ -31,13 +31,19 @@ export default function MobileSplash() {
             </div>
             <div className="links">
                 <div className="fb-icon">
-                    <FontAwesomeIcon icon={faFacebookF} />
+                    <a href="https://www.facebook.com/lapa.eats" target="_blank">
+                        <FontAwesomeIcon icon={faFacebookF} />
+                    </a>
                 </div>
                 <div className="ig-icon">
-                    <FontAwesomeIcon icon={faInstagram} />
+                    <a href="https://www.instagram.com/lapa.eats" target="_blank">
+                        <FontAwesomeIcon icon={faInstagram} />
+                    </a>
                 </div>
                 <div className="pin-icon">
-                    <FontAwesomeIcon icon={faPinterestP} />
+                    <a href="https://www.pinterest.com/lapaeats" target="_blank">
+                        <FontAwesomeIcon icon={faPinterestP} />
+                    </a>
                 </div>
             </div>
         </div>

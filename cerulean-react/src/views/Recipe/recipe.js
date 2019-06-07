@@ -12,6 +12,7 @@ export default class Recipe extends Component {
     this.state = {
       id: '',
       title: this.props.match.params.title,
+      date: '',
       description: '',
       content: '',
       ingredients: '',
@@ -26,6 +27,7 @@ export default class Recipe extends Component {
       .then(res => {
         this.setState({
           title: res.data[0].title,
+          date: res.data[0].date,
           description: res.data[0].description,
           content: res.data[0].body_content,
           ingredients: res.data[0].ingredients,
@@ -61,6 +63,7 @@ export default class Recipe extends Component {
             <NavSmall />
             <div className="recipe-content">
               <p className="title canvas">{this.state.title}</p>
+              <div className="date">{this.state.date}</div>
               <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
               <div start="md" className="recipe-info">
                 <div className="recipe-ingredients">
@@ -71,6 +74,9 @@ export default class Recipe extends Component {
                   <span className="info-title canvas">Instructions</span>
                   <div dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
                 </div>
+              </div>
+              <div className="tag-us">
+                Did you try out this recipe? Tag @lapa.eats on Instagram
               </div>
             </div>
             <FooterSmall />
@@ -88,15 +94,19 @@ export default class Recipe extends Component {
           <div className="recipe-preview-mobile">
             <img className="image-1x1" src={this.state.img} alt="Recipe" />
             <p className="title canvas">{this.state.title}</p>
+            <div className="date">{this.state.date}</div>
             <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
             <div className="recipe-info">
               <span className="info-title canvas">Ingredients</span>
               <div dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
-
               <span className="info-title canvas">Instructions</span>
               <div dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
             </div>
+            <div className="tag-us">
+              Did you try out this recipe? Tag @lapa.eats on Instagram
+            </div>
           </div>
+          <FooterSmall />
         </div>
       );
     }

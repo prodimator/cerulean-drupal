@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as CONSTANTS from '../../Constants';
 import NavSmall from '../../components/navSmall/navSmall';
 import NavMobile from '../../components/navMobile/navMobile';
-import Footer from '../../components/footer/footer';
+import FooterSmall from '../../components/footerSmall/footerSmall';
 import axios from 'axios';
 import './about.scss';
 
@@ -73,34 +73,34 @@ export default class About extends Component {
                             <div className="what-is" dangerouslySetInnerHTML={this.createWhatIsMarkup()} />
                             <h3>Who We Are</h3>
                             <div className="who-we-are" dangerouslySetInnerHTML={this.createWhoAreWeMarkup()} />
-                            <h3>About the Site</h3>
+                            <h3>The Site And Beyond</h3>
                             <div className="about-site" dangerouslySetInnerHTML={this.createAboutSiteMarkup()} />
                         </div>
-                        <Footer />
+                        <FooterSmall />
                     </div>
                     <div className="about-right">
-                        <img src={this.state.img} alt="Recipe" />
+                        <img src={this.state.img} alt="About" />
                     </div>
                 </div>
             );
         }
         else {
             return (
-                <>
+                <div className="mobile-about">
                     <NavMobile />
-                    <div className="mobile-about">
-                        <div className="about-content">
-                            <p className="title canvas">{this.state.title}</p>
-                            <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
-                            <h2>What Is Lapa</h2>
-                            <div className="what-is" dangerouslySetInnerHTML={this.createWhatIsMarkup()} />
-                            <h2>Who We Are</h2>
-                            <div className="who-we-are" dangerouslySetInnerHTML={this.createWhoAreWeMarkup()} />
-                            <h2>About the Site</h2>
-                            <div className="about-site" dangerouslySetInnerHTML={this.createAboutSiteMarkup()} />
-                        </div>
+                    <div className="about-content">
+                        <p className="title canvas">{this.state.title}</p>
+                        <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
+                        <img className="about-image"src={this.state.img} alt="About" />
+                        <h2>What Is Lapa</h2>
+                        <div className="what-is" dangerouslySetInnerHTML={this.createWhatIsMarkup()} />
+                        <h2>Who We Are</h2>
+                        <div className="who-we-are" dangerouslySetInnerHTML={this.createWhoAreWeMarkup()} />
+                        <h2>The Site And Beyond</h2>
+                        <div className="about-site" dangerouslySetInnerHTML={this.createAboutSiteMarkup()} />
                     </div>
-                </>
+                    <FooterSmall />
+                </div>
             );
         }
 

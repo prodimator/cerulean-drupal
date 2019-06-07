@@ -59,6 +59,9 @@ export default class RecipeCategories extends Component {
                 <>
                     <NavSmall />
                     <div className="recipe-categories">
+                        <div className="categories-intro">
+                            <div>What are you craving?</div>
+                        </div>
                         <div className="latest">
                             <span className="bar" />
                             <div className="latest canvas">Categories</div>
@@ -90,6 +93,7 @@ export default class RecipeCategories extends Component {
                             ))}
                         </div>
                     </div>
+                    <FooterSmall />
                 </>
             );
         }
