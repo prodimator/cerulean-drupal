@@ -4,6 +4,7 @@ import NavSmall from '../../components/navSmall/navSmall';
 import NavMobile from '../../components/navMobile/navMobile';
 import FooterSmall from '../../components/footerSmall/footerSmall';
 import RecipePreview from '../../components/recipePreview/recipePreview';
+import SearchNoResults from '../../components/searchNoResults/searchNoResults'
 import * as CONSTANTS from '../../Constants';
 import axios from 'axios';
 
@@ -52,7 +53,10 @@ export default class RecipeFilter extends Component {
 	isResults = () => {
 		if (this.state.error) {
 			return (
-				<h3>No results found</h3>
+				<div className="no-results">
+					<h3>No results found -- try entering different keywords:</h3>
+					<SearchNoResults />
+				</div>
 			);
 		}
 		else {

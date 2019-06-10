@@ -5,14 +5,13 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-import './search.scss';
+import './searchNoResults.scss';
 
-class Search extends Component {
+class SearchNoResults extends Component {
     constructor(props) {
 	    super(props);
 	    this.state = {
-	    	searchString: "",
-			visible: 'hide',
+	    	searchString: ""
 	    };
 	}
 
@@ -31,30 +30,11 @@ class Search extends Component {
 
 	onSearch = (e) => {
 		e.preventDefault();
-		if (this.state.visible == 'hide'){
-			this.toggleMenu();
-			document.getElementById("search").focus();
-		}
-		else if (this.state.visible == 'show' && this.state.searchString == "") {
-			this.toggleMenu();
-		}
-		else{
-			//this.toggleMenu();
+		if (this.state.searchString != "") {
 			this.props.history.push(`/results/${this.state.searchString}`)
-		}
-	}
-
-	  
-	toggleMenu = () => {
-		if (this.state.visible === 'show') {
-			this.setState({
-				visible: 'hide'
-			});
-		}
-		if (this.state.visible === 'hide') {
-			this.setState({
-				visible: 'show'
-			});
+			// The page has to reload to understand that a new searchstring was inputted
+			// hopefully there's some other way to do this
+			window.location.reload();
 		}
 	}
 
@@ -63,7 +43,7 @@ class Search extends Component {
 			<div>
 				<form className="search-form" onSubmit={this.onSearch}>
 					<input 
-					className={`search ${this.state.visible}`}
+					className="search-bar"
 					id="search"
 					type="text"
 					value={this.state.searchString}
@@ -79,4 +59,4 @@ class Search extends Component {
 	}
 }
 
-export default withRouter(Search);
+export default withRouter(SearchNoResults);
