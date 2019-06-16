@@ -7,7 +7,7 @@
     background: $white;
     margin: 0;
     height: 100%;
-    font-family: $Noe;
+    font-family: $OpenSans;
     box-sizing: border-box;
     border: 20px solid $black;
     -webkit-font-smoothing: antialiased;
@@ -16,23 +16,25 @@
 }
 
   .canvas{
-    font-family: $MadeCanvas;
-    font-weight: 600;
+    font-family: $PlayFair;
   }
   .canvasBlack{
-    font-family: $MadeCanvasBlack;
+    font-family: $PlayFairBoldItalic;
   }
   .nexaBold{
-    font-family: $NexaBold;
+    font-family: $OpenSansCondensed;
   }
   .nexaLight{
     font-family: $NexaLight;
   }
 
   h1{
-    font-family: $NexaBold;
+    font-family: $PlayFair;
     font-size: 1.8rem;
     text-transform: uppercase;
+  }
+  h3{
+    font-family: $PlayFair;
   }
 
   a{
@@ -50,13 +52,21 @@
     background-repeat: no-repeat;
     background-size: 100% 40%;
   }
+  .category{
+    font-family: $PlayFairBoldItalic;
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    letter-spacing: 10px;
+    padding: 0 50px;
+  }
 
 @media only screen and (max-width: 650px) {
   body{
     background: $white;
     box-sizing: border-box;
     border-left: 5px solid $purple;
-    font-family: $Noe;
+    font-family: $OpenSans;
     letter-spacing: 1px;
     margin: 0;
     height: 100%;

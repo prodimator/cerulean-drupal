@@ -59,7 +59,7 @@ export default class Home extends Component {
           <Splash />
           <div className="latest">
               <span className="bar" />
-              <div className="latest canvas">Latest</div>   
+              <div className="category">Latest</div>   
               <span className="bar" />
           </div>
           <div className="recipe-row">
@@ -80,7 +80,7 @@ export default class Home extends Component {
           <NavMobile />
           <div className="mobile-home">
             <MobileSplash />
-            <div className="title canvas">Latest</div>
+            <div className="category">Latest</div>
             {this.state.recipes.map((recipe, index) => (
               <div className="recipe-row item" key={index}>
                 <RecipePreview title={recipe.title} />

@@ -15,7 +15,7 @@ export default function Nav() {
                         <span id="recipes">Recipes</span>
                     </NavLink>
                 </div>
-                <h1 className="nav-title"> Lapa</h1>
+                <h1 className="nav-title canvasBlack"> Lapa</h1>
                 <div className="right">
                     <NavLink exact activeClassName="active" to={'/about'}>
                         <span id="about">About</span>
