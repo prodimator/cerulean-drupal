@@ -16,14 +16,14 @@
 }
 
   .canvas{
-    font-family: $MadeCanvas;
-    font-weight: 600;
+    font-family: $Noe;
+    font-weight: 500;
   }
   .canvasBlack{
     font-family: $MadeCanvasBlack;
   }
   .nexaBold{
-    font-family: $NexaBold;
+    font-family: $OpenSans;
   }
   .nexaLight{
     font-family: $NexaLight;
@@ -49,6 +49,31 @@
     background-position: center 100%;
     background-repeat: no-repeat;
     background-size: 100% 40%;
+  }
+.header{
+  display: flex;
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  justify-content: center;
+  margin: 10px 0;
+}
+  
+  button{
+    width: 120px;
+    height: 40px;
+    border: none;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
+    font-family: $OpenSans;
+    font-size: .8rem;
+    text-transform: lowercase;
+  }
+  button.primary{
+    background: $purple;
+    color: $white;
+  }
+  button.light{
+    background: $white;
+    color: $purple;
   }
 
 @media only screen and (max-width: 650px) {

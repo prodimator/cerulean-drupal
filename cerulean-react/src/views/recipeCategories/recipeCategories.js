@@ -62,11 +62,6 @@ export default class RecipeCategories extends Component {
                         <div className="categories-intro">
                             <div>What are you craving?</div>
                         </div>
-                        <div className="latest">
-                            <span className="bar" />
-                            <div className="latest canvas">Categories</div>
-                            <span className="bar" />
-                        </div>
                         <div className="categories">
                             {this.state.categories.map((category, index) => (
                                 <div className="card" key={index}>
@@ -84,7 +79,7 @@ export default class RecipeCategories extends Component {
                 <>
                     <NavMobile />
                     <div className="recipe-categories-mobile">
-                        <div className="title canvas">Categories</div>
+                        <div className="header canvas">Categories</div>
                         <div className="categories">
                             {this.state.categories.map((category, index) => (
                                 <div className="card" key={index}>

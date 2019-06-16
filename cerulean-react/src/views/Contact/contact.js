@@ -137,7 +137,7 @@ export default class Contact extends Component {
                                 <input type="text" name="subject" />
                                 <p>Message</p>
                                 <textarea name="message" />
-                                <button type="submit">Submit</button>
+                                <button type="submit" className="primary">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -151,7 +151,7 @@ export default class Contact extends Component {
                     <NavMobile />
                     <div className="mobile-contact">
                         <div className="contact-content">
-                            <p className="title canvas">{this.state.title}</p>
+                            <p className="header canvas">{this.state.title}</p>
                             <div dangerouslySetInnerHTML={this.createContactMarkup()} />
                         </div>
                         <div className="mobile-contact-form">
@@ -164,11 +164,11 @@ export default class Contact extends Component {
                                 <input type="text" name="subject" />
                                 <p>Message</p>
                                 <textarea name="message" />
-                                <button type="submit">Submit</button>
+                                <button type="submit" className="primary">Submit</button>
                             </form>
                         </div>
+                        <FooterSmall />
                     </div>
-                    <FooterSmall />
                 </>
             );
         }

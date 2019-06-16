@@ -8,6 +8,7 @@ import Footer from '../../components/footer/footer';
 import * as CONSTANTS from '../../Constants';
 import axios from 'axios';
 import './home.scss';
+import FooterSmall from '../../components/footerSmall/footerSmall';
 
 export default class Home extends Component {
   constructor(props) {
@@ -80,14 +81,13 @@ export default class Home extends Component {
           <NavMobile />
           <div className="mobile-home">
             <MobileSplash />
-            <div className="title canvas">Latest</div>
             {this.state.recipes.map((recipe, index) => (
               <div className="recipe-row item" key={index}>
                 <RecipePreview title={recipe.title} />
               </div>
             ))}
+            <FooterSmall />
           </div>
-          <Footer />
         </> 
       );
     }

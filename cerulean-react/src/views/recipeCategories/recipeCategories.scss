@@ -6,8 +6,11 @@
 
     .categories-intro{
         display: flex;
+        font-size: 2rem;
+        letter-spacing: 3px;
         justify-content: center;
-        padding: 50px;
+        margin: 10px 0;
+        text-transform: none;
     }
 
     .latest{

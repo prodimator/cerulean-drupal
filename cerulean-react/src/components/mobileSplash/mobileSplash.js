@@ -23,10 +23,10 @@ export default function MobileSplash() {
             </div>
             <div className="buttons">
                 <NavLink to={'/recipes'}>
-                    <button className="recipes">recipes</button>
+                    <button className="primary">recipes</button>
                 </NavLink>
                 <NavLink to={'/contact'}>
-                    <button className="hello">say hi</button>
+                    <button className="light">say hi</button>
                 </NavLink>
             </div>
             <div className="links">
