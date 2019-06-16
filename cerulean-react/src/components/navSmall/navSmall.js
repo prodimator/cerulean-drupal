@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import Search from '../../components/search/search'
+
 import './navSmall.scss';
 
 export default function NavSmall() {
@@ -18,6 +20,9 @@ export default function NavSmall() {
                 <NavLink exact activeClassName="active" to={'/contact'}>
                     <span id="contact">Contact</span>
                 </NavLink>
+            </div>
+            <div className="search">
+                <Search />
             </div>
         </div>
     );
