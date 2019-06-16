@@ -109,19 +109,19 @@ export default class Contact extends Component {
                                     <div className="fb-icon">
                                         <a href="https://www.facebook.com/lapa.eats" target="_blank">
                                             <FontAwesomeIcon icon={faFacebookF} />
-                                            <div className="fb">lapa.eats</div>
+                                            <span className="fb">lapa.eats</span>
                                         </a>
                                     </div>
                                     <div className="ig-icon">
                                         <a href="https://www.instagram.com/lapa.eats" target="_blank">
                                             <FontAwesomeIcon icon={faInstagram} />
-                                            <div className="ig">lapa.eats</div>
+                                            <span className="ig">lapa.eats</span>
                                         </a>
                                     </div>
                                     <div className="pin-icon">
                                         <a href="https://www.pinterest.com/lapaeats" target="_blank">
                                             <FontAwesomeIcon icon={faPinterestP} />
-                                            <div className="pin">lapaeats</div>
+                                            <span className="pin">lapaeats</span>
                                         </a>
                                     </div>
                                 </div>
