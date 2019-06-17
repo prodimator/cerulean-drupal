@@ -15,6 +15,8 @@ export default class Recipe extends Component {
       date: '',
       description: '',
       content: '',
+      serving_size: '',
+      total_time: '',
       ingredients: '',
       instructions: '',
       img: '',
@@ -30,6 +32,8 @@ export default class Recipe extends Component {
           date: res.data[0].date,
           description: res.data[0].description,
           content: res.data[0].body_content,
+          serving_size: res.data[0].serving_size,
+          total_time: res.data[0].total_time,
           ingredients: res.data[0].ingredients,
           instructions: res.data[0].instructions,
           img: CONSTANTS.BASE_URL + res.data[0].image_3x4,
@@ -66,6 +70,9 @@ export default class Recipe extends Component {
               <div className="date">{this.state.date}</div>
               <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
               <div start="md" className="recipe-info">
+                <div className="pre-recipe-info">Serving Size: {this.state.serving_size}</div>
+                <div className="pre-recipe-info">Total Time: {this.state.total_time}</div>
+                <br></br>
                 <div className="recipe-ingredients">
                   <span className="info-title canvas">Ingredients</span>
                   <div dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
@@ -97,6 +104,9 @@ export default class Recipe extends Component {
             <div className="date">{this.state.date}</div>
             <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
             <div className="recipe-info">
+              <div className="pre-recipe-info">Serving Size: {this.state.serving_size}</div>
+              <div className="pre-recipe-info">Total Time: {this.state.total_time}</div>
+              <br></br>
               <span className="info-title canvas">Ingredients</span>
               <div dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
               <span className="info-title canvas">Instructions</span>

@@ -35,5 +35,15 @@
             }
         }
     }
-    
+
+    .splash-social{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        svg{
+            margin: 10px;
+            font-size: 1.6rem;
+        }
+    }
 }

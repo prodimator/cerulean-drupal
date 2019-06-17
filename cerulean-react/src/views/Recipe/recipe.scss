@@ -32,6 +32,10 @@
                     margin: 0;
                 }
 
+                .pre-recipe-info{
+                    letter-spacing: 2px;
+                }
+
                 .info-title{
                     font-size: 1.2rem;
                     font-weight: 400;
@@ -46,6 +50,11 @@
                         padding: 10px 0;
                     }
                 }
+            }
+
+            .tag-us{
+                padding: 20px;
+                text-align: center;
             }
         }
     }
@@ -80,28 +89,37 @@
             text-transform: none;
         }
         .recipe-info{
-                border: 1px solid $black;
-                font-size: .8rem;
-                padding: 1rem;
+            border: 1px solid $black;
+            font-size: .8rem;
+            padding: 1rem;
 
-                p{
-                    margin: 0;
-                }
+            p{
+                margin: 0;
+            }
 
-                .info-title{
-                    font-size: 1.2rem;
-                    font-weight: 400;
-                }
+            .pre-recipe-info{
+                letter-spacing: 2px;
+            }
 
-                ul, ol {
-                    list-style: none;
-                    padding: 0;
+            .info-title{
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
 
-                    li{
-                        border-bottom: 1px dotted $black;
-                        padding: 10px 0;
-                    }
+            ul, ol {
+                list-style: none;
+                padding: 0;
+
+                li{
+                    border-bottom: 1px dotted $black;
+                    padding: 10px 0;
                 }
             }
+        }
+
+        .tag-us{
+            padding: 20px;
+            text-align: center;
+        }
     }
 }
