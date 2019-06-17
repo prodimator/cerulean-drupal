@@ -19,11 +19,15 @@ export default class RecipeCategories extends Component {
     componentDidMount() {
         axios.get(CONSTANTS.BASE_URL + '/api/categories?_format=json')
             .then(res => {
-                let categories = [];
-                res.data.forEach(function (item) {
-                    categories.push([item.title, item.image]);
+                let categories = res.data.map(category => {
+                    return ({
+                        title: category.title,
+                        image: category.image
+                    })
+                })
+                this.setState({
+                    categories: categories
                 });
-                this.setState({ categories })
             })
     }
 
@@ -38,12 +42,12 @@ export default class RecipeCategories extends Component {
     };
 
     generateCard = (category) => {
-        let query = category[0].toLowerCase();
+        let category_title = category.title;
         return (
-            <Link to={`/results/${query}`}>
+            <Link to={`/results/${category_title}`}>
                 <div className="wrapper">
-                    <a>{category[0]}</a>
-                    <img className="image" src={CONSTANTS.BASE_URL + category[1]} alt="Category" />
+                    <p>{category.title}</p>
+                    <img className="image" src={CONSTANTS.BASE_URL + category.image} alt="Category" />
                 </div>
             </Link>
         );

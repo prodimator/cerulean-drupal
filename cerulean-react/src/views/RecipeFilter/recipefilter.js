@@ -22,7 +22,7 @@ export default class RecipeFilter extends Component {
 	}
 
 	componentDidMount() {
-		axios.get(CONSTANTS.BASE_URL + '/api/taxonomy/' + `${this.state.filter}` + '?_format=json')
+		axios.get(CONSTANTS.BASE_URL + `/api/taxonomy/${this.state.filter}?_format=json`)
 			.then(res => {
 				let recipes = res.data.map(recipe => {
 					return ({

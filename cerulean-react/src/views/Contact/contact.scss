@@ -91,6 +91,17 @@
                 margin: 5px 0;
             }
 
+            .help-block{
+                color: $red;
+            }
+
+            .help-message{
+                float: right;
+            }
+
+            .form-submit-success{
+                padding: 15px;
+            }
         }
     }
 }
@@ -135,6 +146,18 @@
 
             p{
                 margin: 5px 0;
+            }
+
+            .help-block{
+                color: $red;
+            }
+
+            .help-message{
+                float: right;
+            }
+
+            .form-submit-success{
+                padding: 15px;
             }
 
         }

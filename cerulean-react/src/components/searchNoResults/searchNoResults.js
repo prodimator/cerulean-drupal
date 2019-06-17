@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
-import * as CONSTANTS from '../../Constants';
-import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -30,10 +28,10 @@ class SearchNoResults extends Component {
 
 	onSearch = (e) => {
 		e.preventDefault();
-		if (this.state.searchString != "") {
+		if (this.state.searchString !== "") {
 			this.props.history.push(`/results/${this.state.searchString}`)
 			// The page has to reload to understand that a new searchstring was inputted
-			// hopefully there's some other way to do this
+			// hopefully there's some other way to do
 			window.location.reload();
 		}
 	}
