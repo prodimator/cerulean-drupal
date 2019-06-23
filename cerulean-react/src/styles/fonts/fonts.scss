@@ -1,31 +1,26 @@
 @font-face {
-    font-family: "NexaBold";
-    src: url("./styles/fonts/NexaBold.otf")
-}
-@font-face {
     font-family: "NexaLight";
     src: url("./styles/fonts/NexaLight.otf")
 }
 @font-face {
-    font-family: "MadeCanvas";
-    src: url("./styles/fonts/MadeCanvas.otf")
+    font-family: "PlayFair";
+    src: url("./styles/fonts/PlayfairDisplay-Regular.ttf");
 }
 @font-face {
-    font-family: "MadeCanvasBlack";
-    src: url("./styles/fonts/MadeCanvasBlack.otf")
+    font-family: "PlayFair-BoldItalic";
+    src: url("./styles/fonts/PlayfairDisplay-BoldItalic.ttf");
+}
+@font-face {
+    font-family: "OpenSansCondensed";
+    src: url("./styles/fonts/OpenSansCondensed-Bold.ttf");
 }
 @font-face {
     font-family: "OpenSans";
     src: url("./styles/fonts/OpenSans-Regular.ttf");
 }
-@font-face {
-    font-family: "Noe";
-    src: url("./styles/fonts/noe-display.ttf");
-}
 
-$Noe: "Noe";
-$NexaBold: "NexaBold";
 $NexaLight: "NexaLight";
-$MadeCanvas: "MadeCanvas";
-$MadeCanvasBlack: "MadeCanvasBlack";
 $OpenSans: "OpenSans";
+$OpenSansCondensed: "OpenSansCondensed";
+$PlayFair: "Playfair";
+$PlayFairBoldItalic: "Playfair-BoldItalic";

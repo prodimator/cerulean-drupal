@@ -67,7 +67,7 @@ export default class Recipe extends Component {
             <NavSmall />
             <div className="recipe-content">
               <p className="title canvas">{this.state.title}</p>
-              <div className="date">{this.state.date}</div>
+              <div className="date nexaLight">{this.state.date}</div>
               <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
               <div start="md" className="recipe-info">
                 <div className="pre-recipe-info">Serving Size: {this.state.serving_size}</div>
@@ -82,7 +82,7 @@ export default class Recipe extends Component {
                   <div dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
                 </div>
               </div>
-              <div className="tag-us">
+              <div className="content tag-us">
                 Did you try out this recipe? Tag @lapa.eats on Instagram
               </div>
             </div>

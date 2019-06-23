@@ -63,7 +63,7 @@ export default class RecipeCategories extends Component {
                 <>
                     <NavSmall />
                     <div className="recipe-categories">
-                        <div className="categories-intro">
+                        <div className="categories-intro canvas">
                             <div>What are you craving?</div>
                         </div>
                         <div className="categories">
@@ -83,7 +83,7 @@ export default class RecipeCategories extends Component {
                 <>
                     <NavMobile />
                     <div className="recipe-categories-mobile">
-                        <div className="header canvas">Categories</div>
+                        <div className="category">Categories</div>
                         <div className="categories">
                             {this.state.categories.map((category, index) => (
                                 <div className="card" key={index}>

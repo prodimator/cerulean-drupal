@@ -60,7 +60,7 @@ export default class Home extends Component {
           <Splash />
           <div className="latest">
               <span className="bar" />
-              <div className="latest canvas">Latest</div>   
+              <div className="category">Latest</div>   
               <span className="bar" />
           </div>
           <div className="recipe-row">
