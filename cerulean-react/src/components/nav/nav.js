@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import SearchMobile from '../../components/searchMobile/searchMobile'
+import Search from '../../components/search/search'
 import './nav.scss';
 
 export default function Nav() {
@@ -26,7 +26,7 @@ export default function Nav() {
                 </div>
             </div>
             <div className="search">
-                <SearchMobile />
+                <Search />
             </div>
         </div>
     );

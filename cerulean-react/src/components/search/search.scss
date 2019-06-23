@@ -1,25 +1,51 @@
 @import '../../styles/colors.scss';
 
-.search-form{
+.search-icon:hover{
+	cursor: pointer;
+}
+.search-mobile-form{
+	background: $white;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	right: 0;
+	top: 0;
+    transition: transform .5s
+              cubic-bezier(0, .5, 0, 1);
+	width: 100vw;
+    height: 100vh;
+	z-index: 150;
 
-	input{
-		left: 100px;
+	.close{
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	.close:hover{
+		cursor: pointer;
 	}
 
-	.search{
-		background: $white;
-		border: none;
-		font-family: inherit;
-		width: 0px;
-		-webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
-		transition: width .5s;
-		outline: none;
+	.search-container{
+		text-align: center;
+		margin-top: 200px;
+		width: 100%;
+
+		input{
+			width: 80%;
+			max-width: 400px;
+			height: 25px;
+			margin-bottom: 15px;
+			border: none;
+			background: none;
+			border-bottom: 2px solid $black;
+			outline: none;
+		}
 	}
-	.search.show{
-		width: 100px;
-		border-bottom: 2px solid $black;
-	}
-	.search-icon{
-		padding: 5px;
-	}
+
+}
+.search-mobile-form.show{
+    transform: translate3d(0, 0, 0);
+}	
+.search-mobile-form.hide{
+    transform: translate3d(100vw, 0, 0);
 }

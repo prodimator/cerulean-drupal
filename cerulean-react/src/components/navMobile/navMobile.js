@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import SearchMobile from '../../components/searchMobile/searchMobile'
+import Search from '../../components/search/search'
 
 import './navMobile.scss';
 
@@ -43,7 +43,7 @@ export default class NavMobile extends Component {
                     </div>
                     <span className="nav-mobile-title playfair">lapa</span>
                     <div className="search">
-                        <SearchMobile />
+                        <Search />
                     </div>
                 </div>
                 <div className={`slide-menu ${this.state.visible}`}>

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import SearchMobile from '../../components/searchMobile/searchMobile'
+import Search from '../../components/search/search'
 
 import './navSmall.scss';
 
@@ -22,7 +22,7 @@ export default function NavSmall() {
                 </NavLink>
             </div>
             <div className="search">
-                <SearchMobile />
+                <Search />
             </div>
         </div>
     );
