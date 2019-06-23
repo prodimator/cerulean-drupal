@@ -28,7 +28,10 @@
 			max-width: 400px;
 			height: 25px;
 			margin-bottom: 15px;
-			border: 1px solid $gray;
+			border: none;
+			background: none;
+			border-bottom: 2px solid $black;
+			outline: none;
 		}
 	}
 

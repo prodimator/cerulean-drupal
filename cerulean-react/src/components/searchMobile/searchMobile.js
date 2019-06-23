@@ -41,7 +41,8 @@ class SearchMobile extends Component {
 		if (this.state.visible === 'hide') {
 			this.setState({
 				visible: 'show'
-			});
+			}); 
+			this.refs.search.focus();
 		}
 	}
 
