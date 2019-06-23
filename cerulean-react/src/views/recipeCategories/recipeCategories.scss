@@ -6,9 +6,11 @@
 
     .categories-intro{
         display: flex;
-        justify-content: center;
-        padding: 20px;
         font-size: 2rem;
+        letter-spacing: 3px;
+        justify-content: center;
+        margin: 10px 0;
+        text-transform: none;
     }
 
     .latest{
@@ -37,7 +39,7 @@
                 margin: auto;
                 position: relative;
 
-                a{
+                p{
                     color: $white;
                     bottom: 0;
                     margin: 20px;
@@ -93,7 +95,7 @@
                     margin: auto;
                     position: relative;
 
-                    a{
+                    p{
                         color: $white;
                         bottom: 0;
                         margin: 20px;

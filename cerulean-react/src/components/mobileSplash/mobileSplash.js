@@ -23,25 +23,25 @@ export default function MobileSplash() {
             </div>
             <div className="buttons">
                 <NavLink to={'/recipes'}>
-                    <button className="recipes">recipes</button>
+                    <button className="primary">recipes</button>
                 </NavLink>
                 <NavLink to={'/contact'}>
-                    <button className="hello">say hi</button>
+                    <button className="light">say hi</button>
                 </NavLink>
             </div>
             <div className="links">
                 <div className="fb-icon">
-                    <a href="https://www.facebook.com/lapa.eats" target="_blank">
+                    <a href="https://www.facebook.com/lapa.eats" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faFacebookF} />
                     </a>
                 </div>
                 <div className="ig-icon">
-                    <a href="https://www.instagram.com/lapa.eats" target="_blank">
+                    <a href="https://www.instagram.com/lapa.eats" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faInstagram} />
                     </a>
                 </div>
                 <div className="pin-icon">
-                    <a href="https://www.pinterest.com/lapaeats" target="_blank">
+                    <a href="https://www.pinterest.com/lapaeats" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faPinterestP} />
                     </a>
                 </div>

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
-import * as CONSTANTS from '../../Constants';
-import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -31,11 +29,11 @@ class Search extends Component {
 
 	onSearch = (e) => {
 		e.preventDefault();
-		if (this.state.visible == 'hide'){
+		if (this.state.visible === 'hide'){
 			this.toggleMenu();
 			document.getElementById("search").focus();
 		}
-		else if (this.state.visible == 'show' && this.state.searchString == "") {
+		else if (this.state.visible === 'show' && this.state.searchString === "") {
 			this.toggleMenu();
 		}
 		else{

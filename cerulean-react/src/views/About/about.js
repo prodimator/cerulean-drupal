@@ -86,21 +86,23 @@ export default class About extends Component {
         }
         else {
             return (
-                <div className="mobile-about">
+                <>
                     <NavMobile />
-                    <div className="about-content">
-                        <p className="title canvas">{this.state.title}</p>
-                        <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
-                        <img className="about-image"src={this.state.img} alt="About" />
-                        <h2>What Is Lapa</h2>
-                        <div className="what-is" dangerouslySetInnerHTML={this.createWhatIsMarkup()} />
-                        <h2>Who We Are</h2>
-                        <div className="who-we-are" dangerouslySetInnerHTML={this.createWhoAreWeMarkup()} />
-                        <h2>The Site And Beyond</h2>
-                        <div className="about-site" dangerouslySetInnerHTML={this.createAboutSiteMarkup()} />
+                    <div className="mobile-about">
+                        <div className="about-content">
+                            <p className="header canvas">{this.state.title}</p>
+                            <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
+                            <img src={this.state.img} alt="About" />
+                            <h2>What Is Lapa</h2>
+                            <div className="what-is" dangerouslySetInnerHTML={this.createWhatIsMarkup()} />
+                            <h2>Who We Are</h2>
+                            <div className="who-we-are" dangerouslySetInnerHTML={this.createWhoAreWeMarkup()} />
+                            <h2>The Site And Beyond</h2>
+                            <div className="about-site" dangerouslySetInnerHTML={this.createAboutSiteMarkup()} />
+                        </div>
+                        <FooterSmall />
                     </div>
-                    <FooterSmall />
-                </div>
+                </>
             );
         }
 
