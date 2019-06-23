@@ -66,7 +66,7 @@ export default class Recipe extends Component {
           <div className="recipe-left">
             <NavSmall />
             <div className="recipe-content">
-              <p className="title canvas">{this.state.title}</p>
+              <p className="title playfair">{this.state.title}</p>
               <div className="date nexaLight">{this.state.date}</div>
               <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
               <div start="md" className="recipe-info">
@@ -74,11 +74,11 @@ export default class Recipe extends Component {
                 <div className="pre-recipe-info">Total Time: {this.state.total_time}</div>
                 <br></br>
                 <div className="recipe-ingredients">
-                  <span className="info-title canvas">Ingredients</span>
+                  <span className="info-title playfair">Ingredients</span>
                   <div dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
                 </div>
                 <div className="recipe-instructions">
-                  <span className="info-title canvas">Instructions</span>
+                  <span className="info-title playfair">Instructions</span>
                   <div dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
                 </div>
               </div>
@@ -100,16 +100,16 @@ export default class Recipe extends Component {
           <NavMobile />
           <div className="recipe-preview-mobile">
             <img className="image-1x1" src={this.state.img} alt="Recipe" />
-            <p className="title canvas">{this.state.title}</p>
+            <p className="title playfair">{this.state.title}</p>
             <div className="date">{this.state.date}</div>
             <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
             <div className="recipe-info">
               <div className="pre-recipe-info">Serving Size: {this.state.serving_size}</div>
               <div className="pre-recipe-info">Total Time: {this.state.total_time}</div>
               <br></br>
-              <span className="info-title canvas">Ingredients</span>
+              <span className="info-title playfair">Ingredients</span>
               <div dangerouslySetInnerHTML={{ __html: this.state.ingredients }} />
-              <span className="info-title canvas">Instructions</span>
+              <span className="info-title playfair">Instructions</span>
               <div dangerouslySetInnerHTML={{ __html: this.state.instructions }} />
             </div>
             <div className="tag-us">

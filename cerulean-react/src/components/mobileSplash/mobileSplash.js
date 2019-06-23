@@ -12,8 +12,8 @@ export default function MobileSplash() {
         <div className="mobile-splash">
             <div className="circle"></div>
             <div className="welcome">
-                <p className="canvas">Welcome to</p>
-                <p className="canvasBlack"> Lapa</p>
+                <p className="playfair">Welcome to</p>
+                <p className="playfairBold"> Lapa</p>
             </div>
             <p className="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan sit amet nulla facilisi morbi</p>
             <div className="what-do">

@@ -15,6 +15,23 @@ class SearchMobile extends Component {
 	    };
 	}
 
+	componentDidMount() {
+		document.addEventListener("keydown", this.escFunction, false);
+	}
+	componentWillUnmount() {
+		document.removeEventListener("keydown", this.escFunction, false);
+	}
+
+	escFunction = (event) => {
+		if (event.keyCode === 27) {
+			if (this.state.visible === 'show') {
+				this.setState({
+					visible: 'hide'
+				});
+			}
+		}
+	}
+
 	toggleMenu = () => {
 		if (this.state.visible === 'show') {
 			this.setState({

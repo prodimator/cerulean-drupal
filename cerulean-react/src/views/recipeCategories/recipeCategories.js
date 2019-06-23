@@ -63,7 +63,7 @@ export default class RecipeCategories extends Component {
                 <>
                     <NavSmall />
                     <div className="recipe-categories">
-                        <div className="categories-intro canvas">
+                        <div className="categories-intro playfair">
                             <div>What are you craving?</div>
                         </div>
                         <div className="categories">

@@ -58,7 +58,7 @@ export default class RecipePreview extends Component {
                         </Link>
                     </div>
                     <div className="details">
-                        <p className="title canvas">{this.state.title}</p>
+                        <p className="title playfair">{this.state.title}</p>
                         <p className="date nexaLight">{this.state.date}</p>
                         <div className="border" />
                         <p className="description nexaBold">{this.state.description}</p>
@@ -75,7 +75,7 @@ export default class RecipePreview extends Component {
                 <div className="recipe-preview-mobile">
                     <Link to={`/recipes/${this.state.title}`}>
                         <img className="image-1x1" src={this.state.img} alt="Recipe" />
-                        <p className="title canvas">{this.state.title}</p>
+                        <p className="title playfair">{this.state.title}</p>
                         <p className="date nexaLight">{this.state.date}</p>
                     </Link>
                     <div className="border" />

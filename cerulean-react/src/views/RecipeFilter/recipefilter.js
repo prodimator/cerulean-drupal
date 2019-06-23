@@ -83,7 +83,7 @@ export default class RecipeFilter extends Component {
 					<div className="recipe-filtered">
 						<div className="results">
 							<p className="search nexaLight">your search results for</p>
-							<p className="query canvas">{this.state.filter}</p>
+							<p className="query playfair">{this.state.filter}</p>
 							{this.isResults()}
 						</div>
 					</div>
@@ -98,7 +98,7 @@ export default class RecipeFilter extends Component {
 					<div className="recipe-filtered-mobile">
 						<div className="results">
 							<p className="search nexaLight">your search results for</p>
-							<p className="query canvas">{this.state.filter}</p>
+							<p className="query playfair">{this.state.filter}</p>
 							{this.isResults()}
 						</div>
 					</div>

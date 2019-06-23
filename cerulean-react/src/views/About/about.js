@@ -67,7 +67,7 @@ export default class About extends Component {
                     <div className="about-left">
                         <NavSmall />
                         <div className="about-content">
-                            <p className="title canvas">{this.state.title}</p>
+                            <p className="title playfair">{this.state.title}</p>
                             <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
                             <h3>What Is Lapa</h3>
                             <div className="what-is" dangerouslySetInnerHTML={this.createWhatIsMarkup()} />
@@ -90,7 +90,7 @@ export default class About extends Component {
                     <NavMobile />
                     <div className="mobile-about">
                         <div className="about-content">
-                            <p className="header canvas">{this.state.title}</p>
+                            <p className="header playfair">{this.state.title}</p>
                             <div className="intro" dangerouslySetInnerHTML={this.createIntroMarkup()} />
                             <img src={this.state.img} alt="About" />
                             <h2>What Is Lapa</h2>

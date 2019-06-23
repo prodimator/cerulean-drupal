@@ -41,23 +41,23 @@ export default class NavMobile extends Component {
                         <div className="top" />
                         <div className="bottom" />
                     </div>
-                    <span className="nav-mobile-title canvas">lapa</span>
+                    <span className="nav-mobile-title playfair">lapa</span>
                     <div className="search">
                         <SearchMobile />
                     </div>
                 </div>
                 <div className={`slide-menu ${this.state.visible}`}>
                     <div className="links">
-                        <NavLink className="canvas" exact activeClassName="active" to={'/'} onClick={this.toggleMenu}>
+                        <NavLink className="playfair" exact activeClassName="active" to={'/'} onClick={this.toggleMenu}>
                             <span id="home">Home</span>
                         </NavLink>
-                        <NavLink className="canvas" to={'/recipes'} onClick={this.toggleMenu}>
+                        <NavLink className="playfair" to={'/recipes'} onClick={this.toggleMenu}>
                             <span id="recipes">Recipes</span>
                         </NavLink>
-                        <NavLink className="canvas" to={'/about'} onClick={this.toggleMenu}>
+                        <NavLink className="playfair" to={'/about'} onClick={this.toggleMenu}>
                             <span id="about">About</span>
                         </NavLink>
-                        <NavLink className="canvas" to={'/contact'} onClick={this.toggleMenu}>
+                        <NavLink className="playfair" to={'/contact'} onClick={this.toggleMenu}>
                             <span id="contact">Contact</span>
                         </NavLink>
                     </div>

@@ -162,7 +162,7 @@ export default class Contact extends Component {
                     <div className="contact">
                         <div className="contact-left">
                             <div className="contact-content">
-                                <p className="title canvas">{this.state.title}</p>
+                                <p className="title playfair">{this.state.title}</p>
                                 <div className="content">
                                     <div dangerouslySetInnerHTML={this.createContactMarkup()} />
                                 </div>
@@ -217,7 +217,7 @@ export default class Contact extends Component {
                     <NavMobile />
                     <div className="mobile-contact">
                         <div className="contact-content">
-                            <p className="header canvas">{this.state.title}</p>
+                            <p className="header playfair">{this.state.title}</p>
                             <div dangerouslySetInnerHTML={this.createContactMarkup()} />
                         </div>
                         <div className="mobile-contact-form">
