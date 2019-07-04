@@ -15,10 +15,10 @@ export default function MobileSplash() {
                 <p className="playfair">Welcome to</p>
                 <p className="playfairBold"> Lapa</p>
             </div>
-            <p className="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan sit amet nulla facilisi morbi</p>
+            <p className="summary">Your go-to place for finding creative and slightly nostalgic recipes. We take requests, so let's connect! Check out the feed below for our most recent content. Bon appetit!</p>
             <div className="what-do">
-                <p className="nexaLight">food</p>
-                <p className="nexaLight">design</p>
+                <p className="nexaLight">recipes</p>
+                <p className="nexaLight">web design</p>
                 <p className="nexaLight">photography</p>
             </div>
             <div className="buttons">

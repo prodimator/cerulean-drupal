@@ -16,7 +16,7 @@ export default function Splash() {
                 <span className="playfairBold"> Lapa</span>
                 <div className="subtext">
                     <span className="underline"></span>
-                    <p>Food</p>
+                    <p>Recipes</p>
                     <p>Web Design</p>
                     <p>Photography</p>
                 </div>

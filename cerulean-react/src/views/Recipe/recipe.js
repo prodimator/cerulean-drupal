@@ -101,7 +101,7 @@ export default class Recipe extends Component {
           <div className="recipe-preview-mobile">
             <img className="image-1x1" src={this.state.img} alt="Recipe" />
             <p className="title playfair">{this.state.title}</p>
-            <div className="date">{this.state.date}</div>
+            <div className="date nexaLight">{this.state.date}</div>
             <div className="content" dangerouslySetInnerHTML={this.createContentMarkup()} />
             <div className="recipe-info">
               <div className="pre-recipe-info">Serving Size: {this.state.serving_size}</div>
