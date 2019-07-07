@@ -37,7 +37,7 @@ export default class RecipeFilter extends Component {
 			.catch(error => {
 				this.setState({ error });
 				console.log("There was an error!");
-			})
+			});
 	}
 
 	componentWillMount = () => {
