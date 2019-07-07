@@ -36,15 +36,29 @@
             padding:10px;
 
             .wrapper{
-                margin: auto;
+                display:flex;
+                justify-content: center;
+                align-items: center;
                 position: relative;
+                outline: 1px solid $white;
+                outline-offset: -20px;
 
                 p{
-                    color: $white;
-                    bottom: 0;
-                    margin: 20px;
+                    color: $black;
+                    margin: 0;
                     position: absolute;
                     z-index: 10;
+                    padding: 10px;
+                    padding-left: 14px;
+                    background-color: $white;
+                }
+
+                .dotted-bar{
+                    z-index: 10;
+                    position: absolute;
+                    border-bottom: 2px $white dotted;
+                    margin-top: 30px;
+                    width: 20%;
                 }
 
                 img{
@@ -59,8 +73,6 @@
                     position:absolute;
                     left:0;
                     top:0;
-                    
-                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $black 100%);
                 }
             }
         }
@@ -92,15 +104,29 @@
                 width: 100%;
 
                 .wrapper{
-                    margin: auto;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
                     position: relative;
+                    outline: 1px solid $white;
+                    outline-offset: -20px;
 
                     p{
-                        color: $white;
-                        bottom: 0;
-                        margin: 20px;
+                        color: $black;
+                        margin: 0;
                         position: absolute;
                         z-index: 1;
+                        padding: 10px;
+                        padding-left: 14px;
+                        background-color: $white;
+                    }
+
+                    .dotted-bar{
+                        z-index: 10;
+                        position: absolute;
+                        border-bottom: 2px $white dotted;
+                        margin-top: 30px;
+                        width: 20%;
                     }
 
                     img{
@@ -115,8 +141,6 @@
                         position:absolute;
                         left:0;
                         top:0;
-                        
-                        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $black 100%);
                     }
                 }
             }

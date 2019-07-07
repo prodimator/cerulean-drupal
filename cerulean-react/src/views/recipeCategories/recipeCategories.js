@@ -47,6 +47,7 @@ export default class RecipeCategories extends Component {
             <Link to={`/results/${category_title}`}>
                 <div className="wrapper">
                     <p>{category.title}</p>
+                    <div className="dotted-bar"></div>
                     <img className="image" src={CONSTANTS.BASE_URL + category.image} alt="Category" />
                 </div>
             </Link>
