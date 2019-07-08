@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import { createBrowserHistory } from 'history';
 import ReactGA from 'react-ga';
 import Home from './views/Home/home';
@@ -13,10 +13,10 @@ import './App.scss';
 const history = createBrowserHistory();
 
 // Initialize google analytics page view tracking
+ReactGA.initialize('UA-143287896-1');
 history.listen(location => {
-  ReactGA.initialize('UA-143287896-1');
   ReactGA.set({ page: location.pathname }); // Update the user's current page
-  ReactGA.pageview(location.pathname); // Record a pageview for the given page
+  ReactGA.pageview(location.pathname + location.search); // Record a pageview for the given page
 });
 
 function App() {
