@@ -101,8 +101,8 @@ export default class RecipeFilter extends Component {
 							<p className="query playfair">{this.state.filter}</p>
 							{this.isResults()}
 						</div>
+						<FooterSmall />
 					</div>
-					<FooterSmall />
 				</>
 			);
 		}

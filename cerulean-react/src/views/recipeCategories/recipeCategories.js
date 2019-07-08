@@ -92,8 +92,8 @@ export default class RecipeCategories extends Component {
                                 </div>
                             ))}
                         </div>
+                        <FooterSmall />
                     </div>
-                    <FooterSmall />
                 </>
             );
         }
