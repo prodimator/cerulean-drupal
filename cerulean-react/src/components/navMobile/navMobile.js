@@ -57,13 +57,13 @@ export default class NavMobile extends Component {
                         <NavLink className="playfair" exact activeClassName="active" to={'/'} onClick={this.toggleMenu}>
                             <span id="home">Home</span>
                         </NavLink>
-                        <NavLink className="playfair" to={'/recipes'} onClick={this.toggleMenu}>
+                        <NavLink className="playfair" exact activeClassName="active" to={'/recipes'} onClick={this.toggleMenu}>
                             <span id="recipes">Recipes</span>
                         </NavLink>
-                        <NavLink className="playfair" to={'/about'} onClick={this.toggleMenu}>
+                        <NavLink className="playfair" exact activeClassName="active" to={'/about'} onClick={this.toggleMenu}>
                             <span id="about">About</span>
                         </NavLink>
-                        <NavLink className="playfair" to={'/contact'} onClick={this.toggleMenu}>
+                        <NavLink className="playfair" exact activeClassName="active" to={'/contact'} onClick={this.toggleMenu}>
                             <span id="contact">Contact</span>
                         </NavLink>
                     </div>
