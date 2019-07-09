@@ -29,6 +29,7 @@ class Search extends Component {
 					visible: 'hide'
 				});
 			}
+			document.body.style.overflow = "auto";
 		}
 	}
 
@@ -37,11 +38,13 @@ class Search extends Component {
 			this.setState({
 				visible: 'hide'
 			});
+			document.body.style.overflow = "auto";
 		}
 		if (this.state.visible === 'hide') {
 			this.setState({
 				visible: 'show'
 			}); 
+			document.body.style.overflow = "hidden";
 			this.refs.search.focus();
 		}
 	}
