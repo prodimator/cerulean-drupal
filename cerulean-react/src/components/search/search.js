@@ -10,7 +10,8 @@ class Search extends Component {
     constructor(props) {
 	    super(props);
 	    this.state = {
-	    	searchString: "",
+			searchString: "",
+			width: window.innerWidth,
 			visible: 'hide',
 	    };
 	}
@@ -28,8 +29,8 @@ class Search extends Component {
 				this.setState({
 					visible: 'hide'
 				});
+				document.body.style.overflow = "auto";
 			}
-			document.body.style.overflow = "auto";
 		}
 	}
 
@@ -45,7 +46,9 @@ class Search extends Component {
 				visible: 'show'
 			}); 
 			document.body.style.overflow = "hidden";
-			this.refs.search.focus();
+			if (this.state.width > 650){
+				this.refs.search.focus();
+			}
 		}
 	}
 
@@ -64,6 +67,10 @@ class Search extends Component {
 
 	onSearch = (e) => {
 		this.props.history.push(`/results/${this.state.searchString}`);
+		this.setState({
+			visible: 'hide'
+		});
+		document.body.style.overflow = "auto";
 	}
 
 	render() {
