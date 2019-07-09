@@ -1,11 +1,13 @@
 @import '../../styles/colors.scss';
 
 .mobile-splash{
-    height: calc(100vh - 100px);
+    max-height: 712px;
+    height: calc(100vh + 80px);
 
     .circle { 
         width: 100vw;
-        height: 100vh;;
+        max-height: 812px;
+        height: calc(100vh + 180px);
         background: #e7e3ed;
         border-bottom-left-radius: 125px;
         top: 0px;
