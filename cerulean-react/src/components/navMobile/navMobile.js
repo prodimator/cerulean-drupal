@@ -19,14 +19,12 @@ export default class NavMobile extends Component {
                 visible: 'hide'
             });
             document.body.style.overflow = "auto";
-
         }
         if (this.state.visible === 'hide') {
             this.setState({
                 visible: 'show'
             });
             document.body.style.overflow = "hidden";
-
         }
     }
     closeMenu = () => {
@@ -35,7 +33,6 @@ export default class NavMobile extends Component {
                 visible: 'hide'
             });
             document.body.style.overflow = "auto";
-
         }
     }
 
