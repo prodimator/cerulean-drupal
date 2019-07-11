@@ -29,7 +29,8 @@ class Search extends Component {
 				this.setState({
 					visible: 'hide'
 				});
-				document.body.style.overflow = "auto";
+				document.body.classList.remove("noScroll");
+
 			}
 		}
 	}
@@ -39,13 +40,13 @@ class Search extends Component {
 			this.setState({
 				visible: 'hide'
 			});
-			document.body.style.overflow = "auto";
+			document.body.classList.remove("noScroll");
 		}
 		if (this.state.visible === 'hide') {
 			this.setState({
 				visible: 'show'
 			}); 
-			document.body.style.overflow = "hidden";
+			document.body.classList.add("noScroll");
 			if (this.state.width > 650){
 				this.refs.search.focus();
 			}

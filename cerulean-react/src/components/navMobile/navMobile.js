@@ -18,13 +18,13 @@ export default class NavMobile extends Component {
             this.setState({
                 visible: 'hide'
             });
-            document.body.style.overflow = "auto";
+            document.body.classList.remove("noScroll");
         }
         if (this.state.visible === 'hide') {
             this.setState({
                 visible: 'show'
             });
-            document.body.style.overflow = "hidden";
+            document.body.classList.add("noScroll");
         }
     }
     closeMenu = () => {
@@ -32,7 +32,7 @@ export default class NavMobile extends Component {
             this.setState({
                 visible: 'hide'
             });
-            document.body.style.overflow = "auto";
+            document.body.classList.remove("noScroll");
         }
     }
 
