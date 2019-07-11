@@ -46,7 +46,7 @@ class Search extends Component {
 			this.setState({
 				visible: 'show'
 			}); 
-			document.body.classList.add("noScroll");
+            document.body.classList.add("noScroll");
 			if (this.state.width > 650){
 				this.refs.search.focus();
 			}
